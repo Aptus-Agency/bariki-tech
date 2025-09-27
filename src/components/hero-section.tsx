@@ -64,35 +64,6 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-
-          {/* Right Content - Floating Cards */}
-          <div className="relative animate-slide-right">
-            <div className="grid grid-cols-2 gap-4">
-              {stats.map((stat, index) => (
-                <div 
-                  key={stat.label} 
-                  className={`card-glass p-6 text-center hover-lift ${
-                    index % 2 === 0 ? 'animate-float' : ''
-                  }`}
-                  style={{
-                    animationDelay: `${index * 0.2}s`
-                  }}
-                >
-                  <Icon icon={stat.icon} className="w-8 h-8 text-primary mx-auto mb-3" />
-                  <div className="text-2xl font-bold text-dark mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Floating Elements */}
-            <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-secondary/20 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-          </div>
         </div>
       </div>
 
