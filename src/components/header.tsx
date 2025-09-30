@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Icon } from "@iconify/react";
+import Image from "next/image";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,9 +39,9 @@ const Header = () => {
             {/* Logo */}
             <div className="flex items-center gap-3">
               <img
-                src={'/bariki-logo.png'}
+                src="https://res.cloudinary.com/zurri-cloud/image/upload/v1759221309/bariki/alh0lrkyjtbzydirlamy.png"
                 alt="Bariki Tech Security Solutions"
-                className="h-12 w-auto"
+                className="h-[100px] w-auto"
               />
             </div>
 
