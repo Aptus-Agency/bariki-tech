@@ -115,8 +115,8 @@ All colors MUST be HSL. Brand colors: #60efff, #231f20, #0b66fd, #ffffff
   
   /* Ghost Button */
   .btn-ghost {
-    @apply text-dark font-medium px-4 py-2 rounded-lg bg-transparent;
-    @apply hover:bg-accent hover:text-accent-foreground transition-all duration-300;
+    @apply font-medium px-4 py-2 rounded-lg bg-transparent;
+    @apply transition-all duration-300;
   }
   
   /* Card Styles */

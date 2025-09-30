@@ -27,10 +27,6 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="animate-slide-left">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
-              <Icon icon="mdi-light:shield" />
-              <span className="font-medium">Professional Security Solutions</span>
-            </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Protect What
