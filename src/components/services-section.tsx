@@ -23,12 +23,12 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <Carousel>
+        {/* Services Grid - Now using the enhanced Carousel */}
+        <Carousel itemsToShow={3}>
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group card-glass hover-lift overflow-hidden"
+              className="group card-glass hover-lift overflow-hidden h-full flex flex-col"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Service Image */}
@@ -45,26 +45,16 @@ const ServicesSection = () => {
               </div>
 
               {/* Service Content */}
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold text-dark mb-3 group-hover:text-primary transition-colors">
                   {service.title}
                 </h3>
 
-                <p className="text-muted-foreground mb-4 leading-relaxed">
+                <p className="text-muted-foreground mb-4 leading-relaxed flex-grow">
                   {service.description}
                 </p>
 
-                {/* Features List */}
-                {/* <div className="grid grid-cols-2 gap-2 mb-6">
-                  {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                      <span className="text-sm text-muted-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div> */}
-
-                <button className="btn-outline w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all">
+                <button className="btn-outline w-full mt-4 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all">
                   Learn More
                 </button>
               </div>
