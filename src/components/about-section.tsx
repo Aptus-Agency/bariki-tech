@@ -1,5 +1,6 @@
 import { features } from "@/lib/data";
 import { Icon } from "@iconify/react";
+import TitleChip from "./title-chip";
 
 const AboutSection = () => {
 
@@ -9,10 +10,7 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div className="animate-slide-left">
-            <div className="inline-flex items-center gap-2 text-dark border-dark/20 border px-4 py-2 rounded-full mb-6">
-              <Icon icon="mdi-light:award" className="w-5 h-5" />
-              <span className="font-medium">About Bariki Tech</span>
-            </div>
+            <TitleChip title="About Bariki Tech" />
             
             <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-6">
               We Protect Lives and Property Through
@@ -50,6 +48,11 @@ const AboutSection = () => {
 
           {/* Right Content - Values Cards */}
           <div className="animate-slide-right space-y-6">
+            <img 
+              src="https://res.cloudinary.com/zurri-cloud/image/upload/v1759221308/bariki/mzefic6yjt2vt0cxxdtn.jpg" 
+              alt="Bariki Tech Security Solutions" 
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </div>

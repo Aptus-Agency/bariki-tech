@@ -5,6 +5,7 @@ import StatsSection from "@/components/stats-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import HeroSection from "@/components/hero-section";
+import Carousel from "@/components/ui/carousel";
 
 export default function Home() {
   return (
@@ -14,7 +15,6 @@ export default function Home() {
       <AboutSection />
       <ServicesSection />
       <StatsSection />
-      <ContactSection />
       <Footer />
     </main>
   );

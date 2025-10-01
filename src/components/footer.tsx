@@ -1,5 +1,4 @@
 import { Icon } from "@iconify/react";
-import barikiLogo from '@/assets/bariki-logo.png';
 
 const Footer = () => {
   const services = [
