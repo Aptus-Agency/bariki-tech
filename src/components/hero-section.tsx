@@ -41,7 +41,7 @@ const HeroSection = () => {
 
           {/* CTA Button */}
           <div className="pt-4">
-            <button className="btn-hero group">
+            <button className="btn-hero border-none group">
               Get Free Consultation
             </button>
           </div>

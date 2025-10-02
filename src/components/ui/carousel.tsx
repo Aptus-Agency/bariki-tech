@@ -9,22 +9,40 @@ interface CarouselProps {
     children: React.ReactNode[];
     itemsToShow?: number;
     autoPlayInterval?: number; // in milliseconds, 0 to disable
+    showNavigationButtons?: boolean;
+    nextCarouselItem?: (currentIndex: number, totalItems: number) => number;
+    prevCarouselItem?: (currentIndex: number, totalItems: number) => number;
 }
 
 export default function Carousel({
     children,
     itemsToShow = 3,
-    autoPlayInterval = 5000
+    autoPlayInterval = 5000,
+    showNavigationButtons = true,
+    nextCarouselItem,
+    prevCarouselItem
 }: CarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const totalItems = React.Children.count(children);
 
+    if (!nextCarouselItem) {
+        nextCarouselItem = (currentIndex: number, totalItems: number) => {
+            return (currentIndex + 1) % totalItems
+        };
+    }
+
+    if (!prevCarouselItem) {
+        prevCarouselItem = (currentIndex: number, totalItems: number) => {
+            return (currentIndex - 1 + totalItems) % totalItems;
+        };
+    }
+
     const nextItem = () => {
-        setCurrentIndex((prev) => (prev + 1) % totalItems);
+        setCurrentIndex(nextCarouselItem(currentIndex, totalItems));
     };
 
     const prevItem = () => {
-        setCurrentIndex((prev) => (prev - 1 + totalItems) % totalItems);
+        setCurrentIndex(prevCarouselItem(currentIndex, totalItems));
     };
 
     useEffect(() => {
@@ -61,7 +79,7 @@ export default function Carousel({
             </div>
 
             {/* Navigation Buttons */}
-            {totalItems > itemsToShow && (
+            {totalItems > itemsToShow && showNavigationButtons && (
                 <>
                     <button
                         onClick={prevItem}

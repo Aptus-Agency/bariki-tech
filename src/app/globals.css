@@ -90,7 +90,7 @@ All colors MUST be HSL. Brand colors: #60efff, #231f20, #0b66fd, #ffffff
 @layer components {
   /* Hero Button Variant */
   .btn-hero {
-    @apply bg-gradient-to-r from-primary to-secondary text-white font-semibold px-8 py-4 rounded-xl;
+    @apply bg-gradient-to-r from-primary to-secondary text-white font-semibold px-8 py-4;
     @apply hover:shadow-[var(--shadow-primary)] transform hover:scale-105 transition-all duration-300;
     @apply border border-primary/20 backdrop-blur-sm;
   }

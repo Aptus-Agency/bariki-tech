@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { Icon } from "@iconify/react";
-import Image from "next/image";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,10 +17,10 @@ const Header = () => {
   }, []);
 
   const navigationItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Projects', href: '#projects' },
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+    { label: 'Services', href: '/services' },
+    { label: 'Projects', href: '/projects' },
     { label: 'Contact', href: '/contact' },
   ];
 
@@ -29,7 +28,7 @@ const Header = () => {
     <>
       {/* Main Header */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all ${isScrolled
             ? 'bg-white/95 backdrop-blur-lg shadow-elegant mt-0'
             : 'bg-transparent text-white'
           }`}
