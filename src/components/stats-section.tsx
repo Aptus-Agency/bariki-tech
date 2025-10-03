@@ -1,60 +1,21 @@
+'use client'
+
 import { Icon } from "@iconify/react";
 import Carousel from "./ui/carousel";
+import { useState } from "react";
+import { stats, testimonials } from "@/lib/data";
 
 const StatsSection = () => {
-  const stats = [
-    {
-      icon: "bxs:check-shield",
-      value: '500+',
-      label: 'Installations Completed',
-      description: 'Successful security installations'
-    },
-    {
-      icon: "bxs:happy",
-      value: '200+',
-      label: 'Happy Clients',
-      description: 'Satisfied customers nationwide'
-    },
-    {
-      icon: "bxs:rocket",
-      value: '10+',
-      label: 'Years Experience',
-      description: 'Proven track record'
-    },
-    {
-      icon: "bxs:time",
-      value: '24/7',
-      label: 'Support Available',
-      description: 'Round-the-clock assistance'
-    }
-  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const totalItems = testimonials.length;
 
-  const testimonials = [
-    {
-      quote: "CryptoFlow has completely transformed my crypto trading experience. The real-time analytics and AI recommendations have significantly improved my returns.",
-      author: "Michael Chen",
-      role: "Full-time Trader",
-      avatar: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=100&h=100&fit=crop"
-    },
-    {
-      quote: "As a beginner, I was intimidated by crypto trading until I found CryptoFlow. Their intuitive interface and educational resources made it easy to start investing confidently.",
-      author: "Sarah Johnson",
-      role: "Tech Entrepreneur",
-      avatar: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=100&h=100&fit=crop"
-    },
-    {
-      quote: "The security features on CryptoFlow are unmatched. I feel confident keeping my assets on their platform, and the trading fees are the most competitive I've found.",
-      author: "David Rodriguez",
-      role: "Cybersecurity Specialist",
-      avatar: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=100&h=100&fit=crop"
-    },
-    {
-      quote: "Their customer support is phenomenal. Any time I've had a question or issue, the team has resolved it quickly. The platform itself is lightning fast and reliable.",
-      author: "Emma Thompson",
-      role: "Investment Advisor",
-      avatar: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=100&h=100&fit=crop"
-    }
-  ];
+  const nextItem = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalItems);
+  };
+
+  const prevItem = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalItems) % totalItems);
+  };
 
   return (
     <section className="section-padding bg-gradient-dark">
@@ -98,7 +59,7 @@ const StatsSection = () => {
           ))}
         </div>
         <div className="mt-16">
-          <Carousel itemsToShow={1}>
+          <Carousel itemsToShow={1} currentIndex={currentIndex} nextItem={nextItem} prevItem={prevItem}>
             {testimonials.map((testimonial, index) => (
               <div key={index} className="px-4">
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 md:p-10">
