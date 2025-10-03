@@ -254,13 +254,15 @@ export const testimonials = [
   export const aboutPageValues = [
     {
       icon: 'mdi:shield-outline',
-      title: 'Project Planning',
-      description: 'Strategic security design with professional implementation'
+      title: 'Dependable protection',
     },
     {
       icon: 'mdi:account-group-outline',
-      title: 'Expert Team',
-      description: 'Highly trained engineers and technicians'
+      title: 'Smart Solutions'
+    },
+    {
+      icon: 'mdi:account-group-outline',
+      title: 'Ongoing Care'
     }
   ];
 
@@ -273,23 +275,23 @@ export const testimonials = [
 
   export const team = [
     {
-      name: 'David Kamau',
-      role: 'Chief Executive Officer',
-      image: '/team-1.jpg'
+      name: 'Migisa Isaac',
+      role: 'Team Lead',
+      image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1759527920/bariki/bmketverzbisjyuekxpx.png'
     },
     {
-      name: 'Grace Wanjiru',
-      role: 'Lead Security Engineer',
-      image: '/team-1.jpg'
+      name: 'Atwine Mukama Tayebwa',
+      role: 'Business Development Manager',
+      image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1759527920/bariki/rhrsscss7reexshwlvor.png'
     },
     {
-      name: 'James Omondi',
-      role: 'Installation Specialist',
-      image: '/team-1.jpg'
+      name: 'Monica Uwera',
+      role: 'Client Relations Manager',
+      image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1759527921/bariki/y9e1emejnm1ttcpm9vil.png'
     },
     {
-      name: 'Sarah Muthoni',
-      role: 'Project Manager',
-      image: '/team-1.jpg'
+      name: 'Luja Abdul Bastu',
+      role: 'Network and Systems Admin',
+      image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1759527921/bariki/jt0jx9kot7pzvzgbeyhn.png'
     }
   ];

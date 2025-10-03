@@ -3,6 +3,7 @@ import Header from '@/components/header';
 import { Icon } from '@iconify/react';
 import Footer from '@/components/footer';
 import { aboutPageValues, achievements, team } from '@/lib/data';
+import TitleChip from '@/components/title-chip';
 
 const About = () => {
 
@@ -14,61 +15,63 @@ const About = () => {
       <section className="relative h-[400px] flex items-center justify-center">
         <div className="container-custom">
           <div className="absolute inset-0">
-          <img
-            src={'/about-hero.jpg'}
-            alt="About Bariki Tech"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-dark/60"></div>
-        </div>
-        <div className="relative flex justify-start z-10 text-white">
-          <h1 className="text-5xl lg:text-6xl font-bold mb-4">About Us</h1>
-          <div></div>
-        </div>
+            <img
+              src={'/about-hero-cctv.jpg'}
+              alt="About Bariki Tech"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-dark/60"></div>
+          </div>
+          <div className="relative flex justify-start z-10 text-white">
+            <h1 className="text-5xl lg:text-6xl font-bold mb-4">About Us</h1>
+            <div></div>
+          </div>
         </div>
       </section>
 
       {/* Introduction Section */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="max-w-3xl">
-            <p className="text-primary font-semibold mb-4 uppercase tracking-wide">Overview</p>
-            <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-8">
-              Dedicated to Delivering Value and Excellence
-            </h2>
+          <div className="">
+            <TitleChip title="Our Promise" />
+            <div className="grid md:grid-cols-3">
+              {aboutPageValues.map((value, index) => (
+                <div key={index} className="flex gap-6">
+                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Icon icon={value.icon} className="w-8 h-8 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-dark mb-2">{value.title}</h3>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mt-12">
-            {aboutPageValues.map((value, index) => (
-              <div key={index} className="flex gap-6">
-                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Icon icon={value.icon} className="w-8 h-8 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-dark mb-2">{value.title}</h3>
-                  <p className="text-muted-foreground">{value.description}</p>
-                </div>
-              </div>
-            ))}
+          <div className="mt-8">
+
+            <h3 className="text-4xl lg:text-5xl font-bold text-dark mb-8">
+              At Bariki, We don’t just install, we integrate, protect, maintain and build trust.
+            </h3>
           </div>
         </div>
       </section>
 
       {/* Trusted Partner Section */}
-      <section className="section-padding bg-muted/50">
+      <section className="section-padding bg-gradient-dark">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-slide-left">
               <img
-                src={'/about-engineer.jpg'}
+                src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1759526429/bariki/hiryaparhmslqhxb0bom.png'}
                 alt="Security Engineer"
                 className="rounded-2xl shadow-2xl w-full"
               />
             </div>
 
             <div className="animate-slide-right">
-              <p className="text-primary font-semibold mb-4 uppercase tracking-wide">About Our Company</p>
-              <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-6">
+            <TitleChip title="About Our Company" className="border-white text-white" />
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
                 Trusted Partner in Security and Design
               </h2>
 
@@ -77,14 +80,14 @@ const About = () => {
                 <p className="text-white/90">Leading security solutions provider in East Africa</p>
               </div>
 
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-lg text-white mb-6 leading-relaxed">
                 At Bariki Tech Ltd, we exist to protect what matters most—lives and property—through
                 smart, reliable, and customized security solutions. We specialize in the design,
                 installation, and maintenance of CCTV surveillance, electric fencing, access control
                 systems, gate automation, time and attendance solutions, and more.
               </p>
 
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-lg text-white mb-8 leading-relaxed">
                 Our solutions are trusted by schools, hospitals, residential estates, businesses, and
                 institutions that demand dependable security and peace of mind. Backed by a team of highly
                 trained engineers and technicians, Bariki Tech has built a strong reputation for innovation,
@@ -108,18 +111,18 @@ const About = () => {
         />
         <div className="absolute inset-0 bg-dark/70"></div>
 
-        <div className="relative z-10 text-center">
-          <div className="flex items-center justify-center gap-8 text-white">
+        <div className="relative z-10 text-center marquee">
+          <div className="flex items-center justify-center gap-8 text-white track">
             <div className="flex items-center gap-4">
-              <Icon icon="mdi:shield-outline" className="w-12 h-12 text-primary animate-pulse" />
+              <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary animate-pulse" />
               <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider">Security</span>
             </div>
             <div className="flex items-center gap-4">
-              <Icon icon="mdi:eye-outline" className="w-12 h-12 text-primary animate-pulse" />
+              <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary animate-pulse" />
               <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider">Surveillance</span>
             </div>
             <div className="flex items-center gap-4">
-              <Icon icon="mdi:shield-outline" className="w-12 h-12 text-primary animate-pulse" />
+              <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary animate-pulse" />
               <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider">Protection</span>
             </div>
           </div>
@@ -131,7 +134,7 @@ const About = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="text-primary font-semibold mb-4 uppercase tracking-wide">Industry Certifications</p>
+              <TitleChip title="Industry Certifications" />
               <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-6">
                 Our Key Achievements Over the Years
               </h2>
@@ -139,7 +142,7 @@ const About = () => {
 
             <div>
               <img
-                src={'/about-hero.jpg'}
+                src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1759527741/bariki/yvtvmxty9oatg03dybbz.png'}
                 alt="Team Achievement"
                 className="rounded-2xl shadow-2xl w-full"
               />
@@ -168,7 +171,7 @@ const About = () => {
       <section className="section-padding bg-muted/50">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <p className="text-primary font-semibold mb-4 uppercase tracking-wide">Meet Our Experts</p>
+            <TitleChip title="Meet Our Experts" />
             <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-6">
               Dedicated Professionals
             </h2>
