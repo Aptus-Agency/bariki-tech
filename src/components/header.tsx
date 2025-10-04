@@ -2,14 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import { Icon } from "@iconify/react";
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { servicesData } from '@/lib/data';
 
+// You should add an 'icon' property to your servicesData objects.
+// For example: { ..., icon: 'mdi:cctv' }
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isServicesHovered, setIsServicesHovered] = useState(false)
+  const [isServicesHovered, setIsServicesHovered] = useState(false);
 
   const services = Object.values(servicesData);
 
@@ -32,96 +34,101 @@ const Header = () => {
 
   return (
     <>
-      {/* Main Header */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all ${isScrolled
-          ? 'bg-white/95 backdrop-blur-lg shadow-elegant mt-0'
-          : 'bg-transparent text-white'
+            ? 'bg-white/95 backdrop-blur-lg shadow-elegant'
+            : 'bg-transparent text-white'
           }`}
+        onMouseLeave={() => setIsServicesHovered(false)}
       >
         <nav className="container-custom">
-          <div className="flex items-center justify-between py-4">
+          <div className="flex items-center justify-between py-2">
             {/* Logo */}
-            <div className="flex items-center gap-3">
+            <Link href="/" className="flex-shrink-0">
               <img
                 src="https://res.cloudinary.com/zurri-cloud/image/upload/v1759221309/bariki/alh0lrkyjtbzydirlamy.png"
                 alt="Bariki Tech Security Solutions"
-                className="h-[100px] w-auto"
+                className="h-20 w-auto"
               />
-            </div>
+            </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-4">
-              {navigationItems.map((item, index) => {
-                if (index === 2) {
-                  return (
-                    <div
-                      className="relative"
-                      onMouseEnter={() => setIsServicesHovered(true)}
-                      onMouseLeave={() => setIsServicesHovered(false)}
-                    >
-                      <div className="hover:text-greenish transition-colors flex items-center gap-1 btn-ghost relative group">
-                        Services
-                        <motion.div
-                          animate={{ rotate: isServicesHovered ? 180 : 0 }}
-                          transition={{ duration: 0.3, ease: "easeInOut" }}
-                        >
-                          <Icon icon="mdi-light:chevron-down" />
-                        </motion.div>
-                      </div>
-                      <div
-                        className={`absolute top-full left-0 mt-2 p-8 bg-white shadow-lg transition-all duration-300 w-[100vw] grid grid-cols-3 ${isServicesHovered
-                          ? 'opacity-100 visible translate-y-0'
-                          : 'opacity-0 invisible -translate-y-2'
-                          }`}
-                      >
-                          {services.map((service, index) => (
-                            <Link
-                              key={index}
-                              href={`/services/${service.id}`}
-                              className="block px-4 py-3 text-sm text-gray-700 hover:bg-primary hover:text-white transition-colors normal-case"
-                            >
-                              <div>
-                                <h3 className='font-medium text-lg mb-4'>{service.title}
-                                <p className='text-sm line-clamp-3'>{service.description}</p></h3>
-                              </div>
-                            </Link>
-                          ))}
-                      </div>
-                    </div>
-                  )
-                }
-                return <a
+            <div className="hidden lg:flex items-center gap-6">
+              {navigationItems.map((item) => (
+                <div
                   key={item.label}
-                  href={item.href}
-                  className="btn-ghost relative group"
+                  onMouseEnter={item.label === 'Services' ? () => setIsServicesHovered(true) : undefined}
                 >
-                  {item.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-                </a>
-              }
-              )}
+                  <Link href={item.href} className="btn-ghost relative group flex items-center gap-1">
+                    {item.label}
+                    {item.label === 'Services' && (
+                      <motion.div
+                        animate={{ rotate: isServicesHovered ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <Icon icon="mdi-light:chevron-down" />
+                      </motion.div>
+                    )}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                  </Link>
+                </div>
+              ))}
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Buttons */}
             <div className="hidden lg:flex items-center gap-4">
-              <button className="btn-outline">
-                Get Quote
-              </button>
-              <button className="btn-primary">
-                Emergency Service
-              </button>
+              <button className="btn-outline">Get Quote</button>
+              <button className="btn-primary">Emergency Service</button>
             </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 rounded-lg hover:bg-accent transition-colors"
+              className="lg:hidden p-2 rounded-lg"
+              aria-label="Toggle Menu"
             >
-              {isMenuOpen ? <Icon icon="mdi-light:x" /> : <Icon icon="mdi-light:menu" />}
+              <Icon icon={isMenuOpen ? "mdi-light:x" : "mdi-light:menu"} className="h-6 w-6" />
             </button>
           </div>
         </nav>
+
+        {/* Services Full-Width Dropdown */}
+        <AnimatePresence>
+          {isServicesHovered && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100"
+              onMouseLeave={() => setIsServicesHovered(false)}
+            >
+              <div className="container-custom py-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {services.map((service) => (
+                    <Link
+                      key={service.id}
+                      href={`/services/${service.id}`}
+                      className="group flex items-start gap-4 p-4 rounded-lg hover:bg-gray-100/80 transition-colors duration-300"
+                    >
+                      <div className="flex-shrink-0 bg-primary/10 text-primary p-3 rounded-md mt-1">
+                        <Icon icon={service.icon || 'mdi:shield-check-outline'} className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-lg text-dark mb-1 group-hover:text-primary transition-colors">
+                          {service.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground line-clamp-2">
+                          {service.description}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
@@ -129,22 +136,18 @@ const Header = () => {
             <div className="container-custom py-4">
               <div className="flex flex-col gap-4">
                 {navigationItems.map((item) => (
-                  <a
+                  <Link
                     key={item.label}
                     href={item.href}
                     className="btn-ghost justify-start"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 ))}
                 <div className="flex flex-col gap-2 pt-4 border-t border-border">
-                  <button className="btn-outline">
-                    Get Quote
-                  </button>
-                  <button className="btn-primary">
-                    Emergency Service
-                  </button>
+                  <button className="btn-outline">Get Quote</button>
+                  <button className="btn-primary">Emergency Service</button>
                 </div>
               </div>
             </div>
