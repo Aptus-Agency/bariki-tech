@@ -45,7 +45,7 @@ const ContactSection = () => {
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Contact our security experts for a free consultation and quote. 
-            We're here to help protect what matters most to you.
+            We&apos;re here to help protect what matters most to you.
           </p>
         </div>
 
@@ -53,7 +53,7 @@ const ContactSection = () => {
           {/* Contact Information */}
           <div className="animate-slide-left">
             <h3 className="text-2xl font-bold text-dark mb-8">
-              Let's Discuss Your Security Needs
+              Let&apos;s Discuss Your Security Needs
             </h3>
             
             <div className="space-y-6 mb-8">

@@ -52,13 +52,6 @@ const ServiceDetail = () => {
                     <h1 className="text-5xl lg:text-6xl font-bold mb-4 animate-slide-up">
                         {service.title}
                     </h1>
-                    <div className="flex items-center justify-center gap-2 text-white/80 animate-slide-up">
-                        <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-                        <Icon icon="mdi:chevron-right" className="w-4 h-4" />
-                        <Link href="/#services" className="hover:text-primary transition-colors">Services</Link>
-                        <Icon icon="mdi:chevron-right" className="w-4 h-4" />
-                        <span className="text-primary">{service.title}</span>
-                    </div>
                 </div>
             </section>
 
@@ -105,21 +98,6 @@ const ServiceDetail = () => {
                                     <Icon icon="mdi:arrow-right" className="w-4 h-4" />
                                 </button>
                             </div>
-
-                            {/* Download Section */}
-                            <div className="card-glass p-6">
-                                <h3 className="text-lg font-bold text-dark mb-4">Download</h3>
-                                <div className="space-y-3">
-                                    <button className="w-full flex items-center justify-between p-3 bg-dark text-white rounded-lg hover:bg-dark/90 transition-all">
-                                        <span className="font-medium">Our Brochures</span>
-                                        <Icon icon="mdi:download" className="w-5 h-5" />
-                                    </button>
-                                    <button className="w-full flex items-center justify-between p-3 bg-dark text-white rounded-lg hover:bg-dark/90 transition-all">
-                                        <span className="font-medium">Company Details</span>
-                                        <Icon icon="mdi:download" className="w-5 h-5" />
-                                    </button>
-                                </div>
-                            </div>
                         </aside>
 
                         {/* Main Content */}
@@ -134,9 +112,6 @@ const ServiceDetail = () => {
 
                                 <div>
                                     <h2 className="text-3xl font-bold text-dark mb-4 flex items-center gap-3">
-                                        <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                                            <ServiceIcon className="w-6 h-6 text-white" />
-                                        </div>
                                         {service.title}
                                     </h2>
                                     <p className="text-muted-foreground leading-relaxed text-lg">

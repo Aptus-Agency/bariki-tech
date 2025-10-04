@@ -14,7 +14,7 @@ export interface Service {
 
 interface ServiceData {
   id: string;
-  icon: any;
+  icon: string;
   title: string;
   description: string;
   image: string;
@@ -202,8 +202,10 @@ export const quickServices = [
   { id: 'electric-fencing', label: 'Electric Fencing', icon: 'mdi:electricity' },
   { id: 'access-control', label: 'Access Control', icon: 'mdi:lock' },
   { id: 'gate-automation', label: 'Gate Automation', icon: 'mdi:gate' },
-  { id: 'time-attendance', label: 'Time & Attendance', icon: 'mdi:clock' },
-  { id: 'security-consulting', label: 'Security Consulting', icon: 'mdi:account-group' }
+  { id: 'vehicle-access-control-barriers', label: 'Vehicle Access Control Barriers', icon: 'mdi:car' },
+  { id: 'intercom-systems', label: 'Intercom Systems', icon: 'mdi:phone' },
+  { id: 'intruder-alarms', label: 'Intruder Alarms', icon: 'mdi:alarm' },
+  { id: 'metal-detectors', label: 'Metal Detectors', icon: 'mdi:alarm' }
 ];
 
 export const faqs = [

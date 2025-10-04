@@ -1,6 +1,7 @@
 import { features } from "@/lib/data";
 import { Icon } from "@iconify/react";
 import TitleChip from "./title-chip";
+import Link from "next/link";
 
 const AboutSection = () => {
 
@@ -41,9 +42,9 @@ const AboutSection = () => {
               ))}
             </div>
 
-            <button className="btn-primary">
+            <Link href="/about" className="btn-primary">
               Learn More About Us
-            </button>
+            </Link>
           </div>
 
           {/* Right Content - Values Cards */}

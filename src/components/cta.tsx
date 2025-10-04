@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function CTA({ className }: { className?: string }) {
     return (
@@ -12,9 +13,11 @@ export default function CTA({ className }: { className?: string }) {
                     that meets your specific needs and budget.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link href="/contact">
                     <button className={cn("btn-primary", "border-none rounded-none")}>
                         Get Free Consultation
                     </button>
+                    </Link>
                 </div>
             </div>
         </div>

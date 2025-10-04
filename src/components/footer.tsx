@@ -20,10 +20,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: "mdi-light:facebook", href: '#', label: 'Facebook' },
-    { icon: "mdi-light:twitter", href: '#', label: 'Twitter' },
-    { icon: "mdi-light:instagram", href: '#', label: 'Instagram' },
-    { icon: "mdi-light:linkedin", href: '#', label: 'LinkedIn' }
+    { icon: "basil:facebook-solid", href: '#', label: 'Facebook' },
+    { icon: "basil:twitter-solid", href: '#', label: 'Twitter' },
+    { icon: "basil:instagram-solid", href: '#', label: 'Instagram' },
+    { icon: "basil:linkedin-solid", href: '#', label: 'LinkedIn' }
   ];
 
   return (
@@ -127,12 +127,6 @@ const Footer = () => {
                   <p className="text-white/60 text-sm">General Inquiries</p>
                 </div>
               </div>
-            </div>
-
-            <div className="mt-6">
-              <button className="btn-primary w-full">
-                Get Emergency Help
-              </button>
             </div>
           </div>
         </div>

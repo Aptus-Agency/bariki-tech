@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const HeroSection = () => {
   const stats = [
     { icon: "mdi-light:shield", label: 'Projects Completed', value: '500+' },
@@ -40,10 +42,12 @@ const HeroSection = () => {
           </p>
 
           {/* CTA Button */}
-          <div className="pt-4">
+          <div className="mt-4">
+          <Link href="/contact" className="mt-4">
             <button className="btn-hero border-none group">
               Get Free Consultation
             </button>
+          </Link>
           </div>
         </div>
       </div>

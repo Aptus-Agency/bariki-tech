@@ -7,57 +7,58 @@ const ContactSection = () => {
     {
       icon: "mdi-light:map-marker",
       title: 'Visit Our Office',
-      details: ['Nairobi, Kenya', 'Professional Security Center'],
+      // Corrected address from company profile [cite: 14, 380]
+      details: ['Plot 10-12, Hancock Rd', 'Ntinda, Kampala, Uganda'],
       action: 'Get Directions'
     },
     {
       icon: "mdi-light:phone",
       title: 'Call Us Now',
-      details: ['+254 700 000 000', '+254 711 000 000'],
+      // Corrected phone number from company profile [cite: 14, 385]
+      details: ['+256 702 751 312'],
       action: 'Call Now'
     },
     {
       icon: "mdi-light:email",
       title: 'Email Us',
+      // Verified email from company profile [cite: 14, 381]
       details: ['info@barikitech.com', 'support@barikitech.com'],
       action: 'Send Email'
     },
     {
       icon: "mdi-light:clock",
       title: 'Working Hours',
-      details: ['Mon - Fri: 8:00 AM - 6:00 PM', '24/7 Emergency Service'],
-      action: 'Emergency Call'
+      // Corrected working hours from company profile 
+      details: ['Mon - Fri: 8:00 AM - 5:00 PM', 'Sat: 9:00 AM - 1:00 PM'],
+      action: 'Call Emergency Line' // Refined button text for consistency
     }
   ];
 
   return (
     <>
       <Header />
-      <section id="contact" className="section-padding bg-muted/30">
-        <div className="container-custom">
-          {/* Section Header */}
-          <div className="text-center mb-16 animate-slide-up">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
-              <Icon icon="mdi-light:message-square" className="w-5 h-5" />
-              <span className="font-medium">Get In Touch</span>
-            </div>
-
-            <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-6">
+      <section id="contact" className="bg-background">
+        {/* Section Header */}
+        <section className="section-padding bg-gradient-primary pt-32">
+          <div className="container-custom text-center">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Ready to Secure Your
-              <span className="text-gradient block">Property Today?</span>
+              <span className="block">Property Today?</span>
             </h2>
 
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
               Contact our security experts for a free consultation and quote.
-              We're here to help protect what matters most to you.
+              We&apos;re here to help protect what matters most to you.
             </p>
           </div>
+        </section>
+        <div className="container-custom section-padding">
 
           <div className="grid lg:grid-cols-2 gap-16">
-            {/* Contact Information */}
+            {/* Contact Information & Map Suggestion */}
             <div className="animate-slide-left">
               <h3 className="text-2xl font-bold text-dark mb-8">
-                Let's Discuss Your Security Needs
+                Let&apos;s Discuss Your Security Needs
               </h3>
 
               <div className="space-y-6 mb-8">
@@ -88,15 +89,19 @@ const ContactSection = () => {
                 ))}
               </div>
 
-              <div className="card-glass p-6">
-                <h4 className="font-semibold text-dark mb-3">Emergency Service</h4>
-                <p className="text-muted-foreground mb-4">
-                  Need immediate security assistance? Our emergency response team is available 24/7.
-                </p>
-                <button className="btn-secondary w-full">
-                  Call Emergency Line
-                </button>
-              </div>
+              {/* SUGGESTION: Embed a Google Map here for better user experience */}
+              {/* <div className="card-glass p-6">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.753382285108!2d32.6163!3d0.3475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb85871f652d%3A0x629535607675765!2sHancock%20Rd%2C%20Kampala!5e0!3m2!1sen!2sug!4v1664501325345!5m2!1sen!2sug"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0, borderRadius: '0.75rem' }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div> */}
+
             </div>
 
             {/* Contact Form */}
@@ -156,14 +161,20 @@ const ContactSection = () => {
                     <label className="block text-sm font-medium text-dark mb-2">
                       Service Needed
                     </label>
+                    {/* Expanded services based on company profile [cite: 8, 39, 54, 156, 160] */}
                     <select className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
                       <option value="">Select a service</option>
                       <option value="cctv">CCTV Surveillance</option>
-                      <option value="fencing">Electric Fencing</option>
-                      <option value="access">Access Control</option>
+                      <option value="fencing">Electric & Razor Fencing</option>
+                      <option value="access">Access Control Systems</option>
+                      <option value="alarms">Intruder & Panic Alarms</option>
                       <option value="automation">Gate Automation</option>
+                      <option value="intercom">Video & Audio Intercoms</option>
+                      <option value="barriers">Vehicle Access Barriers</option>
                       <option value="attendance">Time & Attendance</option>
+                      <option value="detectors">Metal Detectors</option>
                       <option value="consultation">Security Consultation</option>
+                      <option value="other">Other</option>
                     </select>
                   </div>
 
@@ -178,7 +189,7 @@ const ContactSection = () => {
                     ></textarea>
                   </div>
 
-                  <button className="btn-primary w-full group">
+                  <button className="btn-primary w-full group flex items-center justify-center">
                     Send Message
                     <Icon icon="mdi-light:send" className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </button>

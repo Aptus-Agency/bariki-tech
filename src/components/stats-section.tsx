@@ -68,7 +68,7 @@ const StatsSection = () => {
                       <Icon icon="mdi-light:star" key={i} className="h-5 w-5 text-yellow-500 fill-yellow-500" />
                     ))}
                   </div>
-                  <p className="text-lg md:text-xl text-gray-200 mb-8">"{testimonial.quote}"</p>
+                  <p className="text-lg md:text-xl text-gray-200 mb-8">&quot;{testimonial.quote}&quot;</p>
                   <div className="flex items-center">
                     <img
                       src={testimonial.avatar}

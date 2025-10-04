@@ -81,20 +81,20 @@ const categories = ['All Projects', 'CCTV Surveillance', 'Electric Fencing', 'Ac
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('All Projects');
 
-  const filteredProjects = selectedCategory === 'All Projects' 
-    ? projects 
+  const filteredProjects = selectedCategory === 'All Projects'
+    ? projects
     : projects.filter(project => project.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="section-padding bg-gradient-primary pt-32">
         <div className="container-custom text-center">
-          <h1 className="heading-1 text-white mb-4">Our Projects</h1>
+          <h1 className="text-4xl font-bold text-white mb-4">Our Projects</h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            Discover our portfolio of successful security installations across Kenya
+            Discover our portfolio of successful security installations across the nation
           </p>
         </div>
       </section>
@@ -107,11 +107,10 @@ const Projects = () => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-lg transition-all duration-300 ${
-                  selectedCategory === category
-                    ? 'bg-primary text-white shadow-elegant'
-                    : 'bg-white text-foreground hover:bg-primary/10'
-                }`}
+                className={`px-6 py-3 rounded-lg transition-all duration-300 ${selectedCategory === category
+                  ? 'bg-primary text-white shadow-elegant'
+                  : 'bg-white text-foreground hover:bg-primary/10'
+                  }`}
               >
                 {category}
               </button>
@@ -127,7 +126,7 @@ const Projects = () => {
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="group card hover-scale cursor-pointer"
+                className="group card hover-scale"
               >
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img
@@ -135,28 +134,28 @@ const Projects = () => {
                     alt={project.title}
                     className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
                     <button className="btn-primary flex items-center gap-2">
                       <Icon icon="mdi:eye-outline" className="w-5 h-5" />
                       View Details
                     </button>
-                  </div>
+                  </div> */}
                   <div className="absolute top-4 right-4">
                     <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
                       {project.category}
                     </span>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  
+
                   <p className="text-muted-foreground mb-4 line-clamp-2">
                     {project.description}
                   </p>
-                  
+
                   <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
                     <div className="flex items-center gap-1">
                       <Icon icon="mdi:map-marker-outline" className="w-4 h-4 text-primary" />
@@ -167,7 +166,7 @@ const Projects = () => {
                       {project.date}
                     </div>
                   </div>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {project.services.map((service) => (
                       <span
@@ -186,24 +185,6 @@ const Projects = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-primary">
-        <div className="container-custom text-center">
-          <h2 className="heading-2 text-white mb-4">
-            Ready to Start Your Project?
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Join our growing list of satisfied clients. Let's discuss your security needs today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/#contact" className="btn-secondary">
-              Get a Quote
-            </Link>
-            <Link href="/services/cctv-installation" className="btn-outline border-white text-white hover:bg-white hover:text-primary">
-              View Services
-            </Link>
-          </div>
-        </div>
-      </section>
       <Footer />
     </div>
   );

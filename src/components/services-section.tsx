@@ -34,14 +34,14 @@ const ServicesSection = () => {
             <button
               onClick={prevItem}
               aria-label="Previous slide"
-              className="bg-white/80 backdrop-blur-sm text-dark hover:bg-primary hover:text-white rounded-full p-2 shadow-elegant transition-all duration-300"
+              className="bg-white/80 backdrop-blur-sm text-dark hover:bg-primary hover:text-white rounded-full p-4 shadow-elegant transition-all duration-300"
             >
               <Icon icon="mdi-light:chevron-left" className="w-6 h-6" />
             </button>
             <button
               onClick={nextItem}
               aria-label="Next slide"
-              className="bg-white/80 backdrop-blur-sm text-dark hover:bg-primary hover:text-white rounded-full p-2 shadow-elegant transition-all duration-300"
+              className="bg-white/80 backdrop-blur-sm text-dark hover:bg-primary hover:text-white rounded-full p-4 shadow-elegant transition-all duration-300"
             >
               <Icon icon="mdi-light:chevron-right" className="w-6 h-6" />
             </button>

@@ -51,6 +51,8 @@ All colors MUST be HSL. Brand colors: #60efff, #231f20, #0b66fd, #ffffff
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     
     --radius: 0.75rem;
+
+    --font-goldman: var(--font-goldman);
   }
 
   .dark {
@@ -80,6 +82,10 @@ All colors MUST be HSL. Brand colors: #60efff, #231f20, #0b66fd, #ffffff
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-goldman;
   }
 
   html {

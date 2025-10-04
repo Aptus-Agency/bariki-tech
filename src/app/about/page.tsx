@@ -95,9 +95,9 @@ const About = () => {
                 integrity, and excellence.
               </p>
 
-              <button className="btn-primary">
+              <Link href="/projects" className="btn-primary">
                 See Projects
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -117,15 +117,15 @@ const About = () => {
           <Marquee duration={15}>
             <div className="flex items-center gap-4">
               <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary" />
-              <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider text-white">Security</span>
+              <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman text-white">Security</span>
             </div>
             <div className="flex items-center gap-4">
               <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary" />
-              <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider text-white">Surveillance</span>
+              <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman text-white">Surveillance</span>
             </div>
             <div className="flex items-center gap-4">
               <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary" />
-              <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider text-white">Protection</span>
+              <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman text-white">Protection</span>
             </div>
           </Marquee>
         </div>
