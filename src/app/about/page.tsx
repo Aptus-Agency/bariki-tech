@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react';
 import Footer from '@/components/footer';
 import { aboutPageValues, achievements, team } from '@/lib/data';
 import TitleChip from '@/components/title-chip';
+import Marquee from '@/components/ui/marquee';
 
 const About = () => {
 
@@ -70,7 +71,7 @@ const About = () => {
             </div>
 
             <div className="animate-slide-right">
-            <TitleChip title="About Our Company" className="border-white text-white" />
+              <TitleChip title="About Our Company" className="border-white text-white" />
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
                 Trusted Partner in Security and Design
               </h2>
@@ -111,21 +112,22 @@ const About = () => {
         />
         <div className="absolute inset-0 bg-dark/70"></div>
 
-        <div className="relative z-10 text-center marquee">
-          <div className="flex items-center justify-center gap-8 text-white track">
+        <div className="relative z-10 w-full">
+          {/* Use the new Marquee component. A lower duration means faster speed. */}
+          <Marquee duration={15}>
             <div className="flex items-center gap-4">
-              <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary animate-pulse" />
-              <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider">Security</span>
+              <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary" />
+              <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider text-white">Security</span>
             </div>
             <div className="flex items-center gap-4">
-              <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary animate-pulse" />
-              <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider">Surveillance</span>
+              <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary" />
+              <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider text-white">Surveillance</span>
             </div>
             <div className="flex items-center gap-4">
-              <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary animate-pulse" />
-              <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider">Protection</span>
+              <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary" />
+              <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider text-white">Protection</span>
             </div>
-          </div>
+          </Marquee>
         </div>
       </section>
 

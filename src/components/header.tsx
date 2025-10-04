@@ -2,10 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import { Icon } from "@iconify/react";
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { servicesData } from '@/lib/data';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isServicesHovered, setIsServicesHovered] = useState(false)
+
+  const services = Object.values(servicesData);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,8 +35,8 @@ const Header = () => {
       {/* Main Header */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all ${isScrolled
-            ? 'bg-white/95 backdrop-blur-lg shadow-elegant mt-0'
-            : 'bg-transparent text-white'
+          ? 'bg-white/95 backdrop-blur-lg shadow-elegant mt-0'
+          : 'bg-transparent text-white'
           }`}
       >
         <nav className="container-custom">
@@ -46,8 +52,46 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-4">
-              {navigationItems.map((item) => (
-                <a
+              {navigationItems.map((item, index) => {
+                if (index === 2) {
+                  return (
+                    <div
+                      className="relative"
+                      onMouseEnter={() => setIsServicesHovered(true)}
+                      onMouseLeave={() => setIsServicesHovered(false)}
+                    >
+                      <div className="hover:text-greenish transition-colors flex items-center gap-1 btn-ghost relative group">
+                        Services
+                        <motion.div
+                          animate={{ rotate: isServicesHovered ? 180 : 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                        >
+                          <Icon icon="mdi-light:chevron-down" />
+                        </motion.div>
+                      </div>
+                      <div
+                        className={`absolute top-full left-0 mt-2 p-8 bg-white shadow-lg transition-all duration-300 w-[100vw] grid grid-cols-3 ${isServicesHovered
+                          ? 'opacity-100 visible translate-y-0'
+                          : 'opacity-0 invisible -translate-y-2'
+                          }`}
+                      >
+                          {services.map((service, index) => (
+                            <Link
+                              key={index}
+                              href={`/services/${service.id}`}
+                              className="block px-4 py-3 text-sm text-gray-700 hover:bg-primary hover:text-white transition-colors normal-case"
+                            >
+                              <div>
+                                <h3 className='font-medium text-lg mb-4'>{service.title}
+                                <p className='text-sm line-clamp-3'>{service.description}</p></h3>
+                              </div>
+                            </Link>
+                          ))}
+                      </div>
+                    </div>
+                  )
+                }
+                return <a
                   key={item.label}
                   href={item.href}
                   className="btn-ghost relative group"
@@ -55,7 +99,8 @@ const Header = () => {
                   {item.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                 </a>
-              ))}
+              }
+              )}
             </div>
 
             {/* CTA Button */}
