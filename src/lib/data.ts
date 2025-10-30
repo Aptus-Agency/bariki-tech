@@ -315,15 +315,15 @@ export const testimonials = [
 
 export const aboutPageValues = [
   {
-    icon: 'mdi:shield-outline',
+    icon: 'solar:shield-bold-duotone',
     title: 'Dependable protection',
   },
   {
-    icon: 'mdi:account-group-outline',
+    icon: 'fluent:brain-circuit-24-filled',
     title: 'Smart Solutions'
   },
   {
-    icon: 'mdi:account-group-outline',
+    icon: 'mdi:heart',
     title: 'Ongoing Care'
   }
 ];

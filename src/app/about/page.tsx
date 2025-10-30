@@ -24,7 +24,7 @@ const About = () => {
             <div className="absolute inset-0 bg-dark/60"></div>
           </div>
           <div className="relative flex justify-start z-10 text-white">
-            <h1 className="text-5xl lg:text-6xl font-bold mb-4">About Us</h1>
+            <h1 className="text-5xl lg:text-6xl font-bold mb-4">Protect What Matters Most</h1>
             <div></div>
           </div>
         </div>
@@ -37,7 +37,7 @@ const About = () => {
             <TitleChip title="Our Promise" />
             <div className="grid md:grid-cols-3">
               {aboutPageValues.map((value, index) => (
-                <div key={index} className="flex gap-6">
+                <div key={index} className="flex gap-6 items-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Icon icon={value.icon} className="w-8 h-8 text-primary" />
                   </div>
@@ -170,7 +170,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="section-padding bg-muted/50">
+      {/* <section className="section-padding bg-muted/50">
         <div className="container-custom">
           <div className="text-center mb-16">
             <TitleChip title="Meet Our Experts" />
@@ -200,7 +200,7 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-r from-primary to-secondary">

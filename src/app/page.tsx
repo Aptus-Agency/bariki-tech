@@ -8,12 +8,14 @@ import CTA from "@/components/cta";
 import Project from "@/components/project";
 import Marquee from "@/components/ui/marquee";
 import { Icon } from "@iconify/react";
+import VideoHero from "@/components/VideoHero";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Header />
-      <HeroSection />
+      {/* <HeroSection /> */}
+      <VideoHero />
       <AboutSection />
       <section className="section-padding">
         <Marquee duration={15}>

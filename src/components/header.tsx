@@ -6,8 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { servicesData } from '@/lib/data';
 
-// You should add an 'icon' property to your servicesData objects.
-// For example: { ..., icon: 'mdi:cctv' }
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,8 +34,8 @@ const Header = () => {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all ${isScrolled
-            ? 'bg-white/95 backdrop-blur-lg shadow-elegant'
-            : 'bg-transparent text-white'
+          ? 'bg-white/95 backdrop-blur-lg shadow-elegant'
+          : 'bg-transparent text-white'
           }`}
         onMouseLeave={() => setIsServicesHovered(false)}
       >
@@ -54,31 +52,63 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-6">
-              {navigationItems.map((item) => (
-                <div
-                  key={item.label}
-                  onMouseEnter={item.label === 'Services' ? () => setIsServicesHovered(true) : undefined}
-                >
-                  <Link href={item.href} className="btn-ghost relative group flex items-center gap-1">
-                    {item.label}
-                    {item.label === 'Services' && (
-                      <motion.div
-                        animate={{ rotate: isServicesHovered ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
+              {navigationItems.map((item) => {
+                if (item.label === 'Services') {
+                  return (
+                    <div
+                      className="relative"
+                      onMouseEnter={() => setIsServicesHovered(true)}
+                      onMouseLeave={() => setIsServicesHovered(false)}
+                    >
+                      <div className="btn-ghost relative group flex items-center gap-1">
+                        {item.label}
+                        <motion.div
+                          animate={{ rotate: isServicesHovered ? 180 : 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                        >
+                          <Icon icon="mdi-light:chevron-down" />
+                        </motion.div>
+                      </div>
+                      <div
+                        className={`absolute top-full left-0 mt-2 bg-white w-64 shadow-lg rounded-none transition-all duration-300 ${isServicesHovered
+                          ? 'opacity-100 visible translate-y-0'
+                          : 'opacity-0 invisible -translate-y-2'
+                          }`}
                       >
-                        <Icon icon="mdi-light:chevron-down" />
-                      </motion.div>
-                    )}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-                  </Link>
-                </div>
-              ))}
+                        <div className="">
+                          {services.map((service, index) => (
+                            <Link
+                              key={index}
+                              href={`/services/${service.id}`}
+                              className="block px-4 py-3 text-sm text-gray-700 hover:bg-primary hover:text-white transition-colors normal-case"
+                            >
+                              {service.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )
+                } else {
+                  return (
+                    (
+                      <div
+                        key={item.label}
+                      >
+                        <Link href={item.href} className="btn-ghost relative group flex items-center gap-1">
+                          {item.label}
+                          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                        </Link>
+                      </div>
+                    )
+                  )
+                }
+              })}
             </div>
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center gap-4">
-              <button className="btn-outline">Get Quote</button>
-              <button className="btn-primary">Emergency Service</button>
+              <a href="https://api.whatsapp.com/send?phone=256702751312" className="btn-primary">Book Site Visit</a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -94,7 +124,7 @@ const Header = () => {
 
         {/* Services Full-Width Dropdown */}
         <AnimatePresence>
-          {isServicesHovered && (
+          {false && (
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -146,8 +176,7 @@ const Header = () => {
                   </Link>
                 ))}
                 <div className="flex flex-col gap-2 pt-4 border-t border-border">
-                  <button className="btn-outline">Get Quote</button>
-                  <button className="btn-primary">Emergency Service</button>
+                  <button className="btn-primary">Book Site Visit</button>
                 </div>
               </div>
             </div>

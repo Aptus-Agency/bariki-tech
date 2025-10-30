@@ -89,19 +89,6 @@ const ContactSection = () => {
                 ))}
               </div>
 
-              {/* SUGGESTION: Embed a Google Map here for better user experience */}
-              {/* <div className="card-glass p-6">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.753382285108!2d32.6163!3d0.3475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb85871f652d%3A0x629535607675765!2sHancock%20Rd%2C%20Kampala!5e0!3m2!1sen!2sug!4v1664501325345!5m2!1sen!2sug"
-                  width="100%"
-                  height="300"
-                  style={{ border: 0, borderRadius: '0.75rem' }}
-                  allowFullScreen={true}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div> */}
-
             </div>
 
             {/* Contact Form */}
@@ -203,6 +190,19 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
+
+<div className="card-glass p-6">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.753382285108!2d32.6163!3d0.3475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb85871f652d%3A0x629535607675765!2sHancock%20Rd%2C%20Kampala!5e0!3m2!1sen!2sug!4v1664501325345!5m2!1sen!2sug"
+            width="100%"
+            height="300"
+            style={{ border: 0, borderRadius: '0.75rem' }}
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
         </div>
       </section>
       <Footer />
