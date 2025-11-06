@@ -1,7 +1,5 @@
-const cctvImage = '/about-hero-cctv.jpg';
 const fencingImage = '/electric-fencing.jpg';
 const accessImage = '/access-control.jpg';
-const heroImage = '/hero-security.jpg';
 
 export interface Service {
   icon: string;
@@ -33,7 +31,7 @@ export const servicesData: Record<string, ServiceData> = {
     icon: 'mdi:security-cctv',
     title: 'Digital CCTV Surveillance Systems',
     description: 'Advanced surveillance systems with HD cameras, remote monitoring, and intelligent analytics for comprehensive security coverage.',
-    image: "/cctv-installation.jpg",
+    image: "https://res.cloudinary.com/zurri-cloud/image/upload/v1761837924/bariki/qf4upyjn3byenihy6xiv.jpg",
     heroImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1761834481/bariki/nlg8xybmeq7dcximos5f.webp",
     video: "https://www.youtube.com/embed/Q_p3pka81uc?si=gpY5ouI7u93PnIoT&amp;controls=0",
     features: ['HD/4K Video Quality', 'Remote Monitoring', 'Motion Detection', 'Night Vision', 'Cloud Storage', 'Mobile App Access'],
@@ -52,7 +50,7 @@ export const servicesData: Record<string, ServiceData> = {
     icon: 'mdi:gate-alert',
     title: 'High-Security Electric Fencing',
     description: 'High-voltage perimeter protection systems designed to deter intruders while ensuring safety and reliability.',
-    image: fencingImage,
+    image: "https://res.cloudinary.com/zurri-cloud/image/upload/v1762418932/bariki/wpqc6g1ekjup8zr8kxhk.webp",
     heroImage: fencingImage,
     video: "https://www.youtube.com/embed/-Hpc8R-gYBs?si=bL3CMoymlRR2STLS",
     features: ['High Voltage Protection', 'Alarm Integration', 'Weather Resistant', 'Low Maintenance', 'Solar Options', 'Monitoring Systems'],
@@ -126,14 +124,14 @@ export const servicesData: Record<string, ServiceData> = {
       "Strengthens your security protocol by enabling controlled vehicle checks"
     ],
     images: [],
-    detailedDescription: "Bariki Tech's vehicle access control barriers are designed to secure your perimeter by creating a single, controlled access point[cite: 157]. These barriers are a clear and visible sign that you are taking a proactive approach to security, allowing guards the opportunity to conduct searches and verify authorization[cite: 158]. By representing a physical line that cannot be crossed without permission, they effectively reduce traffic speed and density, enhancing both security and safety on your property[cite: 159].",
-    whyChoose: "At Bariki Tech, we don't just sell products; we deliver comprehensive security solutions tailored to your unique needs. Our approach is founded on our brand promise of **Dependable Protection, Smart Solutions, and Ongoing Care**[cite: 30]. Backed by a team of highly trained and experienced engineers and technicians, we have built a reputation for innovation, integrity, and excellence. We partner with globally recognized brands to ensure the highest quality and reliability. When you choose Bariki, you're not just installing a system; you're investing in a trusted partnership dedicated to protecting what matters most to you through integration, maintenance, and unwavering support[cite: 31]."
+    detailedDescription: "Bariki Tech's vehicle access control barriers are designed to secure your perimeter by creating a single, controlled access point. These barriers are a clear and visible sign that you are taking a proactive approach to security, allowing guards the opportunity to conduct searches and verify authorization. By representing a physical line that cannot be crossed without permission, they effectively reduce traffic speed and density, enhancing both security and safety on your property.",
+    whyChoose: "At Bariki Tech, we don't just sell products; we deliver comprehensive security solutions tailored to your unique needs. Our approach is founded on our brand promise of **Dependable Protection, Smart Solutions, and Ongoing Care. Backed by a team of highly trained and experienced engineers and technicians, we have built a reputation for innovation, integrity, and excellence. We partner with globally recognized brands to ensure the highest quality and reliability. When you choose Bariki, you're not just installing a system; you're investing in a trusted partnership dedicated to protecting what matters most to you through integration, maintenance, and unwavering support."
   },
   'intercom-systems': {
     id: "intercom-systems",
     icon: "mdi:intercom",
     title: "Video & Audio Intercom Systems",
-    description: "Securely manage visitor access with a range of audio and video intercoms for apartments, homes, and businesses[cite: 164].",
+    description: "Securely manage visitor access with a range of audio and video intercoms for apartments, homes, and businesses.",
     image: "https://res.cloudinary.com/zurri-cloud/image/upload/v1759535030/bariki/gh1ezkbgikrjpfk9abze.jpg",
     heroImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1759535030/bariki/gh1ezkbgikrjpfk9abze.jpg",
     video: "https://www.youtube.com/embed/TW-K5pFtcVg?si=AjWo7TNfe9b_Dwv7",
@@ -151,14 +149,14 @@ export const servicesData: Record<string, ServiceData> = {
       "A wide range of options ensures a perfect fit for any type of property"
     ],
     images: [],
-    detailedDescription: "With Bariki Tech's intercom systems, visitor access is managed safely and efficiently[cite: 161]. An intercom unit is mounted at your gate, allowing you to communicate with visitors before deciding to let them in, which greatly enhances your privacy and security. We are a preferred supplier for all kinds of solutions, including apartment security entry phones, building intercoms, wireless systems, and video gate door access systems, ensuring we have the right product for your specific needs.",
-    whyChoose: "At Bariki Tech, we don't just sell products; we deliver comprehensive security solutions tailored to your unique needs. Our approach is founded on our brand promise of **Dependable Protection, Smart Solutions, and Ongoing Care**[cite: 30]. Backed by a team of highly trained and experienced engineers and technicians, we have built a reputation for innovation, integrity, and excellence. We partner with globally recognized brands to ensure the highest quality and reliability. When you choose Bariki, you're not just installing a system; you're investing in a trusted partnership dedicated to protecting what matters most to you through integration, maintenance, and unwavering support."
+    detailedDescription: "With Bariki Tech's intercom systems, visitor access is managed safely and efficiently. An intercom unit is mounted at your gate, allowing you to communicate with visitors before deciding to let them in, which greatly enhances your privacy and security. We are a preferred supplier for all kinds of solutions, including apartment security entry phones, building intercoms, wireless systems, and video gate door access systems, ensuring we have the right product for your specific needs.",
+    whyChoose: "At Bariki Tech, we don't just sell products; we deliver comprehensive security solutions tailored to your unique needs. Our approach is founded on our brand promise of **Dependable Protection, Smart Solutions, and Ongoing Care. Backed by a team of highly trained and experienced engineers and technicians, we have built a reputation for innovation, integrity, and excellence. We partner with globally recognized brands to ensure the highest quality and reliability. When you choose Bariki, you're not just installing a system; you're investing in a trusted partnership dedicated to protecting what matters most to you through integration, maintenance, and unwavering support."
   },
   "intruder-alarms": {
     id: "intruder-alarms",
     icon: "mdi:alarm-light",
     title: "Intruder & Panic Alarm Systems",
-    description: "Protect your property with intelligent alarm systems that detect unauthorized entry and provide instant alerts through audible sirens and remote panic buttons[cite: 186, 189].",
+    description: "Protect your property with intelligent alarm systems that detect unauthorized entry and provide instant alerts through audible sirens and remote panic buttons.",
     image: "https://res.cloudinary.com/zurri-cloud/image/upload/v1759535383/bariki/eyfnlqb82dfteinvlcoe.jpg",
     heroImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1759535383/bariki/eyfnlqb82dfteinvlcoe.jpg",
     video: "https://www.youtube.com/embed/qTf8Kvd4Ups?si=ndsMUakIHY4emQoQ",
@@ -183,8 +181,8 @@ export const servicesData: Record<string, ServiceData> = {
     id: "metal-detectors",
     icon: "mdi:metal-detector",
     title: "Walk-Through Portable Metal Detectors",
-    description: "A highly portable and rapidly deployable metal detector for events and facilities, ensuring enhanced security screening with ease and efficiency[cite: 215, 216].",
-    image: "https://res.cloudinary.com/zurri-cloud/image/upload/v1759535630/bariki/sosgliesju4ydk55dh0t.png",
+    description: "A highly portable and rapidly deployable metal detector for events and facilities, ensuring enhanced security screening with ease and efficiency.",
+    image: "https://res.cloudinary.com/zurri-cloud/image/upload/v1762419337/bariki/wmjzqpvdctgpfj8ybnyh.jpg",
     heroImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1759535630/bariki/sosgliesju4ydk55dh0t.png",
     video: "https://www.youtube.com/embed/C-kLgMuMW-Y?si=DEJFcwgczDF_ajmM",
     features: [

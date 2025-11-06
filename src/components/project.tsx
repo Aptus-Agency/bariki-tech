@@ -17,7 +17,6 @@ const Project = () => {
           </div>
 
           <div className="animate-slide-left">
-            <TitleChip title="Installation Project" />
             
             <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-6">
               Installation Project
