@@ -31,7 +31,6 @@ const ServiceDetail = () => {
         );
     }
 
-    const ServiceIcon = service.icon;
 
     return (
         <>

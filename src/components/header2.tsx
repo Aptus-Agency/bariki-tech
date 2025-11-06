@@ -1,15 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-// import './Header.css'; // Keep or create for custom styles not covered by Tailwind
-// import './MeanMenu.css'; // Keep if using MeanMenu JS plugin
 
-// Define custom colors or use Tailwind config extension
-const themeColor = '#3c8599'; // --tp-theme-1
-const themeSecondary = '#226172'; // Button color
-const headerContactIconBorder = '#629cac';
+const themeSecondary = '#226172';
 const headerContactLabel = '#c8d9de';
-const offerColor = '#ffb614';
 
 const Header = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);

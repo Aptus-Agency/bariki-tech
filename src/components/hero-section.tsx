@@ -1,12 +1,6 @@
 import Link from "next/link";
 
 const HeroSection = () => {
-  const stats = [
-    { icon: "mdi-light:shield", label: 'Projects Completed', value: '500+' },
-    { icon: "mdi-light:users", label: 'Happy Clients', value: '200+' },
-    { icon: "mdi-light:award", label: 'Years Experience', value: '10+' },
-    { icon: "mdi-light:clock", label: '24/7 Support', value: 'Always' },  
-  ];
 
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">

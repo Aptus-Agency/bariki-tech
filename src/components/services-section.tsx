@@ -1,4 +1,3 @@
-import { Icon } from "@iconify/react";
 import TitleChip from "./title-chip";
 import { servicesData } from "@/lib/data";
 

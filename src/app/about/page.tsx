@@ -2,9 +2,8 @@ import Link from 'next/link';
 import Header from '@/components/header';
 import { Icon } from '@iconify/react';
 import Footer from '@/components/footer';
-import { aboutPageValues, achievements, team } from '@/lib/data';
+import { aboutPageValues, achievements } from '@/lib/data';
 import TitleChip from '@/components/title-chip';
-import Marquee from '@/components/ui/marquee';
 
 const About = () => {
 

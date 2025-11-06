@@ -56,6 +56,7 @@ const Header = () => {
                 if (item.label === 'Services') {
                   return (
                     <div
+                      key={item.label}
                       className="relative"
                       onMouseEnter={() => setIsServicesHovered(true)}
                       onMouseLeave={() => setIsServicesHovered(false)}
