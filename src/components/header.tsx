@@ -33,7 +33,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all ${isScrolled
+        className={`fixed top-0 left-0 right-0 z-50 ${isScrolled
           ? 'bg-white/95 backdrop-blur-lg shadow-elegant'
           : 'bg-transparent text-white'
           }`}

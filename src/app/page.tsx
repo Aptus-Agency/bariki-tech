@@ -3,11 +3,9 @@ import Header from "@/components/header";
 import ServicesSection from "@/components/services-section";
 import StatsSection from "@/components/stats-section";
 import Footer from "@/components/footer";
-import HeroSection from "@/components/hero-section";
 import CTA from "@/components/cta";
 import Project from "@/components/project";
 import Marquee from "@/components/ui/marquee";
-import { Icon } from "@iconify/react";
 import VideoHero from "@/components/VideoHero";
 
 export default function Home() {

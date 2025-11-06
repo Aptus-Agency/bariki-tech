@@ -50,9 +50,9 @@ const AboutSection = () => {
           {/* Right Content - Values Cards */}
           <div className="animate-slide-right space-y-6">
             <img 
-              src="https://res.cloudinary.com/zurri-cloud/image/upload/v1759221308/bariki/mzefic6yjt2vt0cxxdtn.jpg" 
+              src="https://res.cloudinary.com/zurri-cloud/image/upload/v1762417210/bariki/t8huhfczdtxvnihgpgga.jpg" 
               alt="Bariki Tech Security Solutions" 
-              className="w-full h-auto"
+              className="w-full h-auto rounded-2xl"
             />
           </div>
         </div>
