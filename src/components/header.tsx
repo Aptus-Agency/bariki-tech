@@ -108,7 +108,7 @@ const Header = () => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center gap-4">
-              <a href="https://api.whatsapp.com/send?phone=256702751312" className="btn-primary">Book Site Visit</a>
+              <a href="https://api.whatsapp.com/send?phone=256702751312" className="btn-primary bg-gradient-primary">Book Site Visit</a>
             </div>
 
             {/* Mobile Menu Button */}

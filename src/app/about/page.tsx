@@ -113,21 +113,7 @@ const About = () => {
         <div className="absolute inset-0 bg-dark/70"></div>
 
         <div className="relative z-10 w-full">
-          {/* Use the new Marquee component. A lower duration means faster speed. */}
-          <Marquee duration={15}>
-            <div className="flex items-center gap-4">
-              <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary" />
-              <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman text-white">Security</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary" />
-              <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman text-white">Surveillance</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary" />
-              <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman text-white">Protection</span>
-            </div>
-          </Marquee>
+          
         </div>
       </section>
 

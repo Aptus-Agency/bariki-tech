@@ -1,3 +1,4 @@
+import { socialLinks } from "@/lib/data";
 import { Icon } from "@iconify/react";
 
 const Footer = () => {
@@ -17,13 +18,6 @@ const Footer = () => {
     'Contact',
     'Privacy Policy',
     'Terms of Service'
-  ];
-
-  const socialLinks = [
-    { icon: "basil:facebook-solid", href: '#', label: 'Facebook' },
-    { icon: "basil:twitter-solid", href: '#', label: 'Twitter' },
-    { icon: "basil:instagram-solid", href: '#', label: 'Instagram' },
-    { icon: "basil:linkedin-solid", href: '#', label: 'LinkedIn' }
   ];
 
   return (

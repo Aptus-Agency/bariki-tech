@@ -1,4 +1,4 @@
-const cctvImage = '/cctv-installation.jpg';
+const cctvImage = '/about-hero-cctv.jpg';
 const fencingImage = '/electric-fencing.jpg';
 const accessImage = '/access-control.jpg';
 const heroImage = '/hero-security.jpg';
@@ -18,6 +18,7 @@ interface ServiceData {
   title: string;
   description: string;
   image: string;
+  video: string;
   heroImage: string;
   features: string[];
   benefits: string[];
@@ -33,7 +34,8 @@ export const servicesData: Record<string, ServiceData> = {
     title: 'Digital CCTV Surveillance Systems',
     description: 'Advanced surveillance systems with HD cameras, remote monitoring, and intelligent analytics for comprehensive security coverage.',
     image: "/cctv-installation.jpg",
-    heroImage: cctvImage,
+    heroImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1761834481/bariki/nlg8xybmeq7dcximos5f.webp",
+    video: "https://www.youtube.com/embed/Q_p3pka81uc?si=gpY5ouI7u93PnIoT&amp;controls=0",
     features: ['HD/4K Video Quality', 'Remote Monitoring', 'Motion Detection', 'Night Vision', 'Cloud Storage', 'Mobile App Access'],
     benefits: [
       'Our skilled professionals bring years of experience',
@@ -43,7 +45,7 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     detailedDescription: 'We pride ourselves on delivering high-quality CCTV surveillance services tailored to meet the unique needs of our clients. With years of experience in the industry, our team of skilled professionals excels in bringing your vision to life. Whether you are looking to secure a new property, monitor an existing space, or need comprehensive surveillance services, we are here to help.',
     whyChoose: 'Transform your existing space with our renovation and remodeling services. Whether you want to update your kitchen, bathroom, or entire home, we bring innovation and style to enhance your living spaces. Our team specializes in both minor updates and major renovations, using cutting-edge materials and design techniques to improve functionality, aesthetics, and value. We work closely with you to ensure your project aligns with your vision, budget, and timeline.',
-    images: [cctvImage, fencingImage, accessImage]
+    images: ["https://res.cloudinary.com/zurri-cloud/image/upload/v1761842328/bariki/fwoicvsnk4peajiizvrl.jpg", "https://res.cloudinary.com/zurri-cloud/image/upload/v1761842265/bariki/sk3bbrqtn7xrksv3wnca.webp"]
   },
   'electric-fencing': {
     id: 'electric-fencing',
@@ -52,6 +54,7 @@ export const servicesData: Record<string, ServiceData> = {
     description: 'High-voltage perimeter protection systems designed to deter intruders while ensuring safety and reliability.',
     image: fencingImage,
     heroImage: fencingImage,
+    video: "https://www.youtube.com/embed/-Hpc8R-gYBs?si=bL3CMoymlRR2STLS",
     features: ['High Voltage Protection', 'Alarm Integration', 'Weather Resistant', 'Low Maintenance', 'Solar Options', 'Monitoring Systems'],
     benefits: [
       'Our skilled professionals bring years of experience',
@@ -61,7 +64,7 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     detailedDescription: 'We pride ourselves on delivering high-quality electric fencing services tailored to meet the unique needs of our clients. With years of experience in the industry, our team of skilled professionals excels in perimeter protection. Whether you are looking to secure a new property, enhance an existing perimeter, or need comprehensive fencing solutions, we are here to help.',
     whyChoose: 'Transform your property security with our electric fencing solutions. We specialize in installing high-voltage perimeter protection systems that deter intruders while ensuring safety. Our systems integrate seamlessly with existing security infrastructure and can be customized to meet your specific requirements.',
-    images: [fencingImage, heroImage, cctvImage]
+    images: []
   },
   'access-control': {
     id: 'access-control',
@@ -70,6 +73,7 @@ export const servicesData: Record<string, ServiceData> = {
     description: 'Smart access control systems including biometric scanners, keycards, and automated entry management.',
     image: accessImage,
     heroImage: accessImage,
+    video: "https://www.youtube.com/embed/9dfILBOmnCA?si=tnUBP4Bxvv1vTSWC",
     features: ['Biometric Scanners', 'Keycard Systems', 'Mobile Access', 'Time Scheduling', 'Visitor Management', 'Integration Ready'],
     benefits: [
       'Our skilled professionals bring years of experience',
@@ -79,7 +83,7 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     detailedDescription: 'We pride ourselves on delivering high-quality access control services tailored to meet the unique needs of our clients. With years of experience in the industry, our team of skilled professionals excels in implementing secure entry systems. Whether you need biometric scanners, keycard systems, or mobile access solutions, we are here to help.',
     whyChoose: 'Enhance your security with smart access control systems. Our solutions provide comprehensive control over who enters your premises and when. We specialize in biometric systems, keycard access, and mobile integration, ensuring seamless security management for your facility.',
-    images: [accessImage, cctvImage, fencingImage]
+    images: ["https://res.cloudinary.com/zurri-cloud/image/upload/v1759535383/bariki/eyfnlqb82dfteinvlcoe.jpg"]
   },
   'gate-automation': {
     id: 'gate-automation',
@@ -88,6 +92,7 @@ export const servicesData: Record<string, ServiceData> = {
     description: 'Automated gate systems with remote control, safety features, and integration with existing security systems.',
     image: "https://res.cloudinary.com/zurri-cloud/image/upload/v1759534485/bariki/bq86zz10bu5bhsafk22d.webp",
     heroImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1759534485/bariki/bq86zz10bu5bhsafk22d.webp",
+    video: "https://www.youtube.com/embed/u1IyMLt-AEM?si=CM7-CpaVD-q63rTh",
     features: ['Remote Control', 'Safety Sensors', 'Backup Power', 'Integration Ready', 'Mobile App', 'Emergency Override'],
     benefits: [
       'Our skilled professionals bring years of experience',
@@ -106,6 +111,7 @@ export const servicesData: Record<string, ServiceData> = {
     description: 'Automated boom barriers that secure perimeters, control traffic flow, and create a single, manageable access point for enhanced security',
     image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1759534834/bariki/ei6jc4hzhkctszxawhn4.jpg',
     heroImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1759534834/bariki/ei6jc4hzhkctszxawhn4.jpg",
+    video: "https://www.youtube.com/embed/l78obVT8MVs?si=dCNzztrCXUYbKaWB",
     features: [
       "Creates a single, controlled access point for vehicles",
       "Acts as a visible sign of proactive security measures",
@@ -130,6 +136,7 @@ export const servicesData: Record<string, ServiceData> = {
     description: "Securely manage visitor access with a range of audio and video intercoms for apartments, homes, and businesses[cite: 164].",
     image: "https://res.cloudinary.com/zurri-cloud/image/upload/v1759535030/bariki/gh1ezkbgikrjpfk9abze.jpg",
     heroImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1759535030/bariki/gh1ezkbgikrjpfk9abze.jpg",
+    video: "https://www.youtube.com/embed/TW-K5pFtcVg?si=AjWo7TNfe9b_Dwv7",
     features: [
       "Audio and video verification options",
       "Specialized systems for single homes, apartments, and large buildings",
@@ -154,6 +161,7 @@ export const servicesData: Record<string, ServiceData> = {
     description: "Protect your property with intelligent alarm systems that detect unauthorized entry and provide instant alerts through audible sirens and remote panic buttons[cite: 186, 189].",
     image: "https://res.cloudinary.com/zurri-cloud/image/upload/v1759535383/bariki/eyfnlqb82dfteinvlcoe.jpg",
     heroImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1759535383/bariki/eyfnlqb82dfteinvlcoe.jpg",
+    video: "https://www.youtube.com/embed/qTf8Kvd4Ups?si=ndsMUakIHY4emQoQ",
     features: [
       "Vibration sensors for windows and magnetic contacts for doors to detect unauthorized opening",
       "Passive Infra-Red (PIR) motion sensors for large rooms",
@@ -178,6 +186,7 @@ export const servicesData: Record<string, ServiceData> = {
     description: "A highly portable and rapidly deployable metal detector for events and facilities, ensuring enhanced security screening with ease and efficiency[cite: 215, 216].",
     image: "https://res.cloudinary.com/zurri-cloud/image/upload/v1759535630/bariki/sosgliesju4ydk55dh0t.png",
     heroImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1759535630/bariki/sosgliesju4ydk55dh0t.png",
+    video: "https://www.youtube.com/embed/C-kLgMuMW-Y?si=DEJFcwgczDF_ajmM",
     features: [
       "Single-person portability and can be transported in a car or van",
       "Assembles and disassembles in under 5 minutes",
@@ -356,4 +365,11 @@ export const team = [
     role: 'Network and Systems Admin',
     image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1759527921/bariki/jt0jx9kot7pzvzgbeyhn.png'
   }
+];
+
+export const socialLinks = [
+  { icon: "basil:facebook-solid", href: '#', label: 'Facebook' },
+  { icon: "basil:twitter-solid", href: '#', label: 'Twitter' },
+  { icon: "basil:instagram-solid", href: '#', label: 'Instagram' },
+  { icon: "basil:linkedin-solid", href: '#', label: 'LinkedIn' }
 ];

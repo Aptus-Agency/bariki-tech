@@ -104,11 +104,24 @@ const ServiceDetail = () => {
                         <div className="space-y-12">
                             {/* Service Image and Description */}
                             <div className="space-y-6">
-                                <img
+                                {/* <img
                                     src={service.image}
                                     alt={service.title}
                                     className="w-full h-[400px] object-cover rounded-2xl"
-                                />
+                                /> */}
+
+                                <div>
+                                    <iframe 
+                                        width="1000" 
+                                        height="500" 
+                                        src={service.video} 
+                                        title="YouTube video player" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                        referrerPolicy="strict-origin-when-cross-origin" 
+                                        allowFullScreen>
+
+                                        </iframe>
+                                </div>
 
                                 <div>
                                     <h2 className="text-3xl font-bold text-dark mb-4 flex items-center gap-3">
@@ -137,7 +150,7 @@ const ServiceDetail = () => {
 
                                 {/* Image Grid */}
                                 <div className="grid md:grid-cols-2 gap-6 mb-8">
-                                    {service.images.slice(1, 3).map((img, index) => (
+                                    {service.images.map((img, index) => (
                                         <img
                                             key={index}
                                             src={img}

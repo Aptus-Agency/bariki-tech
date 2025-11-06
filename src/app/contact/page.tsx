@@ -1,5 +1,6 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import { socialLinks } from "@/lib/data";
 import { Icon } from "@iconify/react";
 
 const ContactSection = () => {
@@ -87,6 +88,18 @@ const ContactSection = () => {
                     </div>
                   </div>
                 ))}
+                <div className="flex gap-4">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      aria-label={social.label}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-primary hover:scale-110 transition-all"
+                    >
+                      <Icon icon={social.icon} className="w-5 h-5 text-white" />
+                    </a>
+                  ))}
+                </div>
               </div>
 
             </div>
@@ -176,7 +189,7 @@ const ContactSection = () => {
                     ></textarea>
                   </div>
 
-                  <button className="btn-primary w-full group flex items-center justify-center">
+                  <button className="btn-primary bg-gradient-primary w-full group flex items-center justify-center">
                     Send Message
                     <Icon icon="mdi-light:send" className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </button>
@@ -191,17 +204,17 @@ const ContactSection = () => {
             </div>
           </div>
 
-<div className="card-glass p-6">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.753382285108!2d32.6163!3d0.3475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb85871f652d%3A0x629535607675765!2sHancock%20Rd%2C%20Kampala!5e0!3m2!1sen!2sug!4v1664501325345!5m2!1sen!2sug"
-            width="100%"
-            height="300"
-            style={{ border: 0, borderRadius: '0.75rem' }}
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
+          <div className="card-glass p-6">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2821.1770922920027!2d32.61803604763362!3d0.3428112953607218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb84935b5c63%3A0xa9118451a68e9b56!2sBariki%20Tech!5e0!3m2!1sen!2sug!4v1762110072213!5m2!1sen!2sug"
+              width="100%"
+              height="300"
+              style={{ border: 0, borderRadius: '0.75rem' }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
 
         </div>
       </section>

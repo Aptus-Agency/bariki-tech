@@ -20,15 +20,18 @@ export default function Home() {
       <section className="section-padding">
         <Marquee duration={15}>
           <div className="flex items-center gap-4">
-            <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary" />
+            {/* <Icon icon="solar:shield-bold-duotone" className="w-12 h-12 text-primary" /> */}
+            <img src={'/bariki-logo.png'} className="w-12 h-12" alt="" />
             <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman">Security</span>
           </div>
           <div className="flex items-center gap-4">
-            <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary" />
+            {/* <Icon icon="solar:shield-bold-duotone" className="w-12 h-12 text-primary" /> */}
+            <img src={'/bariki-logo.png'} className="w-12 h-12" alt="" />
             <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman">Surveillance</span>
           </div>
           <div className="flex items-center gap-4">
-            <Icon icon="svg-spinners:pulse-3" className="w-12 h-12 text-primary" />
+            {/* <Icon icon="solar:shield-bold-duotone" className="w-12 h-12 text-primary" /> */}
+            <img src={'/bariki-logo.png'} className="w-12 h-12" alt="" />
             <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman">Protection</span>
           </div>
         </Marquee>

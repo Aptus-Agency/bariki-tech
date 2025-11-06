@@ -100,7 +100,7 @@ const Projects = () => {
       </section>
 
       {/* Filter Section */}
-      <section className="section-padding bg-accent/30">
+      <section className="bg-accent/30 mt-20">
         <div className="container-custom">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (

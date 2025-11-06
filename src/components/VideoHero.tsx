@@ -14,6 +14,7 @@ export default function VideoHero() {
     const playerRef = useRef<any>(null);
     const [isMuted, setIsMuted] = useState(true);
     const [volume, setVolume] = useState(50);
+    const [isVideoReady, setIsVideoReady] = useState(false);
 
     useEffect(() => {
         // Load YouTube IFrame API
@@ -39,6 +40,7 @@ export default function VideoHero() {
                 events: {
                     onReady: (event: any) => {
                         event.target.playVideo();
+                        setIsVideoReady(true);
                     },
                 },
             });
@@ -70,8 +72,20 @@ export default function VideoHero() {
     };
     return (
         <div className="relative h-screen w-full overflow-hidden">
+            {/* Image Background - Shown while video loads */}
+            <div
+                className={`absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ${
+                    isVideoReady ? 'opacity-0' : 'opacity-100'
+                }`}
+                style={{
+                    backgroundImage: 'url(https://res.cloudinary.com/zurri-cloud/image/upload/v1761834481/bariki/nlg8xybmeq7dcximos5f.webp)'
+                }}
+            />
+
             {/* YouTube Video Background */}
-            <div className="absolute inset-0 w-full h-full">
+            <div className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
+                isVideoReady ? 'opacity-100' : 'opacity-0'
+            }`}>
                 <div
                     id="youtube-player"
                     className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2"
@@ -97,16 +111,6 @@ export default function VideoHero() {
                     step={1}
                     className="w-24"
                 /> */}
-            </div>
-
-            {/* Content Overlay */}
-            <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
-                <h1 className="mb-6 text-5xl font-bold text-white md:text-7xl lg:text-8xl animate-fade-in">
-                    Experience the Future
-                </h1>
-                <p className="mb-8 max-w-2xl text-lg text-white/90 md:text-xl lg:text-2xl animate-fade-in-delayed">
-                    Immerse yourself in a world of possibilities with cutting-edge technology and innovative design
-                </p>
             </div>
         </div>
     )
