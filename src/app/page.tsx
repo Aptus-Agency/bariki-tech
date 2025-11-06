@@ -12,9 +12,9 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Header />
-      {/* <HeroSection /> */}
       <VideoHero />
       <AboutSection />
+
       <section className="section-padding">
         <Marquee duration={15}>
           <div className="flex items-center gap-4">
@@ -34,6 +34,7 @@ export default function Home() {
           </div>
         </Marquee>
       </section>
+
       <ServicesSection />
       <CTA className="mt-16 bg-gradient-dark py-16" />
       <Project />
