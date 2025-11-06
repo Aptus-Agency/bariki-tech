@@ -239,12 +239,12 @@ export const faqs = [
 ];
 
 export const features = [
-  'Licensed security professionals',
-  'State-of-the-art equipment',
-  '24/7 monitoring & support',
-  'Custom security solutions',
-  'Preventive maintenance',
-  'Emergency response team'
+  'ColorVu 3.0 - 24/7 Full-Color Night Vision',
+  'F1.0 Super Lens - Ultra-Light Sensitive',
+  '4K UHD Resolution',
+  'Smart Hybrid Light Technology',
+  'AcuSense 3.0 - AI-Powered Detection',
+  'Audio 2.0 - Two-Way Communication'
 ];
 
 export const values = [

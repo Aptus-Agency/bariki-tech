@@ -5,13 +5,13 @@ const ContactSection = () => {
     {
       icon: "mdi-light:map-marker",
       title: 'Visit Our Office',
-      details: ['Nairobi, Kenya', 'Professional Security Center'],
+      details: ['Hancock Rd Ntinda, Uganda', 'Professional Security Center'],
       action: 'Get Directions'
     },
     {
       icon: "mdi-light:phone",
       title: 'Call Us Now',
-      details: ['+254 700 000 000', '+254 711 000 000'],
+      details: ['+256 780 535 965', '+256 702 751 312'],
       action: 'Call Now'
     },
     {

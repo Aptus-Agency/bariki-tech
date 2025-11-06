@@ -2,6 +2,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { socialLinks } from "@/lib/data";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 const ContactSection = () => {
   const contactInfo = [
@@ -10,28 +11,28 @@ const ContactSection = () => {
       title: 'Visit Our Office',
       // Corrected address from company profile [cite: 14, 380]
       details: ['Plot 10-12, Hancock Rd', 'Ntinda, Kampala, Uganda'],
-      action: 'Get Directions'
+      action: {title: 'Get Directions', href: 'https://maps.app.goo.gl/TdTxoHtoRB25t2u79'}
     },
     {
       icon: "mdi-light:phone",
       title: 'Call Us Now',
       // Corrected phone number from company profile [cite: 14, 385]
       details: ['+256 702 751 312'],
-      action: 'Call Now'
+      action: {title: 'Call Now', href: 'tel:+256702751312'}
     },
     {
       icon: "mdi-light:email",
       title: 'Email Us',
       // Verified email from company profile [cite: 14, 381]
       details: ['info@barikitech.com', 'support@barikitech.com'],
-      action: 'Send Email'
+      action: {title: 'Send Email', href: 'mailto:info@barikitech.com'}
     },
     {
       icon: "mdi-light:clock",
       title: 'Working Hours',
       // Corrected working hours from company profile 
       details: ['Mon - Fri: 8:00 AM - 5:00 PM', 'Sat: 9:00 AM - 1:00 PM'],
-      action: 'Call Emergency Line' // Refined button text for consistency
+      action: {title: 'Call Emergency Line', href: 'tel:+256702751312'}
     }
   ];
 
@@ -82,13 +83,13 @@ const ContactSection = () => {
                           </p>
                         ))}
                         <button className="text-primary hover:text-secondary transition-colors font-medium text-sm mt-2">
-                          {info.action} →
+                          <Link href={info.action.href}>{info.action.title}</Link> →
                         </button>
                       </div>
                     </div>
                   </div>
                 ))}
-                <div className="flex gap-4">
+                <div className="flex gap-4 p-6">
                   {socialLinks.map((social) => (
                     <a
                       key={social.label}

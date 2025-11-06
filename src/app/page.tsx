@@ -15,22 +15,22 @@ export default function Home() {
       <VideoHero />
       <AboutSection />
 
-      <section className="section-padding">
+      <section className="section-padding bg-dark">
         <Marquee duration={15}>
           <div className="flex items-center gap-4">
             {/* <Icon icon="solar:shield-bold-duotone" className="w-12 h-12 text-primary" /> */}
             <img src={'/bariki-logo.png'} className="w-12 h-12" alt="" />
-            <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman">Security</span>
+            <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman text-white">Security</span>
           </div>
           <div className="flex items-center gap-4">
             {/* <Icon icon="solar:shield-bold-duotone" className="w-12 h-12 text-primary" /> */}
             <img src={'/bariki-logo.png'} className="w-12 h-12" alt="" />
-            <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman">Surveillance</span>
+            <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman text-white">Surveillance</span>
           </div>
           <div className="flex items-center gap-4">
             {/* <Icon icon="solar:shield-bold-duotone" className="w-12 h-12 text-primary" /> */}
             <img src={'/bariki-logo.png'} className="w-12 h-12" alt="" />
-            <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman">Protection</span>
+            <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman text-white">Protection</span>
           </div>
         </Marquee>
       </section>

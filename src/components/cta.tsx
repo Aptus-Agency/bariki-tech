@@ -14,7 +14,7 @@ export default function CTA({ className }: { className?: string }) {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link href="/contact">
-                    <button className={cn("btn-primary", "border-none rounded-none")}>
+                    <button className={cn("btn-primary bg-gradient-primary", "border-none rounded-none")}>
                         Get Free Consultation
                     </button>
                     </Link>

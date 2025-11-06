@@ -3,13 +3,12 @@
 import { useState } from 'react';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import Link from 'next/link';
 import { Icon } from '@iconify/react';
 
 const officeCctv = '/project-office-cctv.jpg';
 const residentialFence = '/project-residential-fence.jpg';
 const corporateAccess = '/project-corporate-access.jpg';
-const mallSurveillance = '/project-mall-surveillance.jpg';
+const mallSurveillance = 'https://res.cloudinary.com/zurri-cloud/image/upload/v1762421979/bariki/ubujhsueh9778fzz9ana.jpg';
 const warehouseSecurity = '/project-warehouse-security.jpg';
 const schoolSecurity = '/project-school-security.jpg';
 
@@ -18,7 +17,7 @@ const projects = [
     id: 1,
     title: 'Corporate Office CCTV Installation',
     category: 'CCTV Surveillance',
-    location: 'Nairobi CBD',
+    location: 'Kampala',
     date: '2024',
     image: officeCctv,
     description: 'Comprehensive 24-camera CCTV system with 4K resolution and cloud backup for a leading financial institution.',
@@ -28,7 +27,7 @@ const projects = [
     id: 2,
     title: 'Residential Electric Fencing',
     category: 'Electric Fencing',
-    location: 'Karen, Nairobi',
+    location: 'Kampala',
     date: '2024',
     image: residentialFence,
     description: 'High-voltage electric perimeter fencing with intelligent alarm system for luxury residential property.',
@@ -38,7 +37,7 @@ const projects = [
     id: 3,
     title: 'Corporate Access Control System',
     category: 'Access Control',
-    location: 'Westlands',
+    location: 'Kampala',
     date: '2024',
     image: corporateAccess,
     description: 'Biometric access control system integrated with time attendance for 500+ employees.',
@@ -48,7 +47,7 @@ const projects = [
     id: 4,
     title: 'Shopping Mall Surveillance',
     category: 'CCTV Surveillance',
-    location: 'Thika Road',
+    location: 'Kampala',
     date: '2023',
     image: mallSurveillance,
     description: '100+ camera network with AI-powered analytics for crowd management and security monitoring.',
@@ -68,7 +67,7 @@ const projects = [
     id: 6,
     title: 'School Campus Security',
     category: 'Integrated Systems',
-    location: 'Kiambu',
+    location: 'Kyanja',
     date: '2023',
     image: schoolSecurity,
     description: 'Integrated security system with visitor management and emergency alert system for educational institution.',
@@ -100,7 +99,7 @@ const Projects = () => {
       </section>
 
       {/* Filter Section */}
-      <section className="bg-accent/30 mt-20">
+      <section className="bg-accent/30 mt-12">
         <div className="container-custom">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
@@ -120,7 +119,7 @@ const Projects = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="section-padding">
+      <section className="py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
@@ -140,8 +139,8 @@ const Projects = () => {
                       View Details
                     </button>
                   </div> */}
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute top-4 right-0">
+                    <span className="bg-primary text-white px-3 py-2 text-sm font-semibold">
                       {project.category}
                     </span>
                   </div>
