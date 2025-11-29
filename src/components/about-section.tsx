@@ -14,15 +14,12 @@ const AboutSection = () => {
             <TitleChip title="About Bariki Tech" />
 
             <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-6">
-              We Protect Lives and Property Through
-              <span className="text-gradient block">Smart Security Solutions</span>
+              We Don't Install Equipment.
+              <span className="text-gradient block">We Design Resilience.</span>
             </h2>
 
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              At Bariki Tech Ltd, we exist to protect what matters most—lives and property—through
-              smart, reliable, and customized security solutions. We specialize in the design,
-              installation, and maintenance of CCTV surveillance, electric fencing, access control
-              systems, gate automation, time and attendance solutions, and more.
+              Bariki Tech is Africa's first fully converged security ecosystem. We transform your security posture from reactive protection to predictive resilience, integrating the physical and digital worlds into a single, unbreakable shield.
             </p>
 
             {/* Features Grid */}
@@ -36,7 +33,7 @@ const AboutSection = () => {
             </div>
 
             <Link href="/about" className="btn-primary">
-              Learn More About Us
+              Book a Security Audit
             </Link>
           </div>
 
