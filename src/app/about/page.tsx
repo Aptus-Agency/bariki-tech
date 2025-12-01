@@ -2,8 +2,9 @@ import Link from 'next/link';
 import Header from '@/components/header';
 import { Icon } from '@iconify/react';
 import Footer from '@/components/footer';
-import { aboutPageValues, achievements } from '@/lib/data';
+import { goldStandardValues, achievements } from '@/lib/data';
 import TitleChip from '@/components/title-chip';
+import CTA from '@/components/cta';
 
 const About = () => {
 
@@ -12,131 +13,172 @@ const About = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-[400px] flex items-center justify-center">
-        <div className="container-custom">
-          <div className="absolute inset-0">
-            <img
-              src={'/about-hero-cctv.jpg'}
-              alt="About Bariki Tech"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-dark/60"></div>
-          </div>
-          <div className="relative flex justify-start z-10 text-white">
-            <h1 className="text-5xl lg:text-6xl font-bold mb-4">Protect What Matters Most</h1>
-            <div></div>
-          </div>
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+        <div className="container-custom text-center">
+          <TitleChip title="Our Story" />
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl mx-auto">
+            The Story of a Revolution <br className="hidden md:block" />
+            <span className="text-gradient">Forged in Africa's Reality</span>
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            We didn't set out to become Africa's first converged security ecosystem.
+            We set out to solve a problem everyone else accepted as normal.
+          </p>
         </div>
       </section>
 
-      {/* Introduction Section */}
+      {/* Evolution Story */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="">
-            <TitleChip title="Our Promise" />
-            <div className="grid md:grid-cols-3">
-              {aboutPageValues.map((value, index) => (
-                <div key={index} className="flex gap-6 items-center">
-                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon icon={value.icon} className="w-8 h-8 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-dark mb-2">{value.title}</h3>
-                  </div>
-                </div>
-              ))}
+          <div className="max-w-4xl">
+            <h2 className="text-3xl lg:text-4xl font-bold text-dark mb-6">
+              From Witnessing the Gap to Building the Bridge
+            </h2>
+
+            <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground leading-relaxed">
+              <p className="text-lg">
+                Bariki Tech began where we were needed most: on the ground as a local installer.
+              </p>
+
+              <p className="text-lg">
+                But as we worked across Uganda's most critical sectors; from banking halls to remote
+                oilfields and telecom infrastructure, a glaring truth became unavoidable. <strong className="text-dark">
+                The systems were multiplying, but the security wasn't strengthening.</strong>
+              </p>
+
+              <p className="text-lg">
+                Organizations were buying more cameras, more fences, and more firewalls, yet they
+                remained vulnerable. Their physical security teams didn't speak to their IT departments.
+                Their sensors couldn't talk to their software. They were creating a patchwork of
+                protection, full of holes and blind spots.
+              </p>
+
+              <p className="text-lg">
+                We realized the industry was broken. And so, we began a transformation not just of our
+                company, but of the very concept of security in Africa.
+              </p>
             </div>
-          </div>
-
-          <div className="mt-8">
-
-            <h3 className="text-4xl lg:text-5xl font-bold text-dark mb-8">
-              At Bariki, We don’t just install, we integrate, protect, maintain and build trust.
-            </h3>
           </div>
         </div>
       </section>
 
-      {/* Trusted Partner Section */}
-      <section className="section-padding bg-gradient-dark">
+      {/* Evolution Timeline */}
+      <section className="section-padding bg-muted/30">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-slide-left">
-              <img
-                src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1759526429/bariki/hiryaparhmslqhxb0bom.png'}
-                alt="Security Engineer"
-                className="rounded-2xl shadow-2xl w-full"
-              />
+          <h3 className="text-2xl lg:text-3xl font-bold text-dark mb-12 text-center">Our Evolution:</h3>
+          <div className="grid md:grid-cols-4 gap-6">
+            <div className="card-glass p-6 text-center">
+              <div className="text-primary text-5xl font-bold mb-3">→</div>
+              <h4 className="text-lg font-semibold mb-2 text-dark">From Vendor</h4>
+              <p className="text-muted-foreground text-sm mb-3">to Integrator</p>
+              <p className="text-sm text-muted-foreground">
+                We started connecting the disconnected systems.
+              </p>
             </div>
 
-            <div className="animate-slide-right">
-              <TitleChip title="About Our Company" className="border-white text-white" />
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Trusted Partner in Security and Design
-              </h2>
-
-              <div className="bg-gradient-to-r from-primary to-secondary p-8 rounded-2xl mb-8">
-                <h3 className="text-2xl font-bold text-white mb-2">Building Trust Since 2010</h3>
-                <p className="text-white/90">Leading security solutions provider in East Africa</p>
-              </div>
-
-              <p className="text-lg text-white mb-6 leading-relaxed">
-                At Bariki Tech Ltd, we exist to protect what matters most—lives and property—through
-                smart, reliable, and customized security solutions. We specialize in the design,
-                installation, and maintenance of CCTV surveillance, electric fencing, access control
-                systems, gate automation, time and attendance solutions, and more.
+            <div className="card-glass p-6 text-center">
+              <div className="text-primary text-5xl font-bold mb-3">→</div>
+              <h4 className="text-lg font-semibold mb-2 text-dark">From Integrator</h4>
+              <p className="text-muted-foreground text-sm mb-3">to Advisor</p>
+              <p className="text-sm text-muted-foreground">
+                We began designing the solutions from the ground up.
               </p>
+            </div>
 
-              <p className="text-lg text-white mb-8 leading-relaxed">
-                Our solutions are trusted by schools, hospitals, residential estates, businesses, and
-                institutions that demand dependable security and peace of mind. Backed by a team of highly
-                trained engineers and technicians, Bariki Tech has built a strong reputation for innovation,
-                integrity, and excellence.
+            <div className="card-glass p-6 text-center">
+              <div className="text-primary text-5xl font-bold mb-3">→</div>
+              <h4 className="text-lg font-semibold mb-2 text-dark">From Advisor</h4>
+              <p className="text-muted-foreground text-sm mb-3">to Ecosystem</p>
+              <p className="text-sm text-muted-foreground">
+                We became Africa's first fully converged security partner.
               </p>
+            </div>
 
-              <Link href="/projects" className="btn-primary">
-                See Projects
-              </Link>
+            <div className="card-glass p-6 text-center bg-gradient-to-br from-primary/10 to-secondary/10">
+              <div className="text-primary text-5xl font-bold mb-3">★</div>
+              <h4 className="text-lg font-semibold mb-2 text-dark">Today</h4>
+              <p className="text-muted-foreground text-sm mb-3">The Gold Standard</p>
+              <p className="text-sm text-muted-foreground">
+                Physical and cyber domains meet under one philosophy.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Video/Image Section */}
-      <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
-        <img
-          src={'/about-facility.jpg'}
-          alt="Security Operations"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-dark/70"></div>
+      {/* Gold Standard Ethos - Full Table */}
+      <section className="section-padding bg-gradient-dark text-white">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <TitleChip title="Our Operating System" className="border-white text-white" />
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">The Gold Standard Ethos</h2>
+            <p className="text-xl opacity-90 max-w-3xl mx-auto">
+              For us, "The Gold Standard" is not a marketing slogan. It is our living operating system,
+              the internal code that governs every project, every decision, and every partnership.
+            </p>
+          </div>
 
-        <div className="relative z-10 w-full">
-          
+          <div className="text-center mb-8">
+            <p className="text-2xl font-semibold italic">"Excellence is not claimed. It is engineered."</p>
+          </div>
+
+          {/* Responsive Table */}
+          <div className="overflow-x-auto rounded-lg">
+            <table className="w-full border-collapse bg-white/5 backdrop-blur-sm">
+              <thead>
+                <tr className="border-b-2 border-white/20">
+                  <th className="text-left p-4 font-bold">Value</th>
+                  <th className="text-left p-4 font-bold">Our Interpretation</th>
+                  <th className="text-left p-4 font-bold">In Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {goldStandardValues.map((value, index) => (
+                  <tr key={index} className="border-b border-white/10 hover:bg-white/5 transition-colors">
+                    <td className="p-4 font-semibold align-top">{value.title}</td>
+                    <td className="p-4 opacity-90 align-top">{value.interpretation}</td>
+                    <td className="p-4 text-primary-light align-top">{value.inAction}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-2xl font-semibold italic">"Culture is our strongest firewall."</p>
+          </div>
         </div>
       </section>
 
-      {/* Achievements Section */}
+      {/* Mission & Vision */}
       <section className="section-padding">
-        <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <TitleChip title="Industry Certifications" />
-              <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-6">
-                Our Key Achievements Over the Years
-              </h2>
-            </div>
+        <div className="container-custom max-w-4xl">
+          <TitleChip title="Mission & Vision" />
+          <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-dark">Our Enduring Mission</h2>
 
-            <div>
-              <img
-                src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1759527741/bariki/yvtvmxty9oatg03dybbz.png'}
-                alt="Team Achievement"
-                className="rounded-2xl shadow-2xl w-full"
-              />
-            </div>
+          <p className="text-lg mb-6 text-muted-foreground leading-relaxed">
+            Our mission is to <strong className="text-dark">redefine what security means for Africa</strong> by moving it from a reactive
+            cost to a strategic advantage. We engineer resilience from the ground up, ensuring that
+            the continent's growth is built on a foundation of unshakable safety and trust.
+          </p>
+
+          <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 rounded-2xl my-8 border-l-4 border-primary">
+            <p className="text-xl font-medium mb-3 text-dark">We no longer just install equipment.</p>
+            <p className="text-2xl font-bold text-primary mb-3">We design resilience.</p>
+            <p className="text-xl font-medium text-dark">We protect the promise of Africa.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Keep Existing Achievements */}
+      <section className="section-padding bg-muted/50">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <TitleChip title="Track Record" />
+            <h2 className="text-3xl lg:text-4xl font-bold text-dark">Our Key Achievements Over the Years</h2>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {achievements.map((stat, index) => (
               <div
                 key={index}
@@ -154,58 +196,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      {/* <section className="section-padding bg-muted/50">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <TitleChip title="Meet Our Experts" />
-            <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-6">
-              Dedicated Professionals
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift"
-              >
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-dark mb-1">{member.name}</h3>
-                  <p className="text-muted-foreground">{member.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-primary to-secondary">
-        <div className="container-custom">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="text-white">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-                Your Security Solution Awaits — Get Started Today!
-              </h2>
-            </div>
-            <Link
-              href="/#contact"
-              className="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-white/90 transition-all hover:scale-105 flex items-center gap-2 flex-shrink-0"
-            >
-              <span>Contact Us</span>
-              <Icon icon="mdi:arrow-up" className="w-5 h-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTA variant="partnership" className="bg-gradient-dark py-16" />
 
       <Footer />
     </div>

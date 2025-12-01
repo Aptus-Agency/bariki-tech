@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Icon } from "@iconify/react";
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { servicesData } from '@/lib/data';
+import { servicesData, ecosystemBranches } from '@/lib/data';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,6 +12,7 @@ const Header = () => {
   const [isServicesHovered, setIsServicesHovered] = useState(false);
 
   const services = Object.values(servicesData);
+  const branches = Object.values(ecosystemBranches);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,22 +71,73 @@ const Header = () => {
                           <Icon icon="mdi-light:chevron-down" />
                         </motion.div>
                       </div>
+                      {/* Two-Column Mega Menu */}
                       <div
-                        className={`absolute top-full left-0 mt-2 bg-white w-64 shadow-lg rounded-none transition-all duration-300 ${isServicesHovered
+                        className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white w-[700px] shadow-lg rounded-lg transition-all duration-300 ${isServicesHovered
                           ? 'opacity-100 visible translate-y-0'
                           : 'opacity-0 invisible -translate-y-2'
                           }`}
                       >
-                        <div className="">
-                          {services.map((service, index) => (
-                            <Link
-                              key={index}
-                              href={`/services/${service.id}`}
-                              className="block px-4 py-3 text-sm text-gray-700 hover:bg-primary hover:text-white transition-colors normal-case"
-                            >
-                              {service.title}
-                            </Link>
-                          ))}
+                        <div className="grid grid-cols-2 divide-x divide-border">
+                          {/* Ecosystem Column */}
+                          <div className="p-6">
+                            <div className="flex items-center gap-2 mb-4">
+                              <Icon icon="mdi:network" className="w-5 h-5 text-primary" />
+                              <h3 className="font-bold text-dark text-sm uppercase tracking-wide">Our Ecosystem</h3>
+                            </div>
+                            <div className="space-y-1">
+                              <Link
+                                href="/services"
+                                className="block px-3 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors rounded normal-case"
+                              >
+                                <div className="font-semibold">View All Branches</div>
+                                <div className="text-xs text-muted-foreground">The Virtuous Cycle</div>
+                              </Link>
+                              <Link
+                                href="/solutions"
+                                className="block px-3 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors rounded normal-case"
+                              >
+                                <div className="font-semibold">Client Solutions</div>
+                                <div className="text-xs text-muted-foreground">Gold Standard, Perfectly Scaled</div>
+                              </Link>
+                              <Link
+                                href="/difference"
+                                className="block px-3 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors rounded normal-case"
+                              >
+                                <div className="font-semibold">The Bariki Difference</div>
+                                <div className="text-xs text-muted-foreground">Where Promise Becomes Proof</div>
+                              </Link>
+                              <div className="border-t border-border my-2"></div>
+                              {branches.slice(0, 4).map((branch, index) => (
+                                <div
+                                  key={index}
+                                  className="px-3 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors rounded normal-case cursor-pointer"
+                                >
+                                  <div className="font-medium">{branch.branch}</div>
+                                  <div className="text-xs text-muted-foreground">{branch.tagline}</div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Technical Solutions Column */}
+                          <div className="p-6">
+                            <div className="flex items-center gap-2 mb-4">
+                              <Icon icon="mdi:tools" className="w-5 h-5 text-primary" />
+                              <h3 className="font-bold text-dark text-sm uppercase tracking-wide">Technical Solutions</h3>
+                            </div>
+                            <div className="space-y-1 max-h-[400px] overflow-y-auto">
+                              {services.map((service, index) => (
+                                <Link
+                                  key={index}
+                                  href={`/services/${service.id}`}
+                                  className="block px-3 py-2 text-sm text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors rounded normal-case"
+                                >
+                                  {service.title}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>

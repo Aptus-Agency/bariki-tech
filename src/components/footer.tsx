@@ -38,8 +38,9 @@ const Footer = () => {
             </div>
             
             <p className="text-dark/80 mb-6 leading-relaxed">
-              Protecting lives and property through smart, reliable, and customized 
-              security solutions. Your trusted partner for comprehensive security needs.
+              <span className="font-semibold text-dark block mb-2">Designing Resilience for Africa</span>
+              Africa's first fully converged security ecosystem. We transform your security
+              posture from reactive protection to predictive resilience.
             </p>
             
             <div className="flex gap-4">
