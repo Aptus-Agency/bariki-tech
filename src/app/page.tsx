@@ -5,11 +5,11 @@ import StatsSection from "@/components/stats-section";
 import Footer from "@/components/footer";
 import CTA from "@/components/cta";
 import Project from "@/components/project";
-import Marquee from "@/components/ui/marquee";
 import VideoHero from "@/components/VideoHero";
 import GoldStandardValues from "@/components/gold-standard-values";
 import VirtuousCycle from "@/components/virtuous-cycle";
 import TitleChip from "@/components/title-chip";
+import BetterMarquee from "@/components/BetterMarquee";
 
 export default function Home() {
   return (
@@ -18,25 +18,8 @@ export default function Home() {
       <VideoHero />
       <AboutSection />
 
-      {/* Updated Marquee with new keywords */}
-      <section className="section-padding bg-dark">
-        <Marquee duration={15}>
-          <div className="flex items-center gap-4">
-            <img src={'/bariki-logo.png'} className="w-12 h-12" alt="" />
-            <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman text-white">Resilience</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <img src={'/bariki-logo.png'} className="w-12 h-12" alt="" />
-            <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman text-white">Excellence</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <img src={'/bariki-logo.png'} className="w-12 h-12" alt="" />
-            <span className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman text-white">Ecosystem</span>
-          </div>
-        </Marquee>
-      </section>
+      <BetterMarquee />
 
-      {/* NEW: Gold Standard Excellence Section */}
       <section className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-12 animate-slide-up">
@@ -56,7 +39,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* NEW: Virtuous Cycle Section */}
       <section className="section-padding bg-muted/50">
         <div className="container-custom">
           <div className="text-center mb-12 animate-slide-up">
