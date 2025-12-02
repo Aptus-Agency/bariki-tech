@@ -9,7 +9,7 @@ const GoldStandardValues = () => {
       {goldStandardValues.map((value, index) => (
         <div
           key={index}
-          className="card-glass p-6 hover:shadow-primary transition-all duration-300 group"
+          className="card-glass-dark p-6 hover:shadow-primary transition-all duration-300 group"
         >
           {/* Icon */}
           <div className="mb-4">

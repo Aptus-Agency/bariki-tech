@@ -130,6 +130,11 @@ All colors MUST be HSL. Brand colors: #60efff, #231f20, #0b66fd, #ffffff
     @apply bg-white/80 backdrop-blur-lg border border-white/20 rounded-2xl;
     @apply shadow-[var(--shadow-elegant)] transition-all duration-300;
   }
+
+  .card-glass-dark {
+    @apply bg-white backdrop-blur-lg border border-white/20 rounded-2xl;
+    @apply shadow-white transition-all duration-300;
+  }
   
   .card-hover {
     @apply hover:shadow-[var(--shadow-elegant)] hover:-translate-y-2 transition-all duration-300;

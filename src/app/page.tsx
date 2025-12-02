@@ -20,34 +20,34 @@ export default function Home() {
 
       <BetterMarquee />
 
-      <section className="section-padding">
+      <section className="section-padding bg-secondary">
         <div className="container-custom">
           <div className="text-center mb-12 animate-slide-up">
-            <TitleChip title="The Gold Standard" />
-            <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-6">
+            <TitleChip title="The Gold Standard" className="text-white border-white" />
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Excellence is Not Claimed.
-              <span className="text-gradient block">It's Engineered.</span>
+              <span className="text-white block">It's Engineered.</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-4">
+            <p className="text-lg text-white max-w-3xl mx-auto mb-4">
               "The Gold Standard" is not a slogan; it's our operating system. Every action we take is governed by an internal code of mastery.
             </p>
           </div>
           <GoldStandardValues />
-          <p className="text-center text-2xl font-semibold italic mt-12 text-dark">
+          <p className="text-center text-2xl font-semibold italic mt-12 text-white">
             "Culture is our strongest firewall."
           </p>
         </div>
       </section>
 
-      <section className="section-padding bg-muted/50">
+      <section className="section-padding bg-secondary">
         <div className="container-custom">
           <div className="text-center mb-12 animate-slide-up">
-            <TitleChip title="Our Ecosystem" />
-            <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-6">
+            <TitleChip title="Our Ecosystem" className="text-white border-white" />
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               The Virtuous Cycle
-              <span className="text-gradient block">of Assurance™</span>
+              <span className="text-white block">of Assurance™</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               Security is not a department—it's an ecosystem. Our six interdependent branches create a continuous loop of assurance that no other company in East Africa can match.
             </p>
           </div>

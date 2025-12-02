@@ -20,7 +20,7 @@ const VirtuousCycle = () => {
           <div key={index} className="flex items-center">
             {/* Cycle Item */}
             <div className="group relative w-[200px]">
-              <div className="card-glass p-6  hover:shadow-primary transition-all duration-300 cursor-pointer">
+              <div className="card-glass-dark p-6  hover:shadow-primary transition-all duration-300 cursor-pointer">
                 <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
                     <Icon icon={item.icon} className="w-8 h-8 text-secondary" />
@@ -76,7 +76,7 @@ const VirtuousCycle = () => {
 
       {/* Description */}
       <div className="mt-8 text-center">
-        <p className="text-lg text-muted-foreground italic max-w-4xl mx-auto">
+        <p className="text-lg text-white italic max-w-4xl mx-auto">
           "Each branch is independent in function but interdependent in purpose. When we consult, we bring the intelligence of every branch with us."
         </p>
       </div>
