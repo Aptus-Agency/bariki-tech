@@ -15,8 +15,8 @@ const GoldStandardValues = () => {
           <div className="mb-4">
             <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <Icon
-                icon={value.icon}
-                className="w-8 h-8 text-primary"
+                icon="tabler:robot"
+                className="w-12 h-12 text-secondary"
               />
             </div>
           </div>
@@ -33,7 +33,7 @@ const GoldStandardValues = () => {
 
           {/* In Action */}
           <div className="pt-4 border-t border-border">
-            <p className="text-sm font-medium text-primary">
+            <p className="text-sm font-medium text-secondary">
               In Action:
             </p>
             <p className="text-sm text-muted-foreground mt-1">

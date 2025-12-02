@@ -9,6 +9,7 @@ const VirtuousCycle = () => {
     { label: 'MAINTAIN', icon: 'mdi:tools', description: 'Ongoing care and optimization' },
     { label: 'TRAIN', icon: 'mdi:school', description: 'Knowledge transfer and capability building' },
     { label: 'CYBERSECURE', icon: 'mdi:security', description: 'Digital layer hardening' },
+    { label: 'CONSULT', icon: 'mdi:brain', description: 'Strategic advisory and architecture' },
   ];
 
   return (
@@ -18,11 +19,11 @@ const VirtuousCycle = () => {
         {cycle.map((item, index) => (
           <div key={index} className="flex items-center">
             {/* Cycle Item */}
-            <div className="group relative">
-              <div className="card-glass p-6 hover:shadow-primary transition-all duration-300 cursor-pointer">
+            <div className="group relative w-[200px]">
+              <div className="card-glass p-6  hover:shadow-primary transition-all duration-300 cursor-pointer">
                 <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                    <Icon icon={item.icon} className="w-8 h-8 text-primary" />
+                    <Icon icon={item.icon} className="w-8 h-8 text-secondary" />
                   </div>
                   <h4 className="font-bold text-dark mb-2">{item.label}</h4>
                   <p className="text-xs text-muted-foreground">{item.description}</p>
@@ -34,18 +35,11 @@ const VirtuousCycle = () => {
             {index < cycle.length - 1 && (
               <Icon
                 icon="mdi:arrow-right"
-                className="w-6 h-6 text-primary mx-2 flex-shrink-0"
+                className="w-6 h-6 text-secondary mx-2 flex-shrink-0"
               />
             )}
           </div>
         ))}
-
-        {/* Back to CONSULT Arrow */}
-        <Icon
-          icon="mdi:arrow-right-bold-circle"
-          className="w-8 h-8 text-primary ml-2"
-        />
-        <div className="font-bold text-primary ml-2">CONSULT</div>
       </div>
 
       {/* Mobile View - Vertical Stack */}
