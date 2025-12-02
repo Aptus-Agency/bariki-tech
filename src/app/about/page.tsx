@@ -12,66 +12,81 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20">
-        <div className="absolute inset-0 bg-white/50 opacity-50"></div>
-        <div className="relative inset-0">
-          <Image src="https://res.cloudinary.com/zurri-cloud/image/upload/v1761834481/bariki/nlg8xybmeq7dcximos5f.webp" fill alt="" className="object-cover" />
-        </div>
-        <div className="container-custom text-center">
-          <TitleChip title="Our Story" />
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl mx-auto">
-            The Story of a Revolution <br className="hidden md:block" />
-            <span className="text-gradient">Forged in Africa's Reality</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We didn't set out to become Africa's first converged security ecosystem.
-            We set out to solve a problem everyone else accepted as normal.
-          </p>
-        </div>
-      </section>
-
-      {/* Evolution Story */}
-      <section className="section-padding">
+      <section className="relative h-[600px] flex items-center justify-center">
         <div className="container-custom">
-          <div className="max-w-4xl">
-            <h2 className="text-3xl lg:text-4xl font-bold text-dark mb-6">
-              From Witnessing the Gap to Building the Bridge
-            </h2>
-
-            <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground leading-relaxed">
-              <p className="text-lg">
-                Bariki Tech began where we were needed most: on the ground as a local installer.
-              </p>
-
-              <p className="text-lg">
-                But as we worked across Uganda's most critical sectors; from banking halls to remote
-                oilfields and telecom infrastructure, a glaring truth became unavoidable. <strong className="text-dark">
-                  The systems were multiplying, but the security wasn't strengthening.</strong>
-              </p>
-
-              <p className="text-lg">
-                Organizations were buying more cameras, more fences, and more firewalls, yet they
-                remained vulnerable. Their physical security teams didn't speak to their IT departments.
-                Their sensors couldn't talk to their software. They were creating a patchwork of
-                protection, full of holes and blind spots.
-              </p>
-
-              <p className="text-lg">
-                We realized the industry was broken. And so, we began a transformation not just of our
-                company, but of the very concept of security in Africa.
+          <div className="absolute inset-0">
+            <img
+              src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1761834481/bariki/nlg8xybmeq7dcximos5f.webp'}
+              alt="About Bariki Tech"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-dark/60"></div>
+          </div>
+          <div className="relative flex justify-start z-10 text-white">
+            <div className="container-custom text-center relative z-10">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl mx-auto text-white">
+                The Story of a Revolution <br className="hidden md:block" />
+                <span className="text-gradient">Forged in Africa's Reality</span>
+              </h1>
+              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                We didn't set out to become Africa's first converged security ecosystem.
+                We set out to solve a problem everyone else accepted as normal.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Evolution Timeline */}
-      <section className="section-padding bg-muted/30">
+      {/* Evolution Story */}
+      <section className="section-padding">
         <div className="container-custom">
-          <h3 className="text-2xl lg:text-3xl font-bold text-dark mb-12 text-center">Our Evolution:</h3>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="max-w-4xl">
+              <h2 className="text-3xl lg:text-4xl font-bold text-dark mb-6">
+                From Witnessing the Gap to Building the Bridge
+              </h2>
+
+              <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground leading-relaxed">
+                <p className="text-lg">
+                  Bariki Tech began where we were needed most: on the ground as a local installer.
+                </p>
+
+                <p className="text-lg">
+                  But as we worked across Uganda's most critical sectors; from banking halls to remote
+                  oilfields and telecom infrastructure, a glaring truth became unavoidable. <strong className="text-dark">
+                    The systems were multiplying, but the security wasn't strengthening.</strong>
+                </p>
+
+                <p className="text-lg">
+                  Organizations were buying more cameras, more fences, and more firewalls, yet they
+                  remained vulnerable. Their physical security teams didn't speak to their IT departments.
+                  Their sensors couldn't talk to their software. They were creating a patchwork of
+                  protection, full of holes and blind spots.
+                </p>
+
+                <p className="text-lg">
+                  We realized the industry was broken. And so, we began a transformation not just of our
+                  company, but of the very concept of security in Africa.
+                </p>
+              </div>
+            </div>
+            <div className="animate-slide-right">
+              <img
+                src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1759526429/bariki/hiryaparhmslqhxb0bom.png'}
+                alt="Security Engineer"
+                className="rounded-2xl shadow-2xl w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Evolution Timeline */}
+      <section className="section-padding bg-secondary">
+        <div className="container-custom">
+          <h3 className="text-2xl lg:text-3xl font-bold text-white mb-12 text-center">Our Evolution:</h3>
           <div className="grid md:grid-cols-4 gap-6">
-            <div className="card-glass p-6 text-center">
+            <div className="card-glass-dark p-6 text-center">
               <div className="text-primary text-5xl font-bold mb-3">→</div>
               <h4 className="text-lg font-semibold mb-2 text-dark">From Vendor</h4>
               <p className="text-muted-foreground text-sm mb-3">to Integrator</p>
@@ -80,7 +95,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="card-glass p-6 text-center">
+            <div className="card-glass-dark p-6 text-center">
               <div className="text-primary text-5xl font-bold mb-3">→</div>
               <h4 className="text-lg font-semibold mb-2 text-dark">From Integrator</h4>
               <p className="text-muted-foreground text-sm mb-3">to Advisor</p>
@@ -89,7 +104,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="card-glass p-6 text-center">
+            <div className="card-glass-dark p-6 text-center">
               <div className="text-primary text-5xl font-bold mb-3">→</div>
               <h4 className="text-lg font-semibold mb-2 text-dark">From Advisor</h4>
               <p className="text-muted-foreground text-sm mb-3">to Ecosystem</p>
@@ -98,7 +113,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="card-glass p-6 text-center bg-gradient-to-br from-primary/10 to-secondary/10">
+            <div className="card-glass-dark p-6 text-center">
               <div className="text-primary text-5xl font-bold mb-3">★</div>
               <h4 className="text-lg font-semibold mb-2 text-dark">Today</h4>
               <p className="text-muted-foreground text-sm mb-3">The Gold Standard</p>
@@ -175,7 +190,7 @@ const About = () => {
       </section>
 
       {/* Keep Existing Achievements */}
-      <section className="section-padding bg-muted/50">
+      <section className="section-padding bg-muted/50" id="facts">
         <div className="container-custom">
           <div className="text-center mb-12">
             <TitleChip title="Track Record" />
