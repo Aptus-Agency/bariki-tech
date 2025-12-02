@@ -33,7 +33,7 @@ export default function CTA({ className, variant = 'consultation' }: CTAProps) {
     const content = ctaContent[variant];
 
     return (
-        <div className={cn("text-center mt-16 animate-scale-in", className)}>
+        <div className={cn("text-center animate-scale-in", className)}>
             <div className="p-8 max-w-3xl mx-auto">
                 <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
                     {content.title}

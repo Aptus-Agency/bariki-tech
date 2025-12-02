@@ -1,10 +1,10 @@
-import Link from 'next/link';
 import Header from '@/components/header';
 import { Icon } from '@iconify/react';
 import Footer from '@/components/footer';
 import { goldStandardValues, achievements } from '@/lib/data';
 import TitleChip from '@/components/title-chip';
 import CTA from '@/components/cta';
+import Image from 'next/image';
 
 const About = () => {
 
@@ -13,7 +13,11 @@ const About = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+      <section className="relative pt-32 pb-20">
+        <div className="absolute inset-0 bg-white/50 opacity-50"></div>
+        <div className="relative inset-0">
+          <Image src="https://res.cloudinary.com/zurri-cloud/image/upload/v1761834481/bariki/nlg8xybmeq7dcximos5f.webp" fill alt="" className="object-cover" />
+        </div>
         <div className="container-custom text-center">
           <TitleChip title="Our Story" />
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl mx-auto">
@@ -43,7 +47,7 @@ const About = () => {
               <p className="text-lg">
                 But as we worked across Uganda's most critical sectors; from banking halls to remote
                 oilfields and telecom infrastructure, a glaring truth became unavoidable. <strong className="text-dark">
-                The systems were multiplying, but the security wasn't strengthening.</strong>
+                  The systems were multiplying, but the security wasn't strengthening.</strong>
               </p>
 
               <p className="text-lg">

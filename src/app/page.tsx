@@ -56,7 +56,7 @@ export default function Home() {
       </section>
 
       <ServicesSection />
-      <CTA variant="consultation" className="mt-16 bg-gradient-dark py-16" />
+      <CTA variant="consultation" className="bg-dark py-16" />
       <Project />
       <StatsSection />
       <Footer />
