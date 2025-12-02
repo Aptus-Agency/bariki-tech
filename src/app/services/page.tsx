@@ -2,7 +2,7 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import TitleChip from '@/components/title-chip';
 import EcosystemServices from '@/components/ecosystem-services';
-import { servicesData } from '@/lib/data';
+import { ServiceData, servicesData } from '@/lib/data';
 import Link from 'next/link';
 
 export default function ServicesPage() {
@@ -12,17 +12,27 @@ export default function ServicesPage() {
     <div className="min-h-screen">
       <Header />
 
-      {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
-        <div className="container-custom text-center">
-          <TitleChip title="Our Services" />
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            The Virtuous Cycle
-            <span className="text-gradient block">of Assurance™</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            One Ecosystem, Six Branches, One Unbreakable Standard
-          </p>
+      <section className="relative h-[600px] flex items-center justify-center">
+        <div className="container-custom">
+          <div className="absolute inset-0">
+            <img
+              src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1761834481/bariki/nlg8xybmeq7dcximos5f.webp'}
+              alt="About Bariki Tech"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-dark/60"></div>
+          </div>
+          <div className="relative flex justify-start z-10 text-white">
+            <div className="container-custom text-center relative z-10">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                The Virtuous Cycle
+                <span className="text-gradient block">of Assurance™</span>
+              </h1>
+              <p className="text-xl text-white max-w-3xl mx-auto">
+                One Ecosystem, Six Branches, One Unbreakable Standard
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -37,17 +47,17 @@ export default function ServicesPage() {
             </p>
 
             <div className="inline-flex flex-wrap items-center justify-center gap-2 md:gap-4 text-lg md:text-xl font-semibold bg-muted/50 p-6 rounded-lg">
-              <span className="text-primary">CONSULT</span>
+              <span className="text-secondary">CONSULT</span>
               <span className="text-muted-foreground">→</span>
-              <span className="text-primary">INTEGRATE</span>
+              <span className="text-secondary">INTEGRATE</span>
               <span className="text-muted-foreground">→</span>
-              <span className="text-primary">MAINTAIN</span>
+              <span className="text-secondary">MAINTAIN</span>
               <span className="text-muted-foreground">→</span>
-              <span className="text-primary">TRAIN</span>
+              <span className="text-secondary">TRAIN</span>
               <span className="text-muted-foreground">→</span>
-              <span className="text-primary">CYBERSECURE</span>
+              <span className="text-secondary">CYBERSECURE</span>
               <span className="text-muted-foreground">→</span>
-              <span className="text-primary">CONSULT</span>
+              <span className="text-secondary">CONSULT</span>
             </div>
 
             <p className="text-lg text-muted-foreground italic mt-8">
@@ -59,14 +69,14 @@ export default function ServicesPage() {
       </section>
 
       {/* Ecosystem Branches */}
-      <section className="section-padding bg-muted/30">
+      <section className="section-padding bg-secondary">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <TitleChip title="Six Branches" />
-            <h2 className="text-3xl lg:text-4xl font-bold text-dark mb-4">
+            <TitleChip title="Six Branches" className='text-white border-white' />
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               The Six Pillars of Our Ecosystem
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl mx-auto">
               Each branch delivers specialized capabilities while contributing to the unified
               security ecosystem.
             </p>
@@ -92,31 +102,7 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Link
-                key={service.id}
-                href={`/services/${service.id}`}
-                className="group card-glass hover-lift overflow-hidden h-full flex flex-col"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent"></div>
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-dark mb-3 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed flex-grow">
-                    {service.description}
-                  </p>
-                  <button className="btn-outline w-full mt-4 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all">
-                    Learn More
-                  </button>
-                </div>
-              </Link>
+              <ServiceCard key={index} service={service} />
             ))}
           </div>
         </div>
@@ -195,5 +181,34 @@ export default function ServicesPage() {
 
       <Footer />
     </div>
+  );
+}
+
+function ServiceCard({ service }: { service: ServiceData }) {
+  return (
+    <Link
+      href={`/services/${service.id}`}
+      className="group card-glass hover-lift overflow-hidden h-full flex flex-col"
+    >
+      <div className="relative h-48 overflow-hidden">
+        <img
+          src={service.image}
+          alt={service.title}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent"></div>
+      </div>
+      <div className="p-6 flex flex-col flex-grow">
+        <h3 className="text-xl font-bold text-dark mb-3 group-hover:text-primary transition-colors">
+          {service.title}
+        </h3>
+        <p className="text-muted-foreground mb-4 leading-relaxed flex-grow">
+          {service.description}
+        </p>
+        <button className="btn-outline w-full mt-4 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all">
+          Learn More
+        </button>
+      </div>
+    </Link>
   );
 }

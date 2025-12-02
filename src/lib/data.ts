@@ -10,7 +10,7 @@ export interface Service {
   link: string;
 }
 
-interface ServiceData {
+export interface ServiceData {
   id: string;
   icon: string;
   title: string;

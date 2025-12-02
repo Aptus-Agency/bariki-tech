@@ -189,26 +189,39 @@ const About = () => {
         </div>
       </section>
 
-      {/* Keep Existing Achievements */}
-      <section className="section-padding bg-muted/50" id="facts">
+      {/* Facts Section */}
+      <section className="section-padding bg-dark" id="facts">
         <div className="container-custom">
-          <div className="text-center mb-12">
-            <TitleChip title="Track Record" />
-            <h2 className="text-3xl lg:text-4xl font-bold text-dark">Our Key Achievements Over the Years</h2>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {achievements.map((stat, index) => (
-              <div
-                key={index}
-                className="text-center animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon icon={stat.icon} className="w-8 h-8 text-primary" />
+              <div key={index} className="flex items-start relative mb-10 group">
+                {/* Background Number */}
+                <div className="absolute right-0 top-0 text-[100px] font-bold text-primary/10 leading-none -z-10 select-none transition-all duration-500 group-hover:text-primary/20">
+                  0{index + 1}
                 </div>
-                <div className="text-5xl font-bold text-dark mb-2">{stat.number}</div>
-                <div className="text-muted-foreground uppercase tracking-wide text-sm">{stat.label}</div>
+
+                {/* Main Number */}
+                <div className="inline-block text-center w-[130px] relative">
+                  <h2 className="text-[70px] font-bold text-transparent [-webkit-text-stroke:1px_#97bbc5] leading-none m-0">
+                    {stat.number.replace(/\D/g, '')}
+                  </h2>
+                  <span className="bg-white h-10 w-10 inline-block text-center font-bold text-dark text-xl rounded-full leading-[38px] -translate-y-[26px] shadow-lg">
+                    {stat.number.includes('+') ? '+' : '%'}
+                  </span>
+                </div>
+
+                {/* Content */}
+                <div className="pl-5 relative z-10 pt-4">
+                  <h4 className="text-white text-xl font-bold mb-1 group-hover:text-primary transition-colors duration-300">
+                    {stat.label}
+                  </h4>
+                  <p className="text-white/70 text-sm m-0">
+                    {stat.icon === 'mdi:building-outline' && 'Successful security installations across the region.'}
+                    {stat.icon === 'mdi:account-group-outline' && 'Dedicated professionals ensuring your safety.'}
+                    {stat.icon === 'mdi:award-outline' && 'Satisfied clients trusting our gold standard.'}
+                    {stat.icon === 'mdi:clock-outline' && 'Years of proven excellence in security.'}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

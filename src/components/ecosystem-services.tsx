@@ -12,17 +12,17 @@ const EcosystemServices = () => {
       {branches.map((branch, index) => (
         <div
           key={index}
-          className="card-glass p-6 hover:shadow-primary transition-all duration-300 group cursor-pointer"
+          className="card-glass-dark p-6 hover:shadow-primary transition-all duration-300 group cursor-pointer"
         >
           {/* Icon & Tag Line */}
           <div className="mb-4">
             <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
               <Icon
                 icon={branch.icon}
-                className="w-10 h-10 text-primary"
+                className="w-10 h-10 text-secondary"
               />
             </div>
-            <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-3">
+            <span className="inline-block px-3 py-1 bg-primary/10 text-secondary text-xs font-semibold rounded-full mb-3">
               {branch.tagline}
             </span>
           </div>
@@ -46,7 +46,7 @@ const EcosystemServices = () => {
           {/* Key Metrics */}
           {branch.keyMetrics && branch.keyMetrics.length > 0 && (
             <div className="pt-4 border-t border-border">
-              <p className="text-xs font-semibold text-primary mb-2">Key Metrics:</p>
+              <p className="text-xs font-semibold text-secondary mb-2">Key Metrics:</p>
               <div className="flex flex-wrap gap-2">
                 {branch.keyMetrics.map((metric, i) => (
                   <span
@@ -63,7 +63,7 @@ const EcosystemServices = () => {
           {/* Related Services Count */}
           {branch.relatedServices.length > 0 && (
             <div className="mt-4 pt-4 border-t border-border">
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-secondary">
                 <Icon icon="mdi:link-variant" className="inline w-4 h-4 mr-1" />
                 {branch.relatedServices.length} Technical {branch.relatedServices.length === 1 ? 'Service' : 'Services'}
               </p>
