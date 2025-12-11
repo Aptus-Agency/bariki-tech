@@ -4,6 +4,7 @@ import TitleChip from '@/components/title-chip';
 import EcosystemServices from '@/components/ecosystem-services';
 import { ServiceData, servicesData } from '@/lib/data';
 import Link from 'next/link';
+import { Icon } from '@iconify/react';
 
 export default function ServicesPage() {
   const services = Object.values(servicesData);
@@ -125,7 +126,7 @@ export default function ServicesPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white/5 backdrop-blur-sm p-8 rounded-lg border border-white/10">
-              <div className="text-5xl font-bold text-primary mb-4">1</div>
+              <div className="text-5xl font-bold text-primary mb-4"><Icon icon="iconoir:number-1-square" /></div>
               <h3 className="text-2xl font-bold mb-4">Core Installation & Maintenance</h3>
               <p className="opacity-90 mb-4">
                 The foundation of trust. We design, install, and maintain the physical infrastructure—
@@ -135,7 +136,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm p-8 rounded-lg border border-white/10">
-              <div className="text-5xl font-bold text-primary mb-4">2</div>
+              <div className="text-5xl font-bold text-primary mb-4"><Icon icon="iconoir:number-2-square" /></div>
               <h3 className="text-2xl font-bold mb-4">Cybersecurity Division</h3>
               <p className="opacity-90 mb-4">
                 The digital shield. We provide Managed Detection & Response (MDR), vulnerability
@@ -145,7 +146,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm p-8 rounded-lg border border-white/10">
-              <div className="text-5xl font-bold text-primary mb-4">3</div>
+              <div className="text-5xl font-bold text-primary mb-4"><Icon icon="iconoir:number-3-square" /></div>
               <h3 className="text-2xl font-bold mb-4">Security Systems Consultancy</h3>
               <p className="opacity-90 mb-4">
                 The strategic brain. We advise, design, and oversee security ecosystems from blueprint

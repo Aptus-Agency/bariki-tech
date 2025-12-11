@@ -611,9 +611,9 @@ export const aboutPageValues = [
 ];
 
 export const achievements = [
-  { number: '500+', label: 'Complete Projects', icon: 'mdi:building-outline' },
+  { number: '50+', label: 'Complete Projects', icon: 'mdi:building-outline' },
   { number: '50+', label: 'Team Members', icon: 'mdi:account-group-outline' },
-  { number: '450+', label: 'Client Reviews', icon: 'mdi:award-outline' },
+  { number: '45+', label: 'Client Reviews', icon: 'mdi:award-outline' },
   { number: '15+', label: 'Years Experience', icon: 'mdi:clock-outline' }
 ];
 

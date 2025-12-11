@@ -181,9 +181,9 @@ const About = () => {
             the continent's growth is built on a foundation of unshakable safety and trust.
           </p>
 
-          <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 rounded-2xl my-8 border-l-4 border-primary">
+          <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 my-8 border-l-4 border-primary">
             <p className="text-xl font-medium mb-3 text-dark">We no longer just install equipment.</p>
-            <p className="text-2xl font-bold text-primary mb-3">We design resilience.</p>
+            <p className="text-5xl font-bold text-primary font-goldman mb-3">We design resilience.</p>
             <p className="text-xl font-medium text-dark">We protect the promise of Africa.</p>
           </div>
         </div>
