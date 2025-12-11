@@ -1,6 +1,9 @@
+"use client";
+
 import { features } from "@/lib/data";
 import { Icon } from "@iconify/react";
 import TitleChip from "./title-chip";
+import { motion } from "framer-motion";
 
 const Project = () => {
 
@@ -8,15 +11,26 @@ const Project = () => {
     <section id="product" className="section-padding bg-muted/50">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-        <div className="animate-slide-right h-full">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="h-full"
+          >
             <img
               src="https://res.cloudinary.com/zurri-cloud/image/upload/v1762420276/bariki/kpi5k4aqnftawfxxoxe0.webp"
               alt="Pro Series with ColorVu 3.0"
               className="w-full h-full max-w-full object-cover rounded-lg shadow-lg"
             />
-          </div>
+          </motion.div>
 
-          <div className="animate-slide-left">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          >
 
             <TitleChip title="Latest Product Offering" />
 
@@ -42,10 +56,10 @@ const Project = () => {
               ))}
             </div>
 
-            <a href="https://api.whatsapp.com/send?phone=256702751312" className="btn-primary bg-gradient-primary">
+            <a href="https://api.whatsapp.com/send?phone=256702751312" className="btn-primary bg-gradient-primary inline-flex">
               Get a Quote
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

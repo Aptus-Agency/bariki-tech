@@ -1,45 +1,77 @@
+"use client";
+
 import TitleChip from "./title-chip";
 import { servicesData } from "@/lib/data";
 import Link from "next/link";
+import { motion, Variants } from "framer-motion";
+import ScrollReveal from "./ui/scroll-reveal";
 
 const ServicesSection = () => {
   const services = Object.values(servicesData);
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  };
+
   return (
     <section id="services" className="section-padding bg-[#F2F2F2]">
       <div className="container-custom">
-        <div className="mb-12 animate-slide-up">
-          <TitleChip title="Our Services" />
-          <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-6">
-            Comprehensive Security
-            <span className="text-gradient block">Solutions & Services</span>
-          </h2>
+        <ScrollReveal>
+          <div className="mb-12">
+            <TitleChip title="Our Services" />
+            <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-6">
+              Comprehensive Security
+              <span className="text-gradient block">Solutions & Services</span>
+            </h2>
 
-          {/* Ecosystem Context */}
-          <div className="max-w-3xl">
-            <p className="text-lg text-muted-foreground mb-6">
-              Our technical solutions are backed by a comprehensive security ecosystem.
-              From strategic consultancy to cybersecurity hardening, every installation
-              is part of our integrated approach to building resilient security.
-            </p>
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-semibold transition-colors"
-            >
-              <span>Explore Our Ecosystem Approach</span>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+            {/* Ecosystem Context */}
+            <div className="max-w-3xl">
+              <p className="text-lg text-muted-foreground mb-6">
+                Our technical solutions are backed by a comprehensive security ecosystem.
+                From strategic consultancy to cybersecurity hardening, every installation
+                is part of our integrated approach to building resilient security.
+              </p>
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-semibold transition-colors"
+              >
+                <span>Explore Our Ecosystem Approach</span>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={service.title}
-              className="group card-glass hover-lift overflow-hidden h-full flex flex-col animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              variants={itemVariants}
+              className="group card-glass hover-lift overflow-hidden h-full flex flex-col"
             >
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -64,9 +96,9 @@ const ServicesSection = () => {
                   </button>
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

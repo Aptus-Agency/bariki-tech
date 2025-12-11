@@ -1,6 +1,9 @@
+"use client";
+
 import { Icon } from "@iconify/react";
 import TitleChip from "./title-chip";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const AboutSection = () => {
   // Simplified Gold Standard features for homepage
@@ -18,7 +21,12 @@ const AboutSection = () => {
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <div className="animate-slide-left">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <TitleChip title="About Bariki Tech" />
 
             <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-6">
@@ -40,19 +48,25 @@ const AboutSection = () => {
               ))}
             </div>
 
-            <Link href="/about" className="btn-primary">
+            <Link href="/contact" className="btn-primary inline-flex">
               Book a Security Audit
             </Link>
-          </div>
+          </motion.div>
 
           {/* Right Content - Values Cards */}
-          <div className="animate-slide-right h-full">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            className="h-full"
+          >
             <img
               src="https://res.cloudinary.com/zurri-cloud/image/upload/v1762417210/bariki/t8huhfczdtxvnihgpgga.jpg"
               alt="Bariki Tech Security Solutions"
               className="w-full h-full max-w-full max-h-full object-cover rounded-2xl"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

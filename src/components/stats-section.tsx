@@ -4,6 +4,7 @@ import { Icon } from "@iconify/react";
 import Carousel from "./ui/carousel";
 import { useState } from "react";
 import { achievements, stats, testimonials } from "@/lib/data";
+import { motion, Variants } from "framer-motion";
 
 const StatsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -15,6 +16,26 @@ const StatsSection = () => {
 
   const prevItem = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + totalItems) % totalItems);
+  };
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
   };
 
   return (
@@ -31,9 +52,19 @@ const StatsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {achievements.map((stat, index) => (
-            <div key={index} className="flex items-start relative mb-10 group">
+            <motion.div
+              key={index}
+              className="flex items-start relative mb-10 group"
+              variants={itemVariants}
+            >
               {/* Background Number */}
               <div className="absolute right-0 top-0 text-[100px] font-bold text-primary/10 leading-none -z-10 select-none transition-all duration-500 group-hover:text-primary/20">
                 0{index + 1}
@@ -61,9 +92,9 @@ const StatsSection = () => {
                   {stat.icon === 'mdi:clock-outline' && 'Years of proven excellence in security.'}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         <div className="mt-16">
           <Carousel itemsToShow={1} currentIndex={currentIndex} nextItem={nextItem} prevItem={prevItem}>
             {testimonials.map((testimonial, index) => (
