@@ -53,13 +53,13 @@ export default function ClientSolutionsPage() {
       </section>
 
       {/* Client Tiers */}
-      <section className="section-padding bg-muted/30" id="solutions">
+      <section className="section-padding bg-secondary" id="solutions">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-dark mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               Choose Your Path to Resilience
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-white/80 max-w-3xl mx-auto">
               Each tier delivers the Gold Standard, scaled to your specific needs and operational context.
             </p>
           </div>
@@ -133,14 +133,11 @@ export default function ClientSolutionsPage() {
               Find Your Tier, Secure Your Future
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Let's identify the perfect Bariki Tech solution for your world.
+              Let's identify the perfect Security solution for your world.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contact" className="btn-primary bg-gradient-primary px-8 py-4">
                 Schedule a Consultation
-              </a>
-              <a href="/difference" className="btn-outline px-8 py-4">
-                Discover The Bariki Difference
               </a>
             </div>
           </div>
