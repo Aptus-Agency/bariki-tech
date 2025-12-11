@@ -19,6 +19,7 @@ const eslintConfig = [
       "react/jsx-no-comment-textnodes": "off",
       "@next/next/no-img-element": "off",
       "@typescript-eslint/no-explicit-any": "off",
+      "react/no-unescaped-entities": "off",
     }
   },
   {
