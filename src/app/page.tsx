@@ -10,6 +10,7 @@ import GoldStandardValues from "@/components/gold-standard-values";
 import VirtuousCycle from "@/components/virtuous-cycle";
 import TitleChip from "@/components/title-chip";
 import BetterMarquee from "@/components/BetterMarquee";
+import { Icon } from "@iconify/react";
 
 export default function Home() {
   return (
@@ -20,7 +21,14 @@ export default function Home() {
 
       <BetterMarquee />
 
-      <section className="section-padding bg-secondary">
+      <section className="section-padding bg-secondary relative" id="gold-standard">
+        <div className="w-[600px] h-[600px] absolute -top-[100px] -left-[100px]">
+          <Icon icon="material-symbols:speed-camera" className="text-white w-[600px] h-[600px] opacity-80" />
+        </div>
+
+        <div className="w-[600px] h-[600px] absolute -bottom-[200px] -right-[100px]">
+          <Icon icon="fluent:camera-dome-20-filled" className="text-white w-[600px] h-[600px] opacity-80" />
+        </div>
         <div className="container-custom">
           <div className="text-center mb-12 animate-slide-up">
             <TitleChip title="The Gold Standard" className="text-white border-white" />
@@ -39,7 +47,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-padding bg-secondary">
+      <section className="section-padding bg-secondary" id="virtuous-cycle">
         <div className="container-custom">
           <div className="text-center mb-12 animate-slide-up">
             <TitleChip title="Our Ecosystem" className="text-white border-white" />

@@ -5,6 +5,7 @@ import { goldStandardValues, achievements } from '@/lib/data';
 import TitleChip from '@/components/title-chip';
 import CTA from '@/components/cta';
 import Image from 'next/image';
+import GoldStandardValues from '@/components/gold-standard-values';
 
 const About = () => {
 
@@ -141,89 +142,40 @@ const About = () => {
             <p className="text-2xl font-semibold italic">"Excellence is not claimed. It is engineered."</p>
           </div>
 
-          {/* Responsive Table */}
-          <div className="overflow-x-auto rounded-lg">
-            <table className="w-full border-collapse bg-white/5 backdrop-blur-sm">
-              <thead>
-                <tr className="border-b-2 border-white/20">
-                  <th className="text-left p-4 font-bold">Value</th>
-                  <th className="text-left p-4 font-bold">Our Interpretation</th>
-                  <th className="text-left p-4 font-bold">In Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {goldStandardValues.map((value, index) => (
-                  <tr key={index} className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                    <td className="p-4 font-semibold align-top">{value.title}</td>
-                    <td className="p-4 opacity-90 align-top">{value.interpretation}</td>
-                    <td className="p-4 text-primary-light align-top">{value.inAction}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-2xl font-semibold italic">"Culture is our strongest firewall."</p>
-          </div>
+          <GoldStandardValues />
         </div>
       </section>
 
       {/* Mission & Vision */}
       <section className="section-padding">
-        <div className="container-custom max-w-4xl">
-          <TitleChip title="Mission & Vision" />
-          <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-dark">Our Enduring Mission</h2>
-
-          <p className="text-lg mb-6 text-muted-foreground leading-relaxed">
-            Our mission is to <strong className="text-dark">redefine what security means for Africa</strong> by moving it from a reactive
-            cost to a strategic advantage. We engineer resilience from the ground up, ensuring that
-            the continent's growth is built on a foundation of unshakable safety and trust.
-          </p>
-
-          <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 my-8 border-l-4 border-primary">
-            <p className="text-xl font-medium mb-3 text-dark">We no longer just install equipment.</p>
-            <p className="text-5xl font-bold text-primary font-goldman mb-3">We design resilience.</p>
-            <p className="text-xl font-medium text-dark">We protect the promise of Africa.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Facts Section */}
-      <section className="section-padding bg-dark" id="facts">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {achievements.map((stat, index) => (
-              <div key={index} className="flex items-start relative mb-10 group">
-                {/* Background Number */}
-                <div className="absolute right-0 top-0 text-[100px] font-bold text-primary/10 leading-none -z-10 select-none transition-all duration-500 group-hover:text-primary/20">
-                  0{index + 1}
-                </div>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
+            <div className="relative min-h-[500px] w-full h-full rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="https://res.cloudinary.com/zurri-cloud/image/upload/v1765447705/bariki/qflqwvpv8qxvda3tduvs.jpg"
+                alt="Our Mission"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="flex flex-col justify-center py-8">
+              <div>
+                <TitleChip title="Mission & Vision" />
+                <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-dark">Our Enduring Mission</h2>
 
-                {/* Main Number */}
-                <div className="inline-block text-center w-[130px] relative">
-                  <h2 className="text-[70px] font-bold text-transparent [-webkit-text-stroke:1px_#97bbc5] leading-none m-0">
-                    {stat.number.replace(/\D/g, '')}
-                  </h2>
-                  <span className="bg-white h-10 w-10 inline-block text-center font-bold text-dark text-xl rounded-full leading-[38px] -translate-y-[26px] shadow-lg">
-                    {stat.number.includes('+') ? '+' : '%'}
-                  </span>
-                </div>
+                <p className="text-lg mb-6 text-muted-foreground leading-relaxed">
+                  Our mission is to <strong className="text-dark">redefine what security means for Africa</strong> by moving it from a reactive
+                  cost to a strategic advantage. We engineer resilience from the ground up, ensuring that
+                  the continent's growth is built on a foundation of unshakable safety and trust.
+                </p>
 
-                {/* Content */}
-                <div className="pl-5 relative z-10 pt-4">
-                  <h4 className="text-white text-xl font-bold mb-1 group-hover:text-primary transition-colors duration-300">
-                    {stat.label}
-                  </h4>
-                  <p className="text-white/70 text-sm m-0">
-                    {stat.icon === 'mdi:building-outline' && 'Successful security installations across the region.'}
-                    {stat.icon === 'mdi:account-group-outline' && 'Dedicated professionals ensuring your safety.'}
-                    {stat.icon === 'mdi:award-outline' && 'Satisfied clients trusting our gold standard.'}
-                    {stat.icon === 'mdi:clock-outline' && 'Years of proven excellence in security.'}
-                  </p>
+                <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 my-8 border-l-4 border-primary rounded-r-xl">
+                  <p className="text-xl font-medium mb-3 text-dark">We no longer just install equipment.</p>
+                  <p className="text-5xl font-bold text-primary font-goldman mb-3">We design resilience.</p>
+                  <p className="text-xl font-medium text-dark">We protect the promise of Africa.</p>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
