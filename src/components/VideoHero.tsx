@@ -25,14 +25,14 @@ export default function VideoHero() {
 
         window.onYouTubeIframeAPIReady = () => {
             playerRef.current = new window.YT.Player("youtube-player", {
-                videoId: "Z4F3AXvrLKo",
+                videoId: "IB4pNS-nQdc",
                 playerVars: {
                     autoplay: 1,
                     mute: 1,
                     controls: 0,
                     showinfo: 0,
                     loop: 1,
-                    playlist: "Z4F3AXvrLKo",
+                    playlist: "IB4pNS-nQdc",
                     playsinline: 1,
                     rel: 0,
                     modestbranding: 1,
@@ -74,18 +74,16 @@ export default function VideoHero() {
         <div className="relative h-screen w-full overflow-hidden">
             {/* Image Background - Shown while video loads */}
             <div
-                className={`absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ${
-                    isVideoReady ? 'opacity-0' : 'opacity-100'
-                }`}
+                className={`absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ${isVideoReady ? 'opacity-0' : 'opacity-100'
+                    }`}
                 style={{
                     backgroundImage: 'url(https://res.cloudinary.com/zurri-cloud/image/upload/v1761834481/bariki/nlg8xybmeq7dcximos5f.webp)'
                 }}
             />
 
             {/* YouTube Video Background */}
-            <div className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
-                isVideoReady ? 'opacity-100' : 'opacity-0'
-            }`}>
+            <div className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${isVideoReady ? 'opacity-100' : 'opacity-0'
+                }`}>
                 <div
                     id="youtube-player"
                     className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2"

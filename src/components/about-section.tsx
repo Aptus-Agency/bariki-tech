@@ -1,9 +1,17 @@
-import { features } from "@/lib/data";
 import { Icon } from "@iconify/react";
 import TitleChip from "./title-chip";
 import Link from "next/link";
 
 const AboutSection = () => {
+  // Simplified Gold Standard features for homepage
+  const features = [
+    "98% First-Time Fix Rate",
+    "24/7 Support Available",
+    "Radical Transparency",
+    "15% Over-Delivery Rule",
+    "Continuous Improvement",
+    "End-to-End Integration"
+  ];
 
   return (
     <section id="about" className="section-padding bg-muted/50">

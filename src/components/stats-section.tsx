@@ -3,7 +3,7 @@
 import { Icon } from "@iconify/react";
 import Carousel from "./ui/carousel";
 import { useState } from "react";
-import { stats, testimonials } from "@/lib/data";
+import { achievements, stats, testimonials } from "@/lib/data";
 
 const StatsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,28 +31,34 @@ const StatsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
-            <div
-              key={stat.label}
-              className="text-center group animate-scale-in flex"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-colors">
-                <Icon icon={stat.icon} className="w-8 h-8 text-primary" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {achievements.map((stat, index) => (
+            <div key={index} className="flex items-start relative mb-10 group">
+              {/* Background Number */}
+              <div className="absolute right-0 top-0 text-[100px] font-bold text-primary/10 leading-none -z-10 select-none transition-all duration-500 group-hover:text-primary/20">
+                0{index + 1}
               </div>
 
-              <div>
-                <div className="text-4xl lg:text-5xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                  {stat.value}
-                </div>
+              {/* Main Number */}
+              <div className="inline-block text-center w-[130px] relative">
+                <h2 className="text-[70px] font-bold text-transparent [-webkit-text-stroke:1px_#97bbc5] leading-none m-0">
+                  {stat.number.replace(/\D/g, '')}
+                </h2>
+                <span className="bg-primary h-10 w-10 inline-block text-center font-bold text-dark text-xl rounded-full leading-[38px] -translate-y-[26px] shadow-lg">
+                  {stat.number.includes('+') ? '+' : '%'}
+                </span>
+              </div>
 
-                <h3 className="text-lg font-semibold text-white mb-2">
+              {/* Content */}
+              <div className="pl-5 relative z-10 pt-4">
+                <h4 className="text-white text-xl font-bold mb-1 group-hover:text-primary transition-colors duration-300">
                   {stat.label}
-                </h3>
-
-                <p className="text-white/60 text-sm">
-                  {stat.description}
+                </h4>
+                <p className="text-white/70 text-sm m-0">
+                  {stat.icon === 'mdi:building-outline' && 'Successful security installations across the region.'}
+                  {stat.icon === 'mdi:account-group-outline' && 'Dedicated professionals ensuring your safety.'}
+                  {stat.icon === 'mdi:award-outline' && 'Satisfied clients trusting our gold standard.'}
+                  {stat.icon === 'mdi:clock-outline' && 'Years of proven excellence in security.'}
                 </p>
               </div>
             </div>
@@ -63,11 +69,6 @@ const StatsSection = () => {
             {testimonials.map((testimonial, index) => (
               <div key={index} className="px-4">
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 md:p-10">
-                  <div className="flex mb-6">
-                    {[...Array(5)].map((_, i) => (
-                      <Icon icon="mdi-light:star" key={i} className="h-5 w-5 text-yellow-500 fill-yellow-500" />
-                    ))}
-                  </div>
                   <p className="text-lg md:text-xl text-gray-200 mb-8">&quot;{testimonial.quote}&quot;</p>
                   <div className="flex items-center">
                     <img
