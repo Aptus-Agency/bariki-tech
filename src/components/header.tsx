@@ -113,8 +113,7 @@ const Header = () => {
                                     href="/services"
                                     className="group block px-4 py-3 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:text-primary transition-all duration-300 rounded-xl"
                                   >
-                                    <div className="font-semibold text-base mb-0.5 group-hover:translate-x-1 transition-transform duration-300">View All Branches</div>
-                                    <div className="text-xs text-muted-foreground">The Virtuous Cycle</div>
+                                    <div className="font-semibold text-base mb-0.5 group-hover:translate-x-1 transition-transform duration-300">All Services</div>
                                   </Link>
                                   <Link
                                     href="/solutions"

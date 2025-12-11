@@ -2,7 +2,6 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import TitleChip from '@/components/title-chip';
 import ClientTiers from '@/components/client-tiers';
-import CTA from '@/components/cta';
 
 export default function ClientSolutionsPage() {
   return (
@@ -10,16 +9,27 @@ export default function ClientSolutionsPage() {
       <Header />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
-        <div className="container-custom text-center">
-          <TitleChip title="Client Solutions" />
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            The Gold Standard,
-            <span className="text-gradient block">Perfectly Scaled</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            One Philosophy, Three Pathways to Resilience
-          </p>
+      <section className="relative h-[600px] flex items-center justify-center">
+        <div className="container-custom">
+          <div className="absolute inset-0">
+            <img
+              src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1761834481/bariki/nlg8xybmeq7dcximos5f.webp'}
+              alt="About Bariki Tech"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-dark/60"></div>
+          </div>
+          <div className="relative flex justify-start z-10 text-white">
+            <div className="container-custom text-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                The Gold Standard,
+                <span className="text-gradient block">Perfectly Scaled</span>
+              </h1>
+              <p className="text-xl text-white max-w-3xl mx-auto">
+                One Philosophy, Three Pathways to Resilience
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -34,21 +44,18 @@ export default function ClientSolutionsPage() {
               precisely engineered for their operational reality and risk profile.
             </p>
 
-            <div className="p-8 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl border-l-4 border-primary">
-              <p className="text-2xl font-bold text-dark">
-                "We scale the solution, never the standard. Every client experiences the same
-                <span className="text-primary block mt-2">Gold Standard Ethos."</span>
-              </p>
+            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 my-8 border-l-4 border-primary rounded-r-xl">
+              <p className="text-xl font-medium mb-3 text-dark">We scale the solution, never the standard. Every client experiences the same</p>
+              <p className="text-5xl font-bold text-primary font-goldman mb-3">Gold Standard Ethos.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Client Tiers */}
-      <section className="section-padding bg-muted/30">
+      <section className="section-padding bg-muted/30" id="solutions">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <TitleChip title="Three Tiers" />
             <h2 className="text-3xl lg:text-4xl font-bold text-dark mb-4">
               Choose Your Path to Resilience
             </h2>
