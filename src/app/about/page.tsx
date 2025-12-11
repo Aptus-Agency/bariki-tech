@@ -152,10 +152,9 @@ const About = () => {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
             <div className="relative min-h-[500px] w-full h-full rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="https://res.cloudinary.com/zurri-cloud/image/upload/v1765447705/bariki/qflqwvpv8qxvda3tduvs.jpg"
+              <img
+                src="https://res.cloudinary.com/zurri-cloud/image/upload/v1765452951/bariki/kshtqub1tbrrmgon6jv1.jpg"
                 alt="Our Mission"
-                fill
                 className="object-cover"
               />
             </div>
