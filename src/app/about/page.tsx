@@ -1,4 +1,5 @@
 import Header from '@/components/header';
+import ClientCarousel from '@/components/client-carousel';
 import { Icon } from '@iconify/react';
 import Footer from '@/components/footer';
 import { goldStandardValues, achievements } from '@/lib/data';
@@ -180,7 +181,9 @@ const About = () => {
         </div>
       </section>
 
+
       <CTA variant="partnership" className="bg-gradient-dark py-16" />
+      <ClientCarousel />
 
       <Footer />
     </div>
