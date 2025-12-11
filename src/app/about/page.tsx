@@ -1,11 +1,8 @@
 import Header from '@/components/header';
 import ClientCarousel from '@/components/client-carousel';
-import { Icon } from '@iconify/react';
 import Footer from '@/components/footer';
-import { goldStandardValues, achievements } from '@/lib/data';
 import TitleChip from '@/components/title-chip';
 import CTA from '@/components/cta';
-import Image from 'next/image';
 import GoldStandardValues from '@/components/gold-standard-values';
 
 const About = () => {

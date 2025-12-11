@@ -15,9 +15,9 @@ export default function BetterMarquee() {
           <div key={key} className="flex whitespace-nowrap shrink-0">
             {[...Array(4)].map((_, i) => (
               <span key={i} className="text-4xl lg:text-6xl font-bold uppercase tracking-wider font-goldman text-white">
-                Resilience <span className="text-white text-2xl md:text-4xl">●</span>
-                Excellence <span className="text-white text-2xl md:text-4xl">●</span>
-                Eco-system <span className="text-white text-2xl md:text-4xl">●</span>
+                Excellent<span className="text-white text-2xl md:text-4xl px-4">●</span>
+                Security<span className="text-white text-2xl md:text-4xl px-4">●</span>
+                Solutions<span className="text-white text-2xl md:text-4xl px-4">●</span>
               </span>
             ))}
           </div>

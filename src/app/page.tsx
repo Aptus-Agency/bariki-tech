@@ -22,11 +22,11 @@ export default function Home() {
       <BetterMarquee />
 
       <section className="section-padding bg-secondary relative" id="gold-standard">
-        <div className="w-[600px] h-[600px] absolute -top-[100px] -left-[100px]">
+        <div className="w-[600px] h-[600px] absolute -top-[100px] -left-[100px] hidden md:block">
           <Icon icon="material-symbols:speed-camera" className="text-white w-[600px] h-[600px] opacity-80" />
         </div>
 
-        <div className="w-[600px] h-[600px] absolute -bottom-[200px] -right-[100px]">
+        <div className="w-[600px] h-[600px] absolute -bottom-[200px] -right-[100px] hidden md:block">
           <Icon icon="fluent:camera-dome-20-filled" className="text-white w-[600px] h-[600px] opacity-80" />
         </div>
         <div className="container-custom">
