@@ -27,7 +27,7 @@ All colors MUST be HSL. Brand colors: #60efff, #231f20, #0b66fd, #ffffff
 
     --background: 0 0% 100%;
     /* White background */
-    --foreground: 0 0% 35%;
+    --foreground: 0 0% 0%;
     /* #5A5A5A */
 
     /* UI Colors */
@@ -35,7 +35,7 @@ All colors MUST be HSL. Brand colors: #60efff, #231f20, #0b66fd, #ffffff
     --card-foreground: 225 8% 13%;
 
     --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 35%;
+    --muted-foreground: 0 0% 0%;
 
     --accent: 193 100% 95%;
     /* Very light cyan for accents */
