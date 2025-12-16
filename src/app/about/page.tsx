@@ -15,7 +15,7 @@ const About = () => {
         <div className="container-custom">
           <div className="absolute inset-0">
             <img
-              src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1761834481/bariki/nlg8xybmeq7dcximos5f.webp'}
+              src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1765874762/bariki/xrwmvv6n4gwnp8tgg2zh.jpg'}
               alt="About Bariki Tech"
               className="w-full h-full object-cover"
             />
