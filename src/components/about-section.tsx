@@ -68,15 +68,11 @@ const AboutSection = () => {
             />
 
             {/* Experience Card */}
-            <div className="absolute -bottom-6 right-4 sm:-right-6 bg-primary p-6 rounded-2xl shadow-xl max-w-[220px] z-10">
-              <p className="text-lg font-bold text-white leading-tight">
-                Over
-              </p>
-              <p className="text-7xl font-bold text-white leading-tight">
-                18 <span className="text-lg font-bold">years</span>
-              </p>
-              <p className="text-lg font-bold text-white leading-tight">
-                of experience
+            <div className="absolute -bottom-6 right-4 sm:-right-6 bg-primary p-8 rounded-2xl shadow-xl z-10 flex flex-col items-center justify-center text-center min-w-[240px]">
+              <p className="text-lg font-bold text-white/90 uppercase tracking-wider mb-2">Over</p>
+              <h3 className="text-8xl font-black text-white leading-none mb-2">18</h3>
+              <p className="text-xl font-bold text-white leading-tight">
+                Years of<br />Experience
               </p>
             </div>
           </motion.div>
