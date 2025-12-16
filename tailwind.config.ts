@@ -51,6 +51,7 @@ export default {
       },
       fontFamily: {
         goldman: ["Goldman", "sans-serif"],
+        opensans: ["Open Sans", "sans-serif"],
       },
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',

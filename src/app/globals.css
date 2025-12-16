@@ -9,65 +9,75 @@ All colors MUST be HSL. Brand colors: #60efff, #231f20, #0b66fd, #ffffff
 @layer base {
   :root {
     /* Brand Colors */
-    --primary: 193 100% 69%; /* #60efff - Cyan brand color */
-    --primary-foreground: 0 0% 100%; /* White text on primary */
-    --primary-glow: 193 100% 85%; /* Lighter version for glow effects */
-    
-    --secondary: 218 98% 52%; /* #0b66fd - Blue brand color */
-    --secondary-foreground: 0 0% 100%; /* White text on secondary */
-    
-    --dark: 225 8% 13%; /* #231f20 - Dark brand color */
+    --primary: 193 100% 69%;
+    /* #60efff - Cyan brand color */
+    --primary-foreground: 0 0% 100%;
+    /* White text on primary */
+    --primary-glow: 193 100% 85%;
+    /* Lighter version for glow effects */
+
+    --secondary: 218 98% 52%;
+    /* #0b66fd - Blue brand color */
+    --secondary-foreground: 0 0% 100%;
+    /* White text on secondary */
+
+    --dark: 225 8% 13%;
+    /* #231f20 - Dark brand color */
     --dark-foreground: 0 0% 100%;
-    
-    --background: 0 0% 100%; /* White background */
-    --foreground: 225 8% 13%; /* Dark text */
-    
+
+    --background: 0 0% 100%;
+    /* White background */
+    --foreground: 0 0% 35%;
+    /* #5A5A5A */
+
     /* UI Colors */
     --card: 0 0% 100%;
     --card-foreground: 225 8% 13%;
-    
+
     --muted: 0 0% 96%;
-    --muted-foreground: 225 8% 45%;
-    
-    --accent: 193 100% 95%; /* Very light cyan for accents */
+    --muted-foreground: 0 0% 35%;
+
+    --accent: 193 100% 95%;
+    /* Very light cyan for accents */
     --accent-foreground: 225 8% 13%;
-    
+
     --border: 0 0% 90%;
     --input: 0 0% 96%;
     --ring: 193 100% 69%;
-    
+
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(193 100% 69%), hsl(218 98% 52%));
     --gradient-hero: linear-gradient(135deg, hsl(193 100% 69% / 0.1), hsl(218 98% 52% / 0.1));
     --gradient-dark: linear-gradient(135deg, hsl(225 8% 13%), hsl(225 8% 20%));
-    
+
     /* Shadows */
     --shadow-primary: 0 10px 40px -10px hsl(193 100% 69% / 0.3);
     --shadow-secondary: 0 10px 40px -10px hsl(218 98% 52% / 0.3);
     --shadow-elegant: 0 20px 60px -15px hsl(225 8% 13% / 0.2);
-    
+
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    
+
     --radius: 0.75rem;
 
     --font-goldman: var(--font-goldman);
+    --font-opensans: var(--font-opensans);
   }
 
   .dark {
     --background: 225 8% 8%;
     --foreground: 0 0% 98%;
-    
+
     --card: 225 8% 10%;
     --card-foreground: 0 0% 98%;
-    
+
     --muted: 225 8% 15%;
     --muted-foreground: 0 0% 70%;
-    
+
     --accent: 193 100% 15%;
     --accent-foreground: 0 0% 98%;
-    
+
     --border: 225 8% 20%;
     --input: 225 8% 15%;
     --ring: 193 100% 69%;
@@ -80,11 +90,16 @@ All colors MUST be HSL. Brand colors: #60efff, #231f20, #0b66fd, #ffffff
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-opensans antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-goldman;
   }
 
@@ -94,37 +109,38 @@ All colors MUST be HSL. Brand colors: #60efff, #231f20, #0b66fd, #ffffff
 }
 
 @layer components {
+
   /* Hero Button Variant */
   .btn-hero {
     @apply bg-gradient-to-r from-primary to-secondary text-white font-semibold px-8 py-4;
     @apply hover:shadow-[var(--shadow-primary)] transform hover:scale-105 transition-all duration-300;
     @apply border border-primary/20 backdrop-blur-sm;
   }
-  
+
   /* Primary Button */
   .btn-primary {
     @apply bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg;
     @apply hover:bg-primary/90 hover:shadow-[var(--shadow-primary)] transition-all duration-300;
   }
-  
+
   /* Secondary Button */
   .btn-secondary {
     @apply bg-secondary text-secondary-foreground font-semibold px-6 py-3 rounded-lg;
     @apply hover:bg-secondary/90 hover:shadow-[var(--shadow-secondary)] transition-all duration-300;
   }
-  
+
   /* Outline Button */
   .btn-outline {
     @apply border-2 border-primary text-primary font-semibold px-6 py-3 rounded-lg bg-transparent;
     @apply hover:bg-primary hover:text-primary-foreground transition-all duration-300;
   }
-  
+
   /* Ghost Button */
   .btn-ghost {
     @apply font-medium px-4 py-2 rounded-lg bg-transparent;
     @apply transition-all duration-300;
   }
-  
+
   /* Card Styles */
   .card-glass {
     @apply bg-white/80 backdrop-blur-lg border border-white/20 rounded-2xl;
@@ -135,26 +151,26 @@ All colors MUST be HSL. Brand colors: #60efff, #231f20, #0b66fd, #ffffff
     @apply bg-white backdrop-blur-lg border border-white/20 rounded-2xl;
     @apply shadow-white transition-all duration-300;
   }
-  
+
   .card-hover {
     @apply hover:shadow-[var(--shadow-elegant)] hover:-translate-y-2 transition-all duration-300;
   }
-  
+
   /* Section Padding */
   .section-padding {
     @apply py-16 lg:py-24 px-4 sm:px-6 lg:px-8;
   }
-  
+
   /* Container */
   .container-custom {
     @apply max-w-7xl mx-auto;
   }
-  
+
   /* Gradient Text */
   .text-gradient {
     @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
   }
-  
+
   /* Hero Section Overlay */
   .hero-overlay {
     background: var(--gradient-hero);
@@ -166,6 +182,7 @@ All colors MUST be HSL. Brand colors: #60efff, #231f20, #0b66fd, #ffffff
     from {
       transform: translateX(0);
     }
+
     to {
       /* Move the content by exactly one full block width to the left */
       transform: translateX(-50%);
@@ -176,104 +193,116 @@ All colors MUST be HSL. Brand colors: #60efff, #231f20, #0b66fd, #ffffff
     /* Use the --duration variable from the component's style prop */
     animation: marquee var(--duration) linear infinite;
   }
-  
+
 }
 
 @layer utilities {
+
   /* Custom Animations */
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
   }
-  
+
   @keyframes slideInUp {
     from {
       opacity: 0;
       transform: translateY(30px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-  
+
   @keyframes slideInLeft {
     from {
       opacity: 0;
       transform: translateX(-30px);
     }
+
     to {
       opacity: 1;
       transform: translateX(0);
     }
   }
-  
+
   @keyframes slideInRight {
     from {
       opacity: 0;
       transform: translateX(30px);
     }
+
     to {
       opacity: 1;
       transform: translateX(0);
     }
   }
-  
+
   @keyframes scaleIn {
     from {
       opacity: 0;
       transform: scale(0.9);
     }
+
     to {
       opacity: 1;
       transform: scale(1);
     }
   }
-  
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
-  
+
   .animate-slide-up {
     animation: slideInUp 0.6s ease-out;
   }
-  
+
   .animate-slide-left {
     animation: slideInLeft 0.6s ease-out;
   }
-  
+
   .animate-slide-right {
     animation: slideInRight 0.6s ease-out;
   }
-  
+
   .animate-scale-in {
     animation: scaleIn 0.6s ease-out;
   }
-  
+
   /* Hover Effects */
   .hover-lift {
     @apply hover:-translate-y-2 hover:shadow-[var(--shadow-elegant)] transition-all duration-300;
   }
-  
+
   .hover-glow {
     @apply hover:shadow-[var(--shadow-primary)] transition-all duration-300;
   }
-  
+
   /* Custom Scrollbar */
   .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
   }
-  
+
   .custom-scrollbar::-webkit-scrollbar-track {
     background: hsl(0 0% 96%);
     border-radius: 10px;
   }
-  
+
   .custom-scrollbar::-webkit-scrollbar-thumb {
     background: linear-gradient(135deg, hsl(193 100% 69%), hsl(218 98% 52%));
     border-radius: 10px;
   }
-  
+
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, hsl(218 98% 52%), hsl(193 100% 69%));
   }

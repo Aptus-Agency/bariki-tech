@@ -34,7 +34,7 @@ const AboutSection = () => {
               <span className="text-gradient block">We Design Resilience.</span>
             </h2>
 
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-lg mb-8 leading-relaxed">
               Bariki Tech is Africa's first fully converged security ecosystem. We transform your security posture from reactive protection to predictive resilience, integrating the physical and digital worlds into a single, unbreakable shield.
             </p>
 
