@@ -92,10 +92,10 @@ const ServiceDetail = () => {
                                 <p className="text-white/80 mb-6 text-sm leading-relaxed">
                                     Get expert consultation and a free quote for your security needs.
                                 </p>
-                                <button className="btn-primary w-full flex items-center justify-center gap-2">
-                                    Get An Advice
+                                <Link href="/contact" className="btn-primary w-full flex items-center justify-center gap-2">
+                                    Reach out now
                                     <Icon icon="mdi:arrow-right" className="w-4 h-4" />
-                                </button>
+                                </Link>
                             </div>
                         </aside>
 
@@ -216,10 +216,10 @@ const ServiceDetail = () => {
                                 Your Dream Project Awaits — Get Started Today!
                             </h2>
                         </div>
-                        <button className="btn-primary flex items-center gap-2 bg-primary hover:bg-primary/90">
+                        <Link href="/contact" className="btn-primary flex items-center gap-2 bg-primary hover:bg-primary/90">
                             <Icon icon="mdi:phone" className="w-5 h-5" />
                             Contact Us
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </section>

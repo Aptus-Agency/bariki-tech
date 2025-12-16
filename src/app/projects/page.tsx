@@ -88,13 +88,24 @@ const Projects = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-primary pt-32">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Our Projects</h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            Discover our portfolio of successful security installations across the nation
-          </p>
+      <section className="relative section-padding pt-32 flex items-center justify-center">
+        <div className="container-custom">
+          <div className="absolute inset-0">
+            <img
+              src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1765885113/bariki/fzu1iatew3pxjg1apo1i.jpg'}
+              alt="About Bariki Tech"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-dark/60"></div>
+          </div>
+          <div className="relative flex justify-start z-10 text-white">
+            <div className="container-custom text-center">
+              <h1 className="text-4xl font-bold text-white mb-4">Our Projects</h1>
+              <p className="text-xl text-white/90 max-w-2xl mx-auto">
+                Discover our portfolio of successful security installations across the nation
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
