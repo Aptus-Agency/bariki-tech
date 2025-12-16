@@ -59,13 +59,26 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="h-full"
+            className="h-full relative"
           >
             <img
               src="https://res.cloudinary.com/zurri-cloud/image/upload/v1762417210/bariki/t8huhfczdtxvnihgpgga.jpg"
               alt="Bariki Tech Security Solutions"
               className="w-full h-full max-w-full max-h-full object-cover rounded-2xl"
             />
+
+            {/* Experience Card */}
+            <div className="absolute -bottom-6 right-4 sm:-right-6 bg-primary p-6 rounded-2xl shadow-xl max-w-[220px] z-10">
+              <p className="text-lg font-bold text-white leading-tight">
+                Over
+              </p>
+              <p className="text-7xl font-bold text-white leading-tight">
+                18 <span className="text-lg font-bold">years</span>
+              </p>
+              <p className="text-lg font-bold text-white leading-tight">
+                of experience
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>
