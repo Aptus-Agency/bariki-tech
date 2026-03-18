@@ -25,18 +25,15 @@ const Header = () => {
 
   const navigationItems = [
     { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
     { label: 'Services', href: '#' },
+    { label: 'About', href: '/about' },
     { label: 'Porfolio', href: '/projects' },
     { label: 'Contact', href: '/contact' },
   ];
 
   return (
     <>
-      <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+      <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
           ? 'bg-white shadow-[0_8px_32px_rgba(0,0,0,0.12)]'
           : 'bg-gradient-to-b from-black/40 via-black/20 to-transparent backdrop-blur-sm'
@@ -69,8 +66,8 @@ const Header = () => {
                     >
                       <motion.div
                         whileHover={{ scale: 1.05 }}
-                        className={`relative group flex items-center gap-1.5 px-4 py-2.5 rounded-lg font-semibold text-base cursor-pointer transition-all duration-300 ${isScrolled
-                          ? 'text-gray-700 hover:text-primary hover:bg-primary/5'
+                        className={`relative group flex items-center gap-1.5 px-4 py-2.5 text-lg rounded-lg font-semibold cursor-pointer transition-all duration-300 ${isScrolled
+                          ? 'hover:text-primary hover:bg-primary/5'
                           : 'text-white hover:text-primary hover:bg-white/10'
                           }`}
                       >
@@ -122,23 +119,6 @@ const Header = () => {
                                     <div className="font-semibold text-base mb-0.5 group-hover:translate-x-1 transition-transform duration-300">Client Solutions</div>
                                     <div className="text-xs text-muted-foreground">Gold Standard, Perfectly Scaled</div>
                                   </Link>
-                                  {/* <Link
-                                    href="/difference"
-                                    className="group block px-4 py-3 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:text-primary transition-all duration-300 rounded-xl"
-                                  >
-                                    <div className="font-semibold text-base mb-0.5 group-hover:translate-x-1 transition-transform duration-300">The Bariki Difference</div>
-                                    <div className="text-xs text-muted-foreground">Where Promise Becomes Proof</div>
-                                  </Link> */}
-                                  <div className="border-t border-gray-200 my-3"></div>
-                                  {/* {branches.slice(0, 4).map((branch, index) => (
-                                    <div
-                                      key={index}
-                                      className="group px-4 py-3 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:text-primary transition-all duration-300 rounded-xl cursor-pointer"
-                                    >
-                                      <div className="font-medium text-[15px] mb-0.5 group-hover:translate-x-1 transition-transform duration-300">{branch.branch}</div>
-                                      <div className="text-xs text-muted-foreground">{branch.tagline}</div>
-                                    </div>
-                                  ))} */}
                                 </div>
                               </div>
 
@@ -155,7 +135,7 @@ const Header = () => {
                                     <Link
                                       key={index}
                                       href={`/services/${service.id}`}
-                                      className="group block px-4 py-2.5 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-secondary/10 hover:to-primary/10 hover:text-secondary transition-all duration-300 rounded-xl"
+                                      className="group block px-4 py-2.5 text-sm text-black hover:bg-gradient-to-r hover:from-secondary/10 hover:to-primary/10 hover:text-secondary transition-all duration-300 rounded-xl"
                                     >
                                       <div className="font-medium group-hover:translate-x-1 transition-transform duration-300">{service.title}</div>
                                     </Link>
@@ -177,8 +157,8 @@ const Header = () => {
                     >
                       <Link
                         href={item.href}
-                        className={`relative group flex items-center gap-1 px-4 py-2.5 rounded-lg font-semibold text-base transition-all duration-300 ${isScrolled
-                          ? 'text-gray-700 hover:text-primary hover:bg-primary/5'
+                        className={`relative group flex items-center gap-1 px-4 py-2.5 rounded-lg font-semibold text-lg transition-all duration-300 ${isScrolled
+                          ? 'hover:text-primary hover:bg-primary/5'
                           : 'text-white hover:text-primary hover:bg-white/10'
                           }`}
                       >
@@ -319,7 +299,7 @@ const Header = () => {
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.header>
+      </header>
     </>
   );
 };

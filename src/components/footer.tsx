@@ -11,7 +11,7 @@ const Footer = () => {
 
   const quickLinks = [
     {title: 'About Us', href: '/about'},
-    {title: 'Our Services', href: '/services/cctv-surveillance'},
+    {title: 'Our Services', href: '/services'},
     {title: 'Projects', href: '/projects'},
     {title: 'Contact', href: '/contact'},
   ];
@@ -49,7 +49,7 @@ const Footer = () => {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 bg-white rounded-lg flex items-center text-black justify-center hover:bg-primary hover:scale-110 transition-all"
+                  className="w-10 h-10 bg-white rounded-lg flex items-center text-black justify-center hover:bg-primary hover:text-white hover:scale-110 transition-all"
                 >
                   <Icon icon={social.icon} className="w-5 h-5" />
                 </a>

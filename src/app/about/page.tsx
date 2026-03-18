@@ -4,6 +4,7 @@ import Footer from '@/components/footer';
 import TitleChip from '@/components/title-chip';
 import CTA from '@/components/cta';
 import GoldStandardValues from '@/components/gold-standard-values';
+import { Icon } from '@iconify/react';
 
 const About = () => {
 
@@ -52,7 +53,7 @@ const About = () => {
 
                 <p className="text-lg">
                   But as we worked across Uganda's most critical sectors; from banking halls to remote
-                  oilfields and telecom infrastructure, a glaring truth became unavoidable. <strong className="text-dark">
+                  oilfields and telecom infrastructure, a glaring truth became unavoidable. <strong className="text-secondary">
                     The systems were multiplying, but the security wasn't strengthening.</strong>
                 </p>
 
@@ -85,40 +86,48 @@ const About = () => {
         <div className="container-custom">
           <h3 className="text-2xl lg:text-3xl font-bold text-white mb-12 text-center">Our Evolution:</h3>
           <div className="grid md:grid-cols-4 gap-6">
-            <div className="card-glass-dark p-6 text-center">
-              <div className="text-primary text-5xl font-bold mb-3">→</div>
-              <h4 className="text-lg font-semibold mb-2 text-dark">From Vendor</h4>
-              <p className="text-muted-foreground text-sm mb-3">to Integrator</p>
-              <p className="text-sm text-muted-foreground">
-                We started connecting the disconnected systems.
-              </p>
+            <div className="card-glass-dark p-6 flex flex-col items-center">
+              <Icon icon="guidance:left-arrow" className="text-secondary text-5xl font-bold mb-3" />
+              <div className='text-center'>
+                <h4 className="text-lg font-semibold mb-2 text-dark">From Vendor</h4>
+                <p className="text-muted-foreground text-sm mb-3">to Integrator</p>
+                <p className="text-sm text-muted-foreground">
+                  We started connecting the disconnected systems.
+                </p>
+              </div>
             </div>
 
-            <div className="card-glass-dark p-6 text-center">
-              <div className="text-primary text-5xl font-bold mb-3">→</div>
-              <h4 className="text-lg font-semibold mb-2 text-dark">From Integrator</h4>
-              <p className="text-muted-foreground text-sm mb-3">to Advisor</p>
-              <p className="text-sm text-muted-foreground">
-                We began designing the solutions from the ground up.
-              </p>
+            <div className="card-glass-dark p-6 flex flex-col items-center">
+              <Icon icon="guidance:left-arrow" className="text-secondary text-5xl font-bold mb-3" />
+              <div className='text-center'>
+                <h4 className="text-lg font-semibold mb-2 text-dark">From Integrator</h4>
+                <p className="text-muted-foreground text-sm mb-3">to Advisor</p>
+                <p className="text-sm text-muted-foreground">
+                  We began designing the solutions from the ground up.
+                </p>
+              </div>
             </div>
 
-            <div className="card-glass-dark p-6 text-center">
-              <div className="text-primary text-5xl font-bold mb-3">→</div>
-              <h4 className="text-lg font-semibold mb-2 text-dark">From Advisor</h4>
-              <p className="text-muted-foreground text-sm mb-3">to Ecosystem</p>
-              <p className="text-sm text-muted-foreground">
-                We became Africa's first fully converged security partner.
-              </p>
+            <div className="card-glass-dark p-6 flex flex-col items-center">
+              <Icon icon="guidance:left-arrow" className="text-secondary text-5xl font-bold mb-3" />
+              <div className='text-center'>
+                <h4 className="text-lg font-semibold mb-2 text-dark">From Advisor</h4>
+                <p className="text-muted-foreground text-sm mb-3">to Ecosystem</p>
+                <p className="text-sm text-muted-foreground">
+                  We became Africa's first fully converged security partner.
+                </p>
+              </div>
             </div>
 
-            <div className="card-glass-dark p-6 text-center">
-              <div className="text-primary text-5xl font-bold mb-3">★</div>
-              <h4 className="text-lg font-semibold mb-2 text-dark">Today</h4>
-              <p className="text-muted-foreground text-sm mb-3">The Gold Standard</p>
-              <p className="text-sm text-muted-foreground">
-                Physical and cyber domains meet under one philosophy.
-              </p>
+            <div className="card-glass-dark p-6 flex flex-col items-center">
+              <Icon icon="streamline-ultimate-color:award-ribbon-star-1" className="text-secondary text-5xl font-bold mb-3" />
+              <div className='text-center'>
+                <h4 className="text-lg font-semibold mb-2 text-dark">Today</h4>
+                <p className="text-muted-foreground text-sm mb-3">The Gold Standard</p>
+                <p className="text-sm text-muted-foreground">
+                  Physical and cyber domains meet under one philosophy.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -137,7 +146,7 @@ const About = () => {
           </div>
 
           <div className="text-center mb-8">
-            <p className="text-2xl font-semibold italic">"Excellence is not claimed. It is engineered."</p>
+            <p className="text-2xl font-black italic">Excellence is not claimed. It is engineered.</p>
           </div>
 
           <GoldStandardValues />

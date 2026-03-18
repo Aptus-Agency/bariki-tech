@@ -124,8 +124,8 @@ const VirtuousCycle = () => {
         transition={{ delay: 0.6, duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <p className="text-lg text-white italic max-w-4xl mx-auto">
-          "Each branch is independent in function but interdependent in purpose. When we consult, we bring the intelligence of every branch with us."
+        <p className="text-lg text-white italic font-black max-w-4xl mx-auto">
+          Each branch is independent in function but interdependent in purpose. When we consult, we bring the intelligence of every branch with us.
         </p>
       </motion.div>
     </div>

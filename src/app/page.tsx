@@ -20,9 +20,12 @@ export default function Home() {
       <VideoHero />
       <AboutSection />
 
+
       <ScrollReveal delay={0.2}>
         <BetterMarquee />
       </ScrollReveal>
+
+      <ServicesSection />
 
       <section className="section-padding bg-secondary relative" id="gold-standard">
         <div className="w-[600px] h-[600px] absolute -top-[100px] -left-[100px] hidden md:block">
@@ -41,14 +44,14 @@ export default function Home() {
                 <span className="text-white block">It's Engineered.</span>
               </h2>
               <p className="text-lg text-white max-w-3xl mx-auto mb-4">
-                "The Gold Standard" is not a slogan; it's our operating system. Every action we take is governed by an internal code of mastery.
+                <span className="font-black">The Gold Standard</span> is not a slogan; it's our operating system. Every action we take is governed by an internal code of mastery.
               </p>
             </div>
           </ScrollReveal>
           <GoldStandardValues />
           <ScrollReveal delay={0.4}>
-            <p className="text-center text-2xl font-semibold italic mt-12 text-white">
-              "Culture is our strongest firewall."
+            <p className="text-center text-2xl font-black italic mt-12 text-white">
+              Culture is our strongest firewall.
             </p>
           </ScrollReveal>
         </div>
@@ -64,7 +67,7 @@ export default function Home() {
                 <span className="text-white block">of Assurance™</span>
               </h2>
               <p className="text-lg text-white max-w-3xl mx-auto">
-                Security is not a department—it's an ecosystem. Our six interdependent branches create a continuous loop of assurance that no other company in East Africa can match.
+                Security is not a department, it's an ecosystem. Our six interdependent branches create a continuous loop of assurance that no other company in East Africa can match.
               </p>
             </div>
           </ScrollReveal>
@@ -72,11 +75,12 @@ export default function Home() {
         </div>
       </section>
 
-      <ServicesSection />
+      <Project />
+
       <ScrollReveal>
         <CTA variant="consultation" className="bg-secondary py-16" />
       </ScrollReveal>
-      <Project />
+
       <StatsSection />
       <ScrollReveal>
         <Footer />

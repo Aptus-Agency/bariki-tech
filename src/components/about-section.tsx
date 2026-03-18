@@ -42,7 +42,7 @@ const AboutSection = () => {
             <div className="grid grid-cols-2 gap-4 mb-8">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <Icon icon="mdi-light:check-circle" className="w-5 h-5 text-primary flex-shrink-0" />
+                  <Icon icon="mdi-light:check-circle" className="w-5 h-5 text-secondary flex-shrink-0" />
                   <span className="text-dark">{feature}</span>
                 </div>
               ))}

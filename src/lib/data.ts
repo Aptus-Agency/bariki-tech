@@ -641,8 +641,8 @@ export const team = [
 ];
 
 export const socialLinks = [
-  { icon: "basil:facebook-solid", href: '#', label: 'Facebook' },
-  { icon: "basil:twitter-solid", href: '#', label: 'Twitter' },
-  { icon: "basil:instagram-solid", href: '#', label: 'Instagram' },
-  { icon: "basil:linkedin-solid", href: '#', label: 'LinkedIn' }
+  { icon: "basil:facebook-solid", href: 'https://www.facebook.com/barikitechug/', label: 'Facebook' },
+  { icon: "basil:twitter-solid", href: 'https://x.com/BarikiTechUg', label: 'Twitter' },
+  { icon: "basil:instagram-solid", href: 'https://www.instagram.com/barikitechug/', label: 'Instagram' },
+  { icon: "basil:linkedin-solid", href: 'https://www.linkedin.com/in/isaac-mugisa-62534b263/', label: 'LinkedIn' }
 ];

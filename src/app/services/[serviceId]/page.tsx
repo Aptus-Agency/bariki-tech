@@ -55,7 +55,7 @@ const ServiceDetail = () => {
             </section>
 
             {/* Main Content */}
-            <section className="section-padding">
+            <section className="section-padding text-base">
                 <div className="container-custom">
                     <div className="grid lg:grid-cols-[300px,1fr] gap-8">
                         {/* Sidebar */}
@@ -63,7 +63,7 @@ const ServiceDetail = () => {
                             {/* Quick Services */}
                             <div className="card-glass p-6">
                                 <h3 className="text-xl font-bold text-dark mb-4 border-b border-border pb-3">
-                                    Quick Services
+                                    All Services
                                 </h3>
                                 <div className="space-y-2">
                                     {quickServices.map((item) => {
@@ -101,14 +101,7 @@ const ServiceDetail = () => {
 
                         {/* Main Content */}
                         <div className="space-y-12">
-                            {/* Service Image and Description */}
                             <div className="space-y-6">
-                                {/* <img
-                                    src={service.image}
-                                    alt={service.title}
-                                    className="w-full h-[400px] object-cover rounded-2xl"
-                                /> */}
-
                                 <div>
                                     <iframe 
                                         width="1000" 
@@ -118,21 +111,20 @@ const ServiceDetail = () => {
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                         referrerPolicy="strict-origin-when-cross-origin" 
                                         allowFullScreen>
-
-                                        </iframe>
+                                    </iframe>
                                 </div>
 
                                 <div>
                                     <h2 className="text-3xl font-bold text-dark mb-4 flex items-center gap-3">
                                         {service.title}
                                     </h2>
-                                    <p className="text-muted-foreground leading-relaxed text-lg">
+                                    <p className="leading-relaxed">
                                         {service.detailedDescription}
                                     </p>
                                 </div>
 
                                 <div>
-                                    <p className="text-muted-foreground leading-relaxed">
+                                    <p className="leading-relaxed">
                                         With years of industry experience, our team handles every aspect of the security process with professionalism and efficiency. We prioritize open communication, timely delivery, and quality workmanship to exceed your expectations. Trust us to provide innovative solutions that bring your security needs to life with unmatched craftsmanship.
                                     </p>
                                 </div>
@@ -143,7 +135,7 @@ const ServiceDetail = () => {
                                 <h3 className="text-2xl font-bold text-dark mb-6">
                                     Securing with Unmatched Excellence
                                 </h3>
-                                <p className="text-muted-foreground mb-8 leading-relaxed">
+                                <p className="mb-8 leading-relaxed">
                                     {service.whyChoose}
                                 </p>
 
@@ -166,7 +158,7 @@ const ServiceDetail = () => {
                                             <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                                                 <div className="w-2 h-2 rounded-full bg-primary"></div>
                                             </div>
-                                            <p className="text-muted-foreground">{benefit}</p>
+                                            <p className="">{benefit}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -193,7 +185,7 @@ const ServiceDetail = () => {
                                             </button>
                                             {openFaq === index && (
                                                 <div className="p-6 pt-0 animate-slide-up">
-                                                    <p className="text-muted-foreground leading-relaxed">
+                                                    <p className="leading-relaxed">
                                                         {faq.answer}
                                                     </p>
                                                 </div>
@@ -216,7 +208,7 @@ const ServiceDetail = () => {
                                 Your Dream Project Awaits — Get Started Today!
                             </h2>
                         </div>
-                        <Link href="/contact" className="btn-primary flex items-center gap-2 bg-primary hover:bg-primary/90">
+                        <Link href="/contact" className="btn-primary flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white font-bold text-base">
                             <Icon icon="mdi:phone" className="w-5 h-5" />
                             Contact Us
                         </Link>

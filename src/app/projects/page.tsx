@@ -144,14 +144,8 @@ const Projects = () => {
                     alt={project.title}
                     className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  {/* <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-                    <button className="btn-primary flex items-center gap-2">
-                      <Icon icon="mdi:eye-outline" className="w-5 h-5" />
-                      View Details
-                    </button>
-                  </div> */}
                   <div className="absolute top-4 right-0">
-                    <span className="bg-primary text-white px-3 py-2 text-sm font-semibold">
+                    <span className="bg-secondary text-white px-3 py-2 text-sm font-semibold">
                       {project.category}
                     </span>
                   </div>

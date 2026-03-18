@@ -38,16 +38,16 @@ export default function ServicesPage() {
       </section>
 
       {/* Introduction */}
-      <section className="section-padding">
+      <section className="section-padding bg-secondary text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            <p className="text-lg leading-relaxed mb-6">
               Unlike contractors who specialize in one niche or consultants who only write reports,
               Bariki Tech operates as a single, unified engine. Our branches follow a deliberate,
               closed-loop process:
             </p>
 
-            <div className="inline-flex flex-wrap items-center justify-center gap-2 md:gap-4 text-lg md:text-xl font-semibold bg-muted/50 p-6 rounded-lg">
+            <div className="inline-flex flex-wrap items-center justify-center gap-2 md:gap-4 text-lg md:text-xl font-semibold bg-white p-6 rounded-lg">
               <span className="text-secondary">CONSULT</span>
               <span className="text-muted-foreground">→</span>
               <span className="text-secondary">INTEGRATE</span>
@@ -61,29 +61,11 @@ export default function ServicesPage() {
               <span className="text-secondary">CONSULT</span>
             </div>
 
-            <p className="text-lg text-muted-foreground italic mt-8">
-              "Each branch is independent in function but interdependent in purpose. When we
-              consult, we bring the intelligence of every branch with us."
+            <p className="text-lg italic mt-8 font-black">
+              Each branch is independent in function but interdependent in purpose. When we
+              consult, we bring the intelligence of every branch with us.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* Ecosystem Branches */}
-      <section className="section-padding bg-secondary">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <TitleChip title="Six Branches" className='text-white border-white' />
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              The Six Pillars of Our Ecosystem
-            </h2>
-            <p className="text-lg text-white max-w-3xl mx-auto">
-              Each branch delivers specialized capabilities while contributing to the unified
-              security ecosystem.
-            </p>
-          </div>
-
-          <EcosystemServices />
         </div>
       </section>
 
@@ -106,6 +88,24 @@ export default function ServicesPage() {
               <ServiceCard key={index} service={service} />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Ecosystem Branches */}
+      <section className="section-padding bg-secondary">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <TitleChip title="Six Branches" className='text-white border-white' />
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              The Six Pillars of Our Ecosystem
+            </h2>
+            <p className="text-lg text-white max-w-3xl mx-auto">
+              Each branch delivers specialized capabilities while contributing to the unified
+              security ecosystem.
+            </p>
+          </div>
+
+          <EcosystemServices />
         </div>
       </section>
 
