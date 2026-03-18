@@ -93,6 +93,17 @@ export default function VideoHero() {
             {/* Dark Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
 
+            {/* Scroll Down Indicator */}
+            <div
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center animate-bounce cursor-pointer group"
+                onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+            >
+                <span className="text-white/80 text-xs font-medium tracking-[0.2em] uppercase mb-2 group-hover:text-primary transition-colors">
+                    Scroll Down
+                </span>
+                <Icon icon="ri:arrow-down-wide-fill" className="w-8 h-8 text-primary/80 group-hover:text-primary transition-colors" />
+            </div>
+
             {/* Volume Controls */}
             <div className="absolute bottom-8 right-8 z-20 flex items-center gap-4 rounded-lg bg-black/40 border border-primary backdrop-blur-sm px-4 py-3">
                 <button
