@@ -78,7 +78,7 @@ export default function Home() {
       <Project />
 
       <ScrollReveal>
-        <CTA variant="consultation" className="bg-secondary py-16" />
+        <CTA variant="consultation" className="bg-secondary py-16 px-4 md:px-0" />
       </ScrollReveal>
 
       <StatsSection />

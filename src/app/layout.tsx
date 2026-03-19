@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Goldman, Open_Sans } from "next/font/google";
+import { Goldman, Open_Sans, Hubot_Sans } from "next/font/google";
 import "./globals.css";
 
 const goldman = Goldman({
@@ -8,9 +8,10 @@ const goldman = Goldman({
   weight: ["400", "700"],
 })
 
-const openSans = Open_Sans({
-  variable: "--font-opensans",
+const sans = Hubot_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${openSans.variable} ${goldman.variable} antialiased`}
+        className={`${sans.variable} ${goldman.variable} antialiased`}
       >
         {children}
       </body>

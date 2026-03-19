@@ -51,7 +51,7 @@ const Header = () => {
           }`}
         onMouseLeave={() => setIsServicesHovered(false)}
       >
-        <nav className="container-custom px-4 lg:px-8">
+        <nav className="container-custom px-4 lg:px-8 font-sans">
           <div className="flex items-center justify-between py-4 lg:py-5">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0 group">
@@ -60,7 +60,7 @@ const Header = () => {
                 transition={{ duration: 0.3 }}
                 src="https://res.cloudinary.com/zurri-cloud/image/upload/v1759221309/bariki/alh0lrkyjtbzydirlamy.png"
                 alt="Bariki Tech Security Solutions"
-                className="h-10 sm:h-12 md:h-16 lg:h-20 w-auto max-w-[70vw] lg:max-w-none object-contain transition-all duration-300"
+                className="h-20 w-auto max-w-[70vw] lg:max-w-none object-contain transition-all duration-300"
               />
             </Link>
 

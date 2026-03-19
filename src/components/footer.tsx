@@ -3,17 +3,17 @@ import { Icon } from "@iconify/react";
 
 const Footer = () => {
   const services = [
-    {title: 'CCTV Surveillance', href: '/services/cctv-surveillance'},
-    {title: 'Electric Fencing', href: '/services/electric-fencing'},
-    {title: 'Access Control', href: '/services/access-control'},
-    {title: 'Gate Automation', href: '/services/gate-automation'},
+    { title: 'CCTV Surveillance', href: '/services/cctv-surveillance' },
+    { title: 'Electric Fencing', href: '/services/electric-fencing' },
+    { title: 'Access Control', href: '/services/access-control' },
+    { title: 'Gate Automation', href: '/services/gate-automation' },
   ];
 
   const quickLinks = [
-    {title: 'About Us', href: '/about'},
-    {title: 'Our Services', href: '/services'},
-    {title: 'Projects', href: '/projects'},
-    {title: 'Contact', href: '/contact'},
+    { title: 'About Us', href: '/about' },
+    { title: 'Our Services', href: '/services' },
+    { title: 'Projects', href: '/projects' },
+    { title: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -22,11 +22,11 @@ const Footer = () => {
       <div className="container-custom pb-16">
         <div className="grid md:grid-cols-2 gap-8">
           {/* Company Info */}
-          <div className="lg:col-span-1 p-8">
+          <div className="lg:col-span-1 p-4 md:p-8">
             <div className="flex items-center gap-3 mb-6">
-              <img 
-                src={"/bariki-logo.png"} 
-                alt="Bariki Tech Security Solutions" 
+              <img
+                src={"/bariki-logo.png"}
+                alt="Bariki Tech Security Solutions"
                 className="h-24 w-auto"
               />
               <div>
@@ -36,13 +36,13 @@ const Footer = () => {
                 <p className="text-xs text-white/60">Security Solutions</p>
               </div>
             </div>
-            
+
             <p className="text-white/80 mb-6 leading-relaxed">
               <span className="font-semibold text-white block mb-2">Designing Resilience for Africa</span>
               Africa's first fully converged security ecosystem. We transform your security
               posture from reactive protection to predictive resilience.
             </p>
-            
+
             <div className="flex gap-4">
               {socialLinks.map((social) => (
                 <a
@@ -57,67 +57,67 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-2 pt-16">
+          <div className="grid md:grid-cols-3 gap-2 p-4 md:pt-16">
             {/* Services */}
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-6">Our Services</h4>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service.title}>
-                  <a 
-                    href={service.href} 
-                    className="text-white/70 hover:text-primary transition-colors"
-                  >
-                    {service.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-6">Our Services</h4>
+              <ul className="space-y-3">
+                {services.map((service) => (
+                  <li key={service.title}>
+                    <a
+                      href={service.href}
+                      className="text-white/70 hover:text-primary transition-colors"
+                    >
+                      {service.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-6">Quick Links</h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.title}>
-                  <a 
-                    href={link.href} 
-                    className="text-white/70 hover:text-primary transition-colors"
-                  >
-                    {link.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-6">Quick Links</h4>
+              <ul className="space-y-3">
+                {quickLinks.map((link) => (
+                  <li key={link.title}>
+                    <a
+                      href={link.href}
+                      className="text-white/70 hover:text-primary transition-colors"
+                    >
+                      {link.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-6">Contact Us</h4>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <Icon icon="mdi-light:map-marker" className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-white/80">Hancock Rd Ntinda, Kamapala</p>
+            {/* Contact Info */}
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-6">Contact Us</h4>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <Icon icon="mdi-light:map-marker" className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-white/80">Hancock Rd Ntinda, Kamapala</p>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="flex items-center gap-3">
-                <Icon icon="mdi-light:phone" className="w-5 h-5 text-primary flex-shrink-0" />
-                <div>
-                  <p className="text-white/80">+256 702 751 312</p>
+
+                <div className="flex items-center gap-3">
+                  <Icon icon="mdi-light:phone" className="w-5 h-5 text-primary flex-shrink-0" />
+                  <div>
+                    <p className="text-white/80">+256 702 751 312</p>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="flex items-center gap-3">
-                <Icon icon="mdi-light:email" className="w-5 h-5 text-primary flex-shrink-0" />
-                <div>
-                  <p className="text-white/80">info@barikitech.com</p>
+
+                <div className="flex items-center gap-3">
+                  <Icon icon="mdi-light:email" className="w-5 h-5 text-primary flex-shrink-0" />
+                  <div>
+                    <p className="text-white/80">info@barikitech.com</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
@@ -129,7 +129,7 @@ const Footer = () => {
             <div className="flex items-center gap-6 text-white/60 text-sm">
               <p>&copy; {new Date().getFullYear()} Bariki Tech Security Solutions. All rights reserved.</p>
             </div>
-            
+
             <div className="flex items-center gap-2 text-white/60 text-sm">
               <span>Licensed & Insured Security Provider</span>
             </div>
