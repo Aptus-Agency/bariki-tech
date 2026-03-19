@@ -95,7 +95,7 @@ export default function VideoHero() {
 
             {/* Scroll Down Indicator */}
             <div
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center animate-bounce cursor-pointer group"
+                className="absolute bottom-8 left-1/2 -ml-12 -translate-x-1/2 z-20 flex flex-col items-center animate-bounce cursor-pointer group"
                 onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
             >
                 <span className="text-white/80 text-xs font-medium tracking-[0.2em] uppercase mb-2 group-hover:text-primary transition-colors">
@@ -105,21 +105,14 @@ export default function VideoHero() {
             </div>
 
             {/* Volume Controls */}
-            <div className="absolute bottom-8 right-8 z-20 flex items-center gap-4 rounded-lg bg-black/40 border border-primary backdrop-blur-sm px-4 py-3">
+            <div className="absolute bottom-16 right-8 z-20 flex items-center gap-4 px-4">
                 <button
                     onClick={toggleMute}
                     className="text-white hover:text-white/80 transition-colors"
                     aria-label={isMuted ? "Unmute" : "Mute"}
                 >
-                    {isMuted ? <Icon icon="mynaui:volume-x-solid" className="w-12 h-12 text-primary" /> : <Icon icon="mynaui:volume-high-solid" className="w-12 h-12 text-primary" />}
+                    {isMuted ? <Icon icon="mynaui:volume-x-solid" className="w-4 h-4 text-primary" /> : <Icon icon="mynaui:volume-high-solid" className="w-4 h-4 text-primary" />}
                 </button>
-                {/* <Slider
-                    value={[volume]}
-                    onValueChange={handleVolumeChange}
-                    max={100}
-                    step={1}
-                    className="w-24"
-                /> */}
             </div>
         </div>
     )

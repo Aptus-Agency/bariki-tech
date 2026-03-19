@@ -51,7 +51,7 @@ const Header = () => {
           }`}
         onMouseLeave={() => setIsServicesHovered(false)}
       >
-        <nav className="container-custom">
+        <nav className="container-custom px-4 lg:px-8">
           <div className="flex items-center justify-between py-4 lg:py-5">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0 group">
@@ -60,7 +60,7 @@ const Header = () => {
                 transition={{ duration: 0.3 }}
                 src="https://res.cloudinary.com/zurri-cloud/image/upload/v1759221309/bariki/alh0lrkyjtbzydirlamy.png"
                 alt="Bariki Tech Security Solutions"
-                className="h-16 lg:h-20 w-auto transition-all duration-300"
+                className="h-10 sm:h-12 md:h-16 lg:h-20 w-auto max-w-[70vw] lg:max-w-none object-contain transition-all duration-300"
               />
             </Link>
 
@@ -211,11 +211,7 @@ const Header = () => {
               {/* Mobile Menu Toggle */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`lg:hidden p-2 rounded-lg backdrop-blur-sm transition-all ${
-                  isScrolled 
-                    ? 'text-gray-900 bg-gray-100 hover:bg-gray-200' 
-                    : 'text-white bg-white/10 border border-white/20 hover:bg-white/20'
-                }`}
+                className={`lg:hidden p-2 rounded-lg backdrop-blur-sm transition-all text-white bg-secondary`}
                 aria-label="Toggle mobile menu"
               >
                 <Icon icon={isMenuOpen ? "mdi:close" : "mdi:menu"} className="w-6 h-6" />
