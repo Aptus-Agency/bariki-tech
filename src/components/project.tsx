@@ -56,7 +56,7 @@ const Project = () => {
               ))}
             </div>
 
-            <a href="https://api.whatsapp.com/send?phone=256702751312" className="btn-primary bg-gradient-primary inline-flex">
+            <a href="/contact" className="btn-primary bg-gradient-primary inline-flex">
               Get a Quote
             </a>
           </motion.div>

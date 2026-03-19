@@ -19,28 +19,28 @@ const ClientCarousel = () => {
             </div>
 
             <div className="relative w-full">
-                <div className="flex w-[200%] animate-scroll hover:[animation-play-state:paused] items-center">
+                <div className="flex w-max animate-scroll hover:[animation-play-state:paused] items-center">
                     {/* First set of logos */}
-                    <div className="flex w-1/2 justify-around items-center px-4">
+                    <div className="flex w-1/2 justify-around items-center px-2 sm:px-4">
                         {clients.map((client, index) => (
-                            <div key={`client-1-${index}`} className="h-20 w-40 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100 mx-4">
+                            <div key={`client-1-${index}`} className="flex-shrink-0 flex items-center justify-center mx-4 sm:mx-6">
                                 <img
                                     src={client.logo}
                                     alt={client.name}
-                                    className="object-contain"
+                                    className="object-contain max-h-full max-w-full"
                                 />
                             </div>
                         ))}
                     </div>
 
                     {/* Second set of logos for seamless loop */}
-                    <div className="flex w-1/2 justify-around items-center px-4">
+                    <div className="flex justify-around items-center px-2 sm:px-4">
                         {clients.map((client, index) => (
-                            <div key={`client-2-${index}`} className="h-20 w-40 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100 mx-4">
+                            <div key={`client-2-${index}`} className="flex-shrink-0 flex items-center justify-center mx-4 sm:mx-6">
                                 <img
                                     src={client.logo}
                                     alt={client.name}
-                                    className="object-contain"
+                                    className="object-contain max-h-full max-w-full"
                                 />
                             </div>
                         ))}

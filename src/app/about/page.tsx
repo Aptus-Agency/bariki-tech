@@ -138,7 +138,7 @@ const About = () => {
         <div className="container-custom">
           <div className="text-center mb-12">
             <TitleChip title="Our Operating System" className="border-white text-white" />
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">The Gold Standard Ethos</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">Our Core Values</h2>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
               For us, "The Gold Standard" is not a marketing slogan. It is our living operating system,
               the internal code that governs every project, every decision, and every partnership.
@@ -187,7 +187,7 @@ const About = () => {
       </section>
 
 
-      <CTA variant="partnership" className="bg-gradient-dark py-16" />
+      <CTA variant="partnership" className="bg-gradient-dark py-16  px-4 md:px-0" />
       <ClientCarousel />
 
       <Footer />
