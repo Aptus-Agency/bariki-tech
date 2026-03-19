@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Icon } from "@iconify/react";
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { servicesData, ecosystemBranches } from '@/lib/data';
+import { servicesData } from '@/lib/data';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +12,6 @@ const Header = () => {
   const [isServicesHovered, setIsServicesHovered] = useState(false);
 
   const services = Object.values(servicesData);
-  const branches = Object.values(ecosystemBranches);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +21,18 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
 
   const navigationItems = [
     { label: 'Home', href: '/' },
@@ -176,13 +187,14 @@ const Header = () => {
               })}
             </div>
 
-            {/* CTA Button */}
-            <div className="hidden lg:flex items-center gap-4">
+            {/* Actions */}
+            <div className="flex items-center gap-4">
+              {/* CTA Button */}
               <motion.a
                 whileHover={{ scale: 1.05, boxShadow: "0 10px 40px rgba(96, 239, 255, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
                 href="https://api.whatsapp.com/send?phone=256702751312"
-                className="relative px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold text-base rounded-xl overflow-hidden group shadow-lg hover:shadow-[0_10px_40px_rgba(96,239,255,0.4)] transition-all duration-300"
+                className="hidden lg:flex relative px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold text-base rounded-xl overflow-hidden group shadow-lg hover:shadow-[0_10px_40px_rgba(96,239,255,0.4)] transition-all duration-300"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <Icon icon="mdi:whatsapp" className="w-5 h-5" />
@@ -195,112 +207,161 @@ const Header = () => {
                   transition={{ duration: 0.3 }}
                 />
               </motion.a>
-            </div>
 
-            {/* Mobile Menu Button */}
-            <motion.button
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`lg:hidden p-3 rounded-xl transition-all duration-300 ${isScrolled
-                ? 'bg-primary/10 text-primary hover:bg-primary/20'
-                : 'bg-white/10 text-white hover:bg-white/20'
+              {/* Mobile Menu Toggle */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className={`lg:hidden p-2 rounded-lg backdrop-blur-sm transition-all ${
+                  isScrolled 
+                    ? 'text-gray-900 bg-gray-100 hover:bg-gray-200' 
+                    : 'text-white bg-white/10 border border-white/20 hover:bg-white/20'
                 }`}
-              aria-label="Toggle Menu"
-            >
-              <Icon icon={isMenuOpen ? "mdi:close" : "mdi:menu"} className="h-6 w-6" />
-            </motion.button>
+                aria-label="Toggle mobile menu"
+              >
+                <Icon icon={isMenuOpen ? "mdi:close" : "mdi:menu"} className="w-6 h-6" />
+              </button>
+            </div>
           </div>
         </nav>
 
-        {/* Enhanced Mobile Menu */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="lg:hidden bg-white/98 backdrop-blur-xl border-t border-gray-100 shadow-xl overflow-hidden"
-            >
-              <div className="container-custom py-6">
-                <motion.div
-                  className="flex flex-col gap-2"
-                  initial="closed"
-                  animate="open"
-                  variants={{
-                    open: {
-                      transition: { staggerChildren: 0.07, delayChildren: 0.1 }
-                    },
-                    closed: {
-                      transition: { staggerChildren: 0.05, staggerDirection: -1 }
-                    }
-                  }}
-                >
-                  {navigationItems.map((item) => (
-                    <motion.div
-                      key={item.label}
-                      variants={{
-                        open: {
-                          y: 0,
-                          opacity: 1,
-                          transition: {
-                            y: { stiffness: 1000, velocity: -100 }
-                          }
-                        },
-                        closed: {
-                          y: 20,
-                          opacity: 0,
-                          transition: {
-                            y: { stiffness: 1000 }
-                          }
-                        }
-                      }}
-                    >
-                      <Link
-                        href={item.href}
-                        className="flex items-center justify-between px-5 py-4 text-gray-700 hover:text-primary hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 rounded-xl font-semibold text-lg transition-all duration-300 group"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        <span className="group-hover:translate-x-1 transition-transform duration-300">{item.label}</span>
-                        <Icon icon="mdi:chevron-right" className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      </Link>
-                    </motion.div>
-                  ))}
-
-                  <motion.div
-                    className="pt-4 mt-4 border-t border-gray-200"
-                    variants={{
-                      open: {
-                        y: 0,
-                        opacity: 1,
-                        transition: {
-                          y: { stiffness: 1000, velocity: -100 }
-                        }
-                      },
-                      closed: {
-                        y: 20,
-                        opacity: 0,
-                        transition: {
-                          y: { stiffness: 1000 }
-                        }
-                      }
-                    }}
-                  >
-                    <a
-                      href="https://api.whatsapp.com/send?phone=256702751312"
-                      className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-[0_10px_40px_rgba(96,239,255,0.4)] transition-all duration-300"
-                    >
-                      <Icon icon="mdi:whatsapp" className="w-6 h-6" />
-                      Book Free Site Visit
-                    </a>
-                  </motion.div>
-                </motion.div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </header>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-black/50 z-[100] lg:hidden"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'tween', duration: 0.3 }}
+              className="absolute right-0 top-0 h-full w-80 max-w-full bg-white shadow-2xl overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Mobile Menu Header */}
+              <div className="flex justify-between items-center p-6 border-b border-gray-100">
+                <span className="text-xl font-bold text-gray-900">Menu</span>
+                <button
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-gray-500 hover:text-gray-900 p-2 bg-gray-100 rounded-lg"
+                  aria-label="Close menu"
+                >
+                  <Icon icon="mdi:close" className="w-6 h-6" />
+                </button>
+              </div>
+
+              {/* Mobile Menu Items */}
+              <nav className="p-6">
+                {navigationItems.map((item) => (
+                  <MobileMenuItem 
+                    key={item.label} 
+                    item={item} 
+                    onClose={() => setIsMenuOpen(false)} 
+                    services={services} 
+                  />
+                ))}
+
+                {/* Mobile CTA */}
+                <a
+                  href="https://api.whatsapp.com/send?phone=256702751312"
+                  className="mt-6 flex items-center justify-center gap-2 w-full px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold text-base rounded-xl shadow-lg transition-all"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Icon icon="mdi:whatsapp" className="w-5 h-5" />
+                  Book Free Site Visit
+                </a>
+              </nav>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
+  );
+};
+
+const MobileMenuItem = ({
+  item,
+  onClose,
+  services
+}: {
+  item: { label: string; href: string }
+  onClose: () => void
+  services: any[]
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  if (item.label !== 'Services') {
+    return (
+      <Link
+        href={item.href}
+        onClick={onClose}
+        className="block py-3 text-gray-800 hover:text-primary transition-colors font-medium border-b border-gray-100 last:border-0"
+      >
+        {item.label}
+      </Link>
+    );
+  }
+
+  return (
+    <div className="border-b border-gray-100 last:border-0">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex justify-between items-center w-full py-3 text-gray-800 hover:text-primary transition-colors font-medium"
+      >
+        {item.label}
+        <motion.div animate={{ rotate: isOpen ? 180 : 0 }}>
+          <Icon icon="ic:round-arrow-drop-down" className="w-5 h-5" />
+        </motion.div>
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden"
+          >
+            <div className="pl-4 pb-2 space-y-1">
+              <Link
+                href="/services"
+                onClick={onClose}
+                className="block py-2 text-gray-600 hover:text-primary transition-colors text-sm font-medium"
+              >
+                All Services
+              </Link>
+              <Link
+                href="/solutions"
+                onClick={onClose}
+                className="block py-2 text-gray-600 hover:text-primary transition-colors text-sm font-medium"
+              >
+                Client Solutions
+              </Link>
+              <div className="pt-3 pb-1 text-xs font-bold text-gray-400 uppercase tracking-wider">
+                Technical Solutions
+              </div>
+              {services.map((service, index) => (
+                <Link
+                  key={index}
+                  href={`/services/${service.id}`}
+                  onClick={onClose}
+                  className="block py-2 text-gray-600 hover:text-primary transition-colors text-sm"
+                >
+                  {service.title}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 
