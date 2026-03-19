@@ -48,7 +48,7 @@ const AboutSection = () => {
               ))}
             </div>
 
-            <Link href="/contact" className="btn-primary inline-flex">
+            <Link href="/contact" className="btn-primary inline-flex bg-gradient-to-r from-primary to-secondary text-white font-bold text-base rounded-xl">
               Book a Security Audit
             </Link>
           </motion.div>

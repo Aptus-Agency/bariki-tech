@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Goldman, Open_Sans, Hubot_Sans } from "next/font/google";
 import "./globals.css";
+import FloatingButton from "@/components/FloatingButton";
 
 const goldman = Goldman({
   variable: "--font-goldman",
@@ -30,6 +31,7 @@ export default function RootLayout({
         className={`${sans.variable} ${goldman.variable} antialiased`}
       >
         {children}
+        <FloatingButton />
       </body>
     </html>
   );
