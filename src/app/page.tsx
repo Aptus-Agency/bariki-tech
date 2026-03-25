@@ -5,21 +5,20 @@ import StatsSection from "@/components/stats-section";
 import Footer from "@/components/footer";
 import CTA from "@/components/cta";
 import Project from "@/components/project";
-import VideoHero from "@/components/VideoHero";
 import GoldStandardValues from "@/components/gold-standard-values";
 import VirtuousCycle from "@/components/virtuous-cycle";
 import TitleChip from "@/components/title-chip";
 import BetterMarquee from "@/components/BetterMarquee";
 import { Icon } from "@iconify/react";
 import ScrollReveal from "@/components/ui/scroll-reveal";
+import HeroCarousel from "@/components/ui/hero-carousel";
 
 export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden">
       <Header />
-      <VideoHero />
+      <HeroCarousel />
       <AboutSection />
-
 
       <ScrollReveal delay={0.2}>
         <BetterMarquee />
