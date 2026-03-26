@@ -1,6 +1,3 @@
-const fencingImage = '/electric-fencing.jpg';
-const accessImage = '/access-control.jpg';
-
 export interface Service {
   icon: string;
   title: string;
@@ -130,7 +127,7 @@ export const ecosystemBranches: Record<string, EcosystemBranch> = {
     icon: 'mdi:tools',
     description: 'We design, install, and maintain the physical infrastructure—from electric fencing to access control—that keeps Africa\'s operations running.',
     keyMetrics: ['98% First-Time Fix Rate'],
-    relatedServices: ['cctv-surveillance', 'electric-fencing', 'access-control', 'gate-automation', 'vehicle-access-control-barriers', 'intercom-systems', 'intruder-alarms', 'metal-detectors']
+    relatedServices: ['cctv-surveillance', 'electric-fencing', 'access-control', 'gate-automation', 'vehicle-access-control-barriers', 'intercom-systems', 'intruder-alarms', 'metal-detectors', 'electric-razor-fencing']
   },
   'cybersecurity': {
     id: 'cybersecurity',
@@ -293,6 +290,32 @@ export const goldStandardFramework: GoldStandardFrameworkItem[] = [
 ];
 
 export const servicesData: Record<string, ServiceData> = {
+  'anti-climb-fence': {
+    id: 'anti-climb-fence',
+    icon: 'mdi:fence',
+    title: 'Anti-Climb Fence',
+    description: 'High-security welded mesh fencing system engineered to deliver uncompromising perimeter protection while maintaining clear visibility.',
+    image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1774528855/bariki/l3sbpqzvytmifutx7hww.jpg',
+    heroImage: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1774528855/bariki/l3sbpqzvytmifutx7hww.jpg',
+    video: 'https://www.youtube.com/embed/S7kvqyXVgN0',
+    features: [
+      'Anti-Climb Mesh Aperture - Narrow openings (76.2x12.7 mm, 76x25 mm, or 76x50 mm) prevent climbing',
+      'High Tensile Steel Wires - Available in 3 mm, 3.5 mm, 4 mm, and 4.5 mm for superior cut resistance',
+      'Corrosion Protection - Hot dip galvanised, powder coated, and PVC/plastic coating options',
+      'Open Mesh Design - Clear visibility for guards and CCTV with no blind spots',
+      'Reinforced Wire Construction - Maximum panel strength against tampering and harsh environments'
+    ],
+    benefits: [
+      'Anti-climb mesh apertures make it extremely difficult for hands or feet to grip the fence',
+      'High tensile steel wires resist cutting tools for lasting perimeter integrity',
+      'Open mesh design improves surveillance and CCTV monitoring efficiency with no blind spots',
+      'Long lifespan with corrosion-resistant coatings and minimal maintenance requirements'
+    ],
+    detailedDescription: 'Bariki Tech Anti-Climb Fence is a high-security welded mesh fencing system engineered to deliver uncompromising perimeter protection while maintaining clear visibility. Unlike traditional palisade or wire mesh fencing, it combines advanced anti-climb technology, superior strength, and a sleek modern appearance. Available in heights from 1.2 m (residential) to 3.0 m (maximum security) and a range of coating finishes, our anti-climb fencing is trusted across industrial facilities, commercial parks, residential estates, schools, airports, and government buildings throughout East Africa.',
+    whyChoose: 'We don\'t just install fences—we engineer perimeter barriers that actively deter intrusion. Our anti-climb mesh systems integrate seamlessly with CCTV for unobstructed camera sightlines, electric fencing for multi-layered perimeter defense, and alarm systems for immediate breach detection. With options for every security level and coatings designed for Africa\'s climate, you get a long-lasting, low-maintenance perimeter that works as hard as your security team.',
+    images: ['https://res.cloudinary.com/zurri-cloud/image/upload/v1774439828/bariki/pso4qbqpku4z4429wvap.png'],
+    ecosystemBranch: 'installations-maintenance'
+  },
   'cctv-surveillance': {
     id: 'cctv-surveillance',
     icon: 'mdi:security-cctv',
@@ -319,7 +342,7 @@ export const servicesData: Record<string, ServiceData> = {
     title: 'High-Security Electric Fencing',
     description: 'High-voltage perimeter protection systems designed to deter intruders while ensuring safety and reliability.',
     image: "https://res.cloudinary.com/zurri-cloud/image/upload/v1762418932/bariki/wpqc6g1ekjup8zr8kxhk.webp",
-    heroImage: fencingImage,
+    heroImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1762418932/bariki/wpqc6g1ekjup8zr8kxhk.webp",
     video: "https://www.youtube.com/embed/-Hpc8R-gYBs?si=bL3CMoymlRR2STLS",
     features: ['High Voltage Protection', 'Alarm Integration', 'Weather Resistant', 'Low Maintenance', 'Solar Options', 'Monitoring Systems'],
     benefits: [
@@ -338,8 +361,8 @@ export const servicesData: Record<string, ServiceData> = {
     icon: 'mdi:access-point',
     title: 'Access Control',
     description: 'Smart access control systems including biometric scanners, keycards, and automated entry management.',
-    image: accessImage,
-    heroImage: accessImage,
+    image: "https://res.cloudinary.com/zurri-cloud/image/upload/v1774528001/bariki/naklnkxzussuy5nqyfds.jpg",
+    heroImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1774528001/bariki/naklnkxzussuy5nqyfds.jpg",
     video: "https://www.youtube.com/embed/9dfILBOmnCA?si=tnUBP4Bxvv1vTSWC",
     features: ['Biometric Scanners', 'Keycard Systems', 'Mobile Access', 'Time Scheduling', 'Visitor Management', 'Integration Ready'],
     benefits: [
@@ -359,7 +382,7 @@ export const servicesData: Record<string, ServiceData> = {
     title: 'Automated Gate Systems',
     description: 'Automated gate systems with remote control, safety features, and integration with existing security systems.',
     image: "https://res.cloudinary.com/zurri-cloud/image/upload/v1759534485/bariki/bq86zz10bu5bhsafk22d.webp",
-    heroImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1759534485/bariki/bq86zz10bu5bhsafk22d.webp",
+    heroImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1774437255/bariki/nx7aoj7knghhqxzdthes.jpg",
     video: "https://www.youtube.com/embed/u1IyMLt-AEM?si=CM7-CpaVD-q63rTh",
     features: ['Remote Control', 'Safety Sensors', 'Backup Power', 'Integration Ready', 'Mobile App', 'Emergency Override'],
     benefits: [
@@ -395,7 +418,7 @@ export const servicesData: Record<string, ServiceData> = {
       "Built to withstand Africa\'s climate and high-traffic demands"
     ],
     images: [],
-    detailedDescription: "Our vehicle access control barriers secure critical facilities across Uganda—from banking headquarters to telecom sites, industrial parks to government compounds. We design barrier systems that create controlled checkpoints, allowing security personnel to verify credentials and conduct inspections while maintaining efficient traffic flow. Every barrier integrates with access control, surveillance, and alarm systems for coordinated security response.",
+    detailedDescription: "Our vehicle access control barriers secure critical facilities across Uganda, from banking headquarters to telecom sites, industrial parks to government compounds. We design barrier systems that create controlled checkpoints, allowing security personnel to verify credentials and conduct inspections while maintaining efficient traffic flow. Every barrier integrates with access control, surveillance, and alarm systems for coordinated security response.",
     whyChoose: "We don\'t just install barriers—we architect vehicular security checkpoints. Our barrier systems integrate with license plate recognition, access control credentials, and CCTV surveillance to create intelligent vehicle screening. With backup power, safety sensors, and remote control capabilities, you maintain security without creating bottlenecks.",
     ecosystemBranch: 'installations-maintenance'
   },
@@ -476,6 +499,39 @@ export const servicesData: Record<string, ServiceData> = {
     detailedDescription: "Our walk-through portable metal detectors provide flexible security screening for Uganda\'s schools, places of worship, sporting venues, corporate events, and government facilities. When you need professional-grade security screening without permanent installation, our portable detectors deploy in minutes. With 40-hour battery life, built-in people counting, and location-specific memory settings, you get enterprise-grade screening with maximum flexibility.",
     whyChoose: "We don\'t just supply metal detectors—we provide flexible security screening solutions. Our portable walk-through detectors are ideal for venues that need professional-grade screening without permanent infrastructure. Whether you\'re securing a one-time event, rotating between multiple locations, or need backup screening capacity, our detectors deliver reliable performance with minimal setup time and maximum portability.",
     ecosystemBranch: 'installations-maintenance'
+  },
+  'electric-razor-fencing': {
+    id: 'electric-razor-fencing',
+    icon: 'mdi:razor-double-edge',
+    title: 'Electric Razor Fencing',
+    description: 'Highly effective razor wire security barriers professionally installed to protect properties, institutions, and high-risk areas from unauthorized access.',
+    image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1774529670/bariki/zkajutaeemyaatghcvdk.jpg',
+    heroImage: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1774529670/bariki/zkajutaeemyaatghcvdk.jpg',
+    video: 'https://www.youtube.com/embed/si7OxHzwWAY?si=qA-wfsHBIRdAnjQ4',
+    features: [
+      'Concertina & Flat-Wrap Designs - Tailored razor wire configurations for every security requirement',
+      'Sharp Blade-Like Edges - Powerful deterrent against intruders attempting perimeter breach',
+      'Weather-Resistant Materials - Durable construction suited to Uganda\'s tropical climate',
+      'Residential & Commercial Grade - Solutions scaled for homes, businesses, and industrial sites',
+      'Government & Warehouse Rated - Suitable for high-risk institutional and storage facilities',
+      'Professional Installation - Expert setup ensuring correct tensioning and maximum effectiveness'
+    ],
+    benefits: [
+      'Acts as a strong visual and physical deterrent against unauthorized access',
+      'Durable, weather-resistant materials ensure long-lasting protection with minimal maintenance',
+      'Flexible concertina and flat-wrap designs meet specific perimeter security needs',
+      'Protects residential, commercial, industrial, and government facilities effectively',
+      'Professional installation guarantees proper setup for reliable, lasting performance'
+    ],
+    detailedDescription: 'Razor wire is a highly effective security barrier widely used to protect properties, institutions, and high-risk areas from unauthorized access. Made from sharp, blade-like edges, it acts as a strong deterrent against intruders and enhances perimeter security. Our professional installation services ensure proper setup, whether for residential, commercial, or industrial applications. We provide durable, weather-resistant razor wire options, including concertina and flat-wrap designs, tailored to meet specific security needs. With expert installation, we help safeguard homes, businesses, government facilities, and warehouses, ensuring long-lasting protection and peace of mind.',
+    whyChoose: 'We don\'t just install razor wire—we engineer comprehensive perimeter barriers. Our team assesses your site and recommends the right razor wire type and configuration to maximise deterrence and durability. From residential estates to government compounds, every installation is executed to the highest standards, complementing your existing security systems and delivering long-lasting peace of mind.',
+    images: [
+      'https://res.cloudinary.com/zurri-cloud/image/upload/v1774529670/bariki/zkajutaeemyaatghcvdk.jpg',
+      "https://res.cloudinary.com/zurri-cloud/image/upload/v1774530662/bariki/ivliujysexofr4kv2vfc.jpg",
+      "https://res.cloudinary.com/zurri-cloud/image/upload/v1774530671/bariki/azzclhziskxi7rbdvgp3.jpg",
+      "https://res.cloudinary.com/zurri-cloud/image/upload/v1774530782/bariki/gy7rvdlie0rhcthrowk8.jpg"
+    ],
+    ecosystemBranch: 'installations-maintenance'
   }
 };
 
@@ -487,7 +543,9 @@ export const quickServices = [
   { id: 'vehicle-access-control-barriers', label: 'Vehicle Access Control Barriers', icon: 'mdi:car' },
   { id: 'intercom-systems', label: 'Intercom Systems', icon: 'mdi:phone' },
   { id: 'intruder-alarms', label: 'Intruder Alarms', icon: 'mdi:alarm' },
-  { id: 'metal-detectors', label: 'Metal Detectors', icon: 'mdi:alarm' }
+  { id: 'metal-detectors', label: 'Metal Detectors', icon: 'mdi:alarm' },
+  { id: 'anti-climb-fence', label: 'Anti-Climb Fence', icon: 'mdi:fence' },
+  { id: 'electric-razor-fencing', label: 'Electric Razor Fencing', icon: 'mdi:razor-double-edge' }
 ];
 
 export const faqs = [

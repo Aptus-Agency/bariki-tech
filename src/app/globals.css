@@ -117,6 +117,11 @@ All colors MUST be HSL. Brand colors: #60efff, #231f20, #0b66fd, #ffffff
     @apply border border-primary/20 backdrop-blur-sm;
   }
 
+  .btn-hero-alt {
+    @apply border-primary border-2 text-primary font-semibold px-8 py-4;
+    @apply hover:bg-secondary hover:text-primary-foreground transition-all duration-300;
+  }
+
   /* Primary Button */
   .btn-primary {
     @apply bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg;

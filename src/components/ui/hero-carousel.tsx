@@ -8,50 +8,31 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-cube';
 import Link from 'next/link';
+import { servicesData } from '@/lib/data';
 
-const slides = [
-  {
-    subtitle: 'Surveillance Solutions',
-    title: 'Digital CCTV Surveillance Systems',
-    description:
-      'Advanced IP camera networks, HD recording, and real-time remote monitoring to keep your property under 24/7 watch.',
-    bg: '/cctv-installation.jpg',
-  },
-  {
-    subtitle: 'Perimeter Security',
-    title: 'High Security Electric Fencing',
-    description:
-      'Energized perimeter solutions that deter intruders, trigger instant alerts, and integrate seamlessly with your security ecosystem.',
-    bg: '/electric-fencing.jpg',
-  },
-  {
-    subtitle: 'Entry Management',
-    title: 'Access Control Systems',
-    description:
-      'Biometric readers, smart cards, and PIN-based entry systems that give you complete control over who enters your premises.',
-    bg: '/access-control.jpg',
-  },
-  {
-    subtitle: 'Gate Automation',
-    title: 'Automated Gate Systems',
-    description:
-      'Motorized sliding and swing gates with remote operation, intercom integration, and obstruction safety sensors.',
-    bg: '/project-corporate-access.jpg',
-  },
-  {
-    subtitle: 'Traffic & Fleet Security',
-    title: 'Vehicle Access Control Systems',
-    description:
-      'Boom barriers, ANPR cameras, and RFID-based lane management for secure, efficient vehicle access at any facility.',
-    bg: '/project-warehouse-security.jpg',
-  },
-];
+const subtitleMap: Record<string, string> = {
+  'cctv-surveillance': 'Surveillance Solutions',
+  'electric-fencing': 'Perimeter Security',
+  'access-control': 'Entry Management',
+  'gate-automation': 'Gate Automation',
+  'vehicle-access-control-barriers': 'Traffic & Fleet Security',
+};
+
+const slides = Object.values(servicesData)
+  .slice(0, 5)
+  .map((s) => ({
+    subtitle: subtitleMap[s.id] ?? s.title,
+    title: s.title,
+    description: s.description,
+    bg: s.heroImage || s.image,
+    link: `/services/${s.id}`,
+  }));
 
 const bottomFeatures = [
   'Professional Installation',
   '24/7 System Monitoring',
   'Rapid Response Support',
-  '5-Year Workmanship Warranty',
+  '15+ Years Experience',
 ];
 
 export default function HeroCarousel() {
@@ -88,8 +69,7 @@ export default function HeroCarousel() {
                 alt={slide.title}
                 className="h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-dark/75" />
-              <div className="absolute inset-0 bg-gradient-to-r from-dark/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/80 to-transparent" />
             </div>
 
             {/* Slide content */}
@@ -105,11 +85,18 @@ export default function HeroCarousel() {
                   <p className="mb-8 max-w-lg text-base leading-relaxed text-white/75 sm:text-lg">
                     {slide.description}
                   </p>
-                  <Link href="/contact">
-                    <button className="btn-hero border-none">
-                      Get Free Consultation
-                    </button>
-                  </Link>
+                  <div className="flex gap-2">
+                    <Link href={slide.link}>
+                      <button className="btn-hero-alt border-none">
+                        Explore Service
+                      </button>
+                    </Link>
+                    <Link href="/contact">
+                      <button className="btn-hero border-none">
+                        Get Free Consultation
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
