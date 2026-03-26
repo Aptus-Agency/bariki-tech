@@ -57,9 +57,9 @@ const ServiceDetail = () => {
             {/* Main Content */}
             <section className="section-padding text-base">
                 <div className="container-custom">
-                    <div className="grid lg:grid-cols-[300px,1fr] gap-8">
+                    <div className="flex flex-col lg:grid lg:grid-cols-[300px,1fr] gap-8">
                         {/* Sidebar */}
-                        <aside className="space-y-6">
+                        <aside className="space-y-6 order-2 lg:order-1">
                             {/* Quick Services */}
                             <div className="card-glass p-6">
                                 <h3 className="text-xl font-bold text-dark mb-4 border-b border-border pb-3">
@@ -100,18 +100,19 @@ const ServiceDetail = () => {
                         </aside>
 
                         {/* Main Content */}
-                        <div className="space-y-12">
+                        <div className="space-y-12 order-1 lg:order-2">
                             <div className="space-y-6">
                                 <div>
-                                    <iframe 
-                                        width="1000" 
-                                        height="500" 
-                                        src={service.video} 
-                                        title="YouTube video player" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                        referrerPolicy="strict-origin-when-cross-origin" 
-                                        allowFullScreen>
-                                    </iframe>
+                                    <div className="relative w-full aspect-video">
+                                        <iframe
+                                            className="absolute inset-0 w-full h-full rounded-xl"
+                                            src={service.video}
+                                            title="YouTube video player"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerPolicy="strict-origin-when-cross-origin"
+                                            allowFullScreen>
+                                        </iframe>
+                                    </div>
                                 </div>
 
                                 <div>
@@ -146,7 +147,7 @@ const ServiceDetail = () => {
                                             key={index}
                                             src={img}
                                             alt={`${service.title} ${index + 1}`}
-                                            className="w-full h-[300px] object-cover rounded-xl"
+                                            className="w-full h-[200px] md:h-[300px] object-cover rounded-xl"
                                         />
                                     ))}
                                 </div>
@@ -200,7 +201,7 @@ const ServiceDetail = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="bg-dark text-white py-20">
+            <section className="bg-dark text-white py-20 px-4 md:px-0">
                 <div className="container-custom">
                     <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
                         <div>
